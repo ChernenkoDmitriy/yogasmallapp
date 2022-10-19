@@ -9,7 +9,7 @@ export const MainView: FC = () => {
 
     return (
         <View style={styles.container}>
-            <Text>{t('password')}</Text>
+            <Text style={styles.text}>{t('MAIN')}</Text>
         </View>
     )
 };
