@@ -1,35 +1,34 @@
 import { MobXRepository } from "../../../src/repository/MobXRepository";
-import { IList } from "../banner/IList";
-import { ILesson } from "./ILesson";
+import { IPractice } from "./IPractice";
 
 export interface IPracticeModel {
-    currentLesson: ILesson | null;
-    lessonsList: IList<ILesson> | null;
+    practices: IPractice[];
+    chosenPractice: IPractice | null;
 }
 
 class PracticeModel implements IPracticeModel {
-    private currentLessonRepository = new MobXRepository<ILesson | null>(null);
-    private lessonsListRepository = new MobXRepository<IList<ILesson> | null>(null);
+    private practicesRepository = new MobXRepository<IPractice[]>([]);
+    private chosenPracticeRepository = new MobXRepository<IPractice | null>(null);
 
-    get currentLesson() {
-        return this.currentLessonRepository.data || null;
+    get practices() {
+        return this.practicesRepository.data || null;
     }
 
-    set currentLesson(data: ILesson | null) {
-        this.currentLessonRepository.save(data);
-    }
-    
-    get lessonsList() {
-        return this.lessonsListRepository.data || null;
+    set practices(data: IPractice[]) {
+        this.practicesRepository.save(data);
     }
 
-    set lessonsList(data: IList<ILesson> | null) {
-        this.lessonsListRepository.save(data);
+    get chosenPractice() {
+        return this.chosenPracticeRepository.data || null;
+    }
+
+    set chosenPractice(data: IPractice | null) {
+        this.chosenPracticeRepository.save(data);
     }
 
     clear = () => {
-        this.currentLesson = null;
-        this.lessonsList = null;
+        this.practices = [];
+        this.chosenPractice = null;
     }
 
 }

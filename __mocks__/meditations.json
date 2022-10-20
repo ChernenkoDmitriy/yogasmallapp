@@ -1,0 +1,21 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "title": "string",
+            "description": "string",
+            "duration": 10,
+            "accessCode": "string",
+            "durationMeasuring": "minutes",
+            "lessonTitle": "string",
+            "lessonContent": [],
+            "media": {
+                "uri": "string",
+                "type": "audio"
+            },
+            "availableDays": 90,
+            "startDate": null,
+            "isAvailable": true
+        }
+    ]
+}
