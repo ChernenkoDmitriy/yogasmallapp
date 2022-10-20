@@ -1,6 +1,6 @@
 export interface IDay {
     id: string;
-    hours: number;
+    hours_to_spend: number;
     audio?: string;
     video?: string;
     tasks: {

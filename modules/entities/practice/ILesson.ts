@@ -2,7 +2,7 @@ import { IDay } from "./IDay";
 
 export interface ILesson {
     id: string;
-    section: 'practice' | 'meditation'; // can not be
+    section: 'practice' | 'meditation'; // may not be
     title: string;
     description: string;
     image: string;
