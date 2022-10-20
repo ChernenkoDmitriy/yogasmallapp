@@ -3,5 +3,7 @@ export const translations = {
     en: {
         email: "Email",
         password: 'Password',
+        lostConnection: 'Lost connection',
+        MAIN:'MAIN',
     }
 }
