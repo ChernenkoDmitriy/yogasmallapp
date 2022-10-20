@@ -6,6 +6,7 @@ import { observer } from 'mobx-react';
 import { Utils } from '../../utils/Utils';
 import { useUiContext } from '../../UIProvider';
 import { LoadingView } from '../../../modules/UIKit/loadingView';
+import { DisconnectView } from '../../../modules/UIKit/disconnectView';
 
 export const RootNavigator: FC = observer(() => {
     const { colors, theme } = useUiContext();
@@ -17,6 +18,7 @@ export const RootNavigator: FC = observer(() => {
                 <StackNavigator />
             </NavigationContainer>
             <LoadingView />
+            <DisconnectView/>
         </KeyboardAvoidingView>
     );
 });
