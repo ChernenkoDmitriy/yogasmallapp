@@ -4,4 +4,6 @@ export type IColors = {
     additionalText: string;
     subText: string;
     blockBackground: string;
+    buttonGradientStart: string,
+    buttonGradientEnd: string,
 }
