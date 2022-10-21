@@ -9,7 +9,7 @@ class ColorTheme implements IColorTheme {
     }
 
     get theme() {
-        return this.themeStore.theme || 'light';
+        return this.themeStore.theme || 'dark';
     }
 
     get colors() {
