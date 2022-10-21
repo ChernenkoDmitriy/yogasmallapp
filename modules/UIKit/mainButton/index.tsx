@@ -1,5 +1,6 @@
 import React, { FC, useMemo, memo } from 'react';
 import { Text, Pressable, ActivityIndicator, View, ViewStyle } from 'react-native';
+import { ButtonGradient } from '../../../assets/icons/buttonGradient';
 import { useUiContext } from '../../../src/UIProvider';
 import { getStyle } from './styles';
 
@@ -21,8 +22,9 @@ export const MainButton: FC<Props> = memo(({ onPress = () => { }, title = '', di
             style={({ pressed }) => [styles.container, containerStyle, { opacity: pressed || disabled ? 0.7 : 1 }]}
             onPress={onPress}
         >
-            <Text style={styles.text}>{title?.toUpperCase()}</Text>
-            {inProgress ? <View style={styles.absoluteSheet}><ActivityIndicator color={colors.accentColorLight} size='large' /></View> : null}
+            <ButtonGradient />
+            <Text style={styles.text}>{title}</Text>
+            {inProgress ? <View style={styles.absoluteSheet}><ActivityIndicator color={colors.regularText} size='large' /></View> : null}
         </Pressable>
     );
 })
