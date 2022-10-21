@@ -13,23 +13,23 @@ const BACKGROUND_IMAGE = require('../../../../assets/icons/gradientOrnament.png'
 
 export const AuthorizationView: FC = observer(() => {
     const { colors, t } = useUiContext();
-    const styles = useMemo(() => getStyle(colors), [colors]);
     const {
         login, onChangeLogin, code, onChangeCode, onAuthorization
     } = useAuthorization();
+    const styles = useMemo(() => getStyle(colors), [colors]);
 
     return (
         <ScreenContainer containerStyle={styles.container}>
             <Image style={styles.backgroundImage} source={BACKGROUND_IMAGE} resizeMode={'contain'} />
-            <AuthTitle />
-            <View style={styles.inputWrapper}>
-                <AuthInput title={t('login')} value={login} onChangeText={onChangeLogin} />
-                <AuthInput title={t('enterCode')} value={code} onChangeText={onChangeCode} />
+            <View style={styles.contentWrapper}>
+                <AuthTitle />
+                <View style={styles.inputWrapper}>
+                    <AuthInput title={t('login')} value={login} onChangeText={onChangeLogin} />
+                    <AuthInput title={t('enterCode')} value={code} onChangeText={onChangeCode} />
+                </View>
+                <Text style={styles.tip}>{t('haveProblems')}</Text>
             </View>
-            <Text style={styles.tip}>{t('haveProblems')}</Text>
-            <View style={styles.authButtonWrapper}>
-                <MainButton title={t('startMyJourney')} onPress={onAuthorization} />
-            </View>
+            <MainButton title={t('startMyJourney')} onPress={onAuthorization} containerStyle={styles.authButtonWrapper} />
         </ScreenContainer>
     )
 })

@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { IColors } from '../../../../src/UIProvider/colorTheme';
 import { FONTS } from '../../../../src/utils/Fonts';
-import { scaleHorizontal, scaleVertical, Utils } from '../../../../src/utils/Utils';
+import { scaleHorizontal, scaleVertical } from '../../../../src/utils/Utils';
 
 export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
@@ -11,9 +11,14 @@ export const getStyle = (colors: IColors) => {
             justifyContent: 'center',
         },
         backgroundImage: {
-            position:'absolute',
+            position: 'absolute',
             height: scaleVertical(630),
             width: scaleVertical(330),
+        },
+        contentWrapper: {
+            flex: 1,
+            justifyContent: 'center',
+            paddingTop: scaleVertical(111),
         },
         inputWrapper: {
             height: scaleVertical(100),
@@ -29,10 +34,8 @@ export const getStyle = (colors: IColors) => {
             paddingHorizontal: scaleHorizontal(37),
         },
         authButtonWrapper: {
-            position: 'absolute',
-            width: '100%',
-            bottom: scaleVertical(57),
-            paddingHorizontal: scaleHorizontal(20),
+            marginBottom: scaleVertical(57),
+            marginHorizontal: scaleHorizontal(20),
         },
     });
     return styles;
