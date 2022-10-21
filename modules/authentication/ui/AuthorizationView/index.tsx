@@ -14,9 +14,9 @@ const BACKGROUND_IMAGE = require('../../../../assets/icons/gradientOrnament.png'
 export const AuthorizationView: FC = observer(() => {
     const { colors, t } = useUiContext();
     const {
-        login, onChangeLogin, code, onChangeCode, onAuthorization
+        login, onChangeLogin, code, onChangeCode, error, onAuthorization
     } = useAuthorization();
-    const styles = useMemo(() => getStyle(colors), [colors]);
+    const styles = useMemo(() => getStyle(colors, !!error), [colors, error]);
 
     return (
         <ScreenContainer containerStyle={styles.container}>
@@ -26,6 +26,9 @@ export const AuthorizationView: FC = observer(() => {
                 <View style={styles.inputWrapper}>
                     <AuthInput title={t('login')} value={login} onChangeText={onChangeLogin} />
                     <AuthInput title={t('enterCode')} value={code} onChangeText={onChangeCode} />
+                </View>
+                <View style={styles.errorWrapper}>
+                    <Text style={styles.errorText}>{error}</Text>
                 </View>
                 <Text style={styles.tip}>{t('haveProblems')}</Text>
             </View>

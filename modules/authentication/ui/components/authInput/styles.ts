@@ -17,6 +17,7 @@ export const getStyle = (colors: IColors) => {
         title: {
             ...FONTS.TEXT_REGULAR_16,
             color: colors.subText,
+            width: scaleHorizontal(80),
         },
         textInput: {
             flex: 1,

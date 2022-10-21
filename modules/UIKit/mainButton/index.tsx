@@ -22,7 +22,7 @@ export const MainButton: FC<Props> = memo(({ onPress = () => { }, title = '', di
             style={({ pressed }) => [styles.container, containerStyle, { opacity: pressed || disabled ? 0.7 : 1 }]}
             onPress={onPress}
         >
-            <ButtonGradient title={title} />
+            <ButtonGradient colorEnd={colors.buttonGradientEnd} colorStart={colors.buttonGradientStart} title={title} />
             {inProgress ? <View style={styles.absoluteSheet}><ActivityIndicator color={colors.regularText} size='large' /></View> : null}
         </Pressable>
     );

@@ -3,7 +3,7 @@ import { IColors } from '../../../../src/UIProvider/colorTheme';
 import { FONTS } from '../../../../src/utils/Fonts';
 import { scaleHorizontal, scaleVertical } from '../../../../src/utils/Utils';
 
-export const getStyle = (colors: IColors) => {
+export const getStyle = (colors: IColors, isError: boolean) => {
     const styles = StyleSheet.create({
         container: {
             flex: 1,
@@ -24,8 +24,21 @@ export const getStyle = (colors: IColors) => {
             height: scaleVertical(100),
             justifyContent: 'space-between',
             marginTop: scaleVertical(23),
-            marginBottom: scaleVertical(25),
             paddingHorizontal: scaleHorizontal(37),
+        },
+        errorWrapper: {
+            height: scaleVertical(25),
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginHorizontal: scaleHorizontal(57),
+            marginTop: scaleVertical(5),
+            borderRadius: 8,
+            backgroundColor: colors.buttonGradientStart,
+            opacity: isError ? 0.8 : 0,
+        },
+        errorText: {
+            ...FONTS.ADDITIONAL_TEXT_14,
+            color: colors.buttonGradientEnd,
         },
         tip: {
             ...FONTS.ADDITIONAL_TEXT_12,

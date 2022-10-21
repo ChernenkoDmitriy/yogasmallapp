@@ -4,13 +4,11 @@ import { authorizationUseCase } from "../useCases/authorizationUseCase";
 export const useAuthorization = () => {
     const [login, setLogin] = useState('');
     const [code, setCode] = useState('');
-    const [error, setError] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
     const onAuthorization = useCallback(async () => {
-        const user = await authorizationUseCase(login, code);
-        if (!user) {
-            setError(true);
-        }
+        const result = await authorizationUseCase(login, code);
+        setError(result.error);
     }, [login, code]);
 
     const onChangeLogin = useCallback((value: string) => {
