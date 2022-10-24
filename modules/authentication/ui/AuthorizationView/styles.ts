@@ -8,12 +8,12 @@ export const getStyle = (colors: IColors, isError: boolean) => {
         container: {
             flex: 1,
             backgroundColor: colors.background,
-            justifyContent: 'center',
         },
         backgroundImage: {
             position: 'absolute',
+            top: scaleVertical(110),
             height: scaleVertical(630),
-            width: scaleVertical(330),
+            width: scaleVertical(360),
         },
         contentWrapper: {
             flex: 1,
@@ -24,7 +24,7 @@ export const getStyle = (colors: IColors, isError: boolean) => {
             height: scaleVertical(100),
             justifyContent: 'space-between',
             marginTop: scaleVertical(23),
-            paddingHorizontal: scaleHorizontal(37),
+            paddingHorizontal: scaleHorizontal(20),
         },
         errorWrapper: {
             height: scaleVertical(25),
@@ -49,6 +49,7 @@ export const getStyle = (colors: IColors, isError: boolean) => {
         authButtonWrapper: {
             marginBottom: scaleVertical(57),
             marginHorizontal: scaleHorizontal(20),
+            backgroundColor:'gray',
         },
     });
     return styles;

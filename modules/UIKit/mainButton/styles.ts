@@ -7,7 +7,7 @@ export const getStyle = () => {
             overflow: 'hidden',
             justifyContent: 'center',
             alignItems: 'center',
-            minHeight: scaleVertical(54),
+            height: scaleVertical(54),
             borderRadius: 16,
         },
         absoluteSheet: {

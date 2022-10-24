@@ -12,8 +12,8 @@ interface IProps {
 
 export const ButtonGradient: FC<IProps> = ({ width, height, colorStart, colorEnd, title }) => (
   <Svg
-    width={width || scaleHorizontal(374)}
-    height={height || scaleVertical(54)}
+    width={width || scaleHorizontal(474)}
+    height={height || scaleVertical(64)}
     viewBox="0 0 374 54"
     fill="none"
   >
@@ -39,10 +39,10 @@ export const ButtonGradient: FC<IProps> = ({ width, height, colorStart, colorEnd
       fontSize="20"
       fontWeight="700"
       fontFamily={'SourceSansPro-Regular'}
-      x="34"
+      x="30"
       y="30"
-      alignmentBaseline="central"
-      textAnchor={'middle'}
+      alignmentBaseline="middle"
+      textAnchor={"middle"}
     >
       <TSpan inlineSize="300">
         {title}

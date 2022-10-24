@@ -28,7 +28,7 @@ export const AuthorizationView: FC = observer(() => {
                     <AuthInput title={t('enterCode')} value={code} onChangeText={onChangeCode} />
                 </View>
                 <View style={styles.errorWrapper}>
-                    <Text style={styles.errorText}>{error}</Text>
+                    <Text style={styles.errorText}>{error && t(error)}</Text>
                 </View>
                 <Text style={styles.tip}>{t('haveProblems')}</Text>
             </View>

@@ -8,7 +8,7 @@ interface Props {
     onChangeText: (data: string) => void;
     value: string;
     title: string;
-    isPassword: boolean;
+    isPassword?: boolean;
 }
 
 export const AuthInput: FC<Props> = ({ value, onChangeText, title, containerStyle, isPassword = false }) => {
