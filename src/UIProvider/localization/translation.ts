@@ -11,6 +11,7 @@ export const translations = {
         haveProblems: 'If you have any problems with entering please contact app owner',
         startMyJourney: 'Start My Journey!',
         incorrectLoginCode: 'Incorrect login or code',
+        requestError: 'Request error',
         fillLoginCode: 'Fill login and code inputs',
         fillLogin: 'Fill login input',
         fillCode: 'Fill code input',
