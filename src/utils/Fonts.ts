@@ -8,6 +8,7 @@ interface IFonts {
     ADDITIONAL_TEXT_14: TextStyle,
     ADDITIONAL_TEXT_13: TextStyle,
     ADDITIONAL_TEXT_12: TextStyle,
+    LABEL_TEXT_12: TextStyle,
 }
 
 export const FONTS: IFonts = {
@@ -44,7 +45,13 @@ export const FONTS: IFonts = {
     ADDITIONAL_TEXT_12: {
         fontFamily: 'SourceSansPro-Regular',
         fontWeight: '400',
-        fontSize: scaleFontSize(13),
+        fontSize: scaleFontSize(12),
         lineHeight: scaleFontSize(20),
+    },
+    LABEL_TEXT_12: {
+        fontFamily: 'SourceSansPro-Regular',
+        fontWeight: '400',
+        fontSize: scaleFontSize(12),
+        lineHeight: scaleFontSize(12),
     },
 }
