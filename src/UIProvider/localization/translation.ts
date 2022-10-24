@@ -14,5 +14,10 @@ export const translations = {
         fillLoginCode: 'Fill login and code inputs',
         fillLogin: 'Fill login input',
         fillCode: 'Fill code input',
+        home: 'Home',
+        meditations: 'Meditations',
+        courses: 'Courses',
+        account: 'Account',
+        more: 'More',
     }
 }
