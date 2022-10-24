@@ -7,6 +7,9 @@ export const COLORS = {
         subText: '#AFCBE0',
         buttonGradientStart: '#130409',
         buttonGradientEnd: '#570034',
+        focusedTab: '#FCEBD4',
+        blurredTab: '#7C6974',
+        tabBarBackground: '#000A40',
     },
     dark: {
         background: '#000935',
@@ -16,5 +19,8 @@ export const COLORS = {
         subText: '#FCEBD4',
         buttonGradientStart: '#130409',
         buttonGradientEnd: '#570034',
+        focusedTab: '#FCEBD4',
+        blurredTab: '#7C6974',
+        tabBarBackground: '#000A40',
     },
 };
