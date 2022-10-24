@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { IColors } from '../../../src/UIProvider/colorTheme';
-import { scaleFontSize, Utils } from '../../../src/utils/Utils'
+import { FONTS } from '../../../src/utils/Fonts';
+import { scaleVertical, Utils } from '../../../src/utils/Utils'
 
 export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
@@ -10,10 +11,14 @@ export const getStyle = (colors: IColors) => {
             alignItems: 'center',
             backgroundColor: colors.background,
         },
+        backgroundImage: {
+            position: 'absolute',
+            height: Utils.size.height - scaleVertical(100),
+            width: Utils.size.width,
+        },
         text: {
-            fontSize: scaleFontSize(22),
-            fontWeight: '700',
-            color: colors.regularText,
+            ...FONTS.TITLE_34,
+            color: colors.additionalText,
         },
     });
     return styles;

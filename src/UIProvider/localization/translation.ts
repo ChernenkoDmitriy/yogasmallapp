@@ -3,7 +3,7 @@ export const translations = {
     en: {
         login: "Login",
         enterCode: 'Enter Code',
-        lostConnection: 'Lost connection',
+        lostConnection: 'No internet connection!',
         MAIN: 'MAIN',
         welcome: 'welcome!',
         startJourney: 'Let’s start\nyour journey!',
