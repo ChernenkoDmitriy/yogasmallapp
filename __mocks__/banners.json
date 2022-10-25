@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "image": "https://nebula.org/blog/wp-content/uploads/2020/08/woman-doing-yoga-at-sunset-1024x683.jpg",
+            "link": "https://www.kreedon.com/wp-content/uploads/2022/03/sunsetyoga-2_647_062115121022.jpg"
+        },
+        {
+            "id": 1,
+            "image": "https://images.news18.com/ibnlive/uploads/2022/03/yoga-3-16484555003x2.jpg?impolicy=website&width=510&height=356",
+            "link": "https://images.news18.com/ibnlive/uploads/2022/03/yoga-3-16484555003x2.jpg?impolicy=website&width=510&height=356"
+        },
+        {
+            "id": 2,
+            "image": "http://kievvlast.com.ua//project/resources/2019/11/PsQqL5FS.jpg",
+            "link": "http://kievvlast.com.ua//project/resources/2019/11/PsQqL5FS.jpg"
+        },
+        {
+            "id": 3,
+            "image": "https://www.kreedon.com/wp-content/uploads/2022/03/sunsetyoga-2_647_062115121022.jpg",
+            "link": "https://www.kreedon.com/wp-content/uploads/2022/03/sunsetyoga-2_647_062115121022.jpg"
+        }
+    ]
+}

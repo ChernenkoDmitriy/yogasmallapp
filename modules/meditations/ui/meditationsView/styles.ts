@@ -8,6 +8,7 @@ export const getStyle = (colors: IColors) => {
             alignItems:'center',
             justifyContent:'center',
             backgroundColor: colors.background,
+            // opacity:0,
         },
         text:{
             color: colors.regularText,
