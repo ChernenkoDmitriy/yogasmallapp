@@ -1,4 +1,4 @@
-import { Link, NavigationProp, ParamListBase, useNavigation } from '@react-navigation/native';
+import { NavigationProp, ParamListBase, useNavigation } from '@react-navigation/native';
 import React, { FC, useCallback, useMemo } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { ArrowRightIcon } from '../../../../../assets/icons/arrowRightIcon';
