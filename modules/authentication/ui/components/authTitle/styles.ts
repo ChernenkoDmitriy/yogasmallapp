@@ -11,11 +11,11 @@ export const getStyle = (colors: IColors) => {
         },
         welcomeText:{
             ...FONTS.ADDITIONAL_TEXT_13,
-            color: colors.additionalText,
+            color: colors.focusedTab,
         },
         subText: {
             ...FONTS.ADDITIONAL_TEXT_14,
-            color: colors.additionalText,
+            color: colors.focusedTab,
         },
         title: {
             ...FONTS.TITLE_34,

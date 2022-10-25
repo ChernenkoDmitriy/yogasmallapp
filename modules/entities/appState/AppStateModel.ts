@@ -2,6 +2,7 @@ import { MobXRepository } from "../../../src/repository/MobXRepository";
 
 export interface ISettingModel {
     isLoading: boolean;
+    isTabBar: boolean;
 }
 
 class AppStateModel implements ISettingModel {
@@ -16,6 +17,14 @@ class AppStateModel implements ISettingModel {
     }
 
     set isLoading(data: boolean) {
+        this.isLoadingRepository.save(data);
+    }
+    
+    get isTabBar() {
+        return this.isLoadingRepository.data || true;
+    }
+
+    set isTabBar(data: boolean) {
         this.isLoadingRepository.save(data);
     }
 

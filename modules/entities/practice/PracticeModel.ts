@@ -11,7 +11,7 @@ class PracticeModel implements IPracticeModel {
     private chosenPracticeRepository = new MobXRepository<IPractice | null>(null);
 
     get practices() {
-        return this.practicesRepository.data || null;
+        return this.practicesRepository.data || [];
     }
 
     set practices(data: IPractice[]) {

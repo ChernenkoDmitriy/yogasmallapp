@@ -3,10 +3,11 @@ export const translations = {
     en: {
         login: "Login",
         enterCode: 'Enter Code',
-        lostConnection: 'Lost connection',
+        lostConnection: 'No internet connection!',
         MAIN: 'MAIN',
         welcome: 'welcome!',
         startJourney: 'Let’s start\nyour journey!',
+        startJourneyOneLine: 'Let’s start your journey!',
         useLoginCode: 'Use login and code provided by app owner',
         haveProblems: 'If you have any problems with entering please contact app owner',
         startMyJourney: 'Start My Journey!',
@@ -15,5 +16,12 @@ export const translations = {
         fillLoginCode: 'Fill login and code inputs',
         fillLogin: 'Fill login input',
         fillCode: 'Fill code input',
+        home: 'Home',
+        meditations: 'Meditations',
+        courses: 'Courses',
+        account: 'Account',
+        more: 'More',
+        all: 'All',
+        empty: 'Empty section',
     }
 }

@@ -1,15 +1,14 @@
 import { StyleSheet } from 'react-native';
-import { IColors } from '../../../src/UIProvider/colorTheme';
+import { IColors } from '../../../../src/UIProvider/colorTheme';
+import { scaleVertical } from '../../../../src/utils/Utils';
 
 export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
         container: {
-            flex: 1,
-            alignItems:'center',
-            justifyContent:'center',
-            backgroundColor: colors.background,
+            justifyContent: 'space-between',
+            paddingBottom: scaleVertical(28),
         },
-        text:{
+        text: {
             color: colors.regularText
         }
     });
