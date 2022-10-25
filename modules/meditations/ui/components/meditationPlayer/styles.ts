@@ -7,30 +7,30 @@ export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
         container: {
             width: '100%',
-            // height: scaleVertical(379),
             alignItems: 'center',
             justifyContent: 'space-between',
             paddingVertical: scaleVertical(14)
         },
-        image: {
-            width: scaleHorizontal(222),
-            height: scaleHorizontal(222),
+        player: {
+            flexDirection: 'row',
+            alignItems: 'center',
+            paddingHorizontal: scaleHorizontal(31),
         },
-        title: {
-            ...FONTS.TITLE_32,
-            color: colors.regularText,
-            textAlign: 'center',
-            marginTop: scaleVertical(25),
-            marginHorizontal: scaleHorizontal(20),
+        track: {
+            height: scaleVertical(8),
+        },
+        trackContainer: {
+            flex: 1,
+            marginRight: scaleHorizontal(9),
         },
         timeWrapper: {
             flexDirection: 'row',
-            alignItems:'center',
+            alignItems: 'center',
             marginTop: scaleVertical(15),
         },
         timeText: {
-            ...FONTS.TEXT_REGULAR_18,
-            color: colors.focusedTab,
+            ...FONTS.TEXT_REGULAR_16,
+            color: colors.regularText,
             textAlign: 'center',
             marginLeft: scaleHorizontal(6),
         }
