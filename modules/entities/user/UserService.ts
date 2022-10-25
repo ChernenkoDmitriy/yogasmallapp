@@ -23,7 +23,7 @@ class UserService {
             }
         } catch (error) {
             console.warn('UserService -> authorizeStaticUsers: ', error);
-            return { user: null, error: 'Request error' };
+            return { user: null, error: 'requestError' };
         }
     }
 
