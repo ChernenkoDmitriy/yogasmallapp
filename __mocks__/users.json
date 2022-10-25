@@ -1,6 +1,12 @@
 {
     "data": [
         {
+            "id": 0,
+            "login": "tasamaya",
+            "password": "01234",
+            "name": "Name"
+        },
+        {
             "id": 1,
             "login": "test",
             "password": "password",
