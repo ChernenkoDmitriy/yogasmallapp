@@ -7,15 +7,6 @@ export const getStyle = () => {
             alignItems: 'center',
             justifyContent: 'center',
             width: '100%',
-            marginTop: scaleVertical(23),
-        },
-        imageWrapper: {
-            flex: 1,
-            marginHorizontal: scaleHorizontal(20),
-        },
-        image: {
-            flex: 1,
-            borderRadius: 16,
         },
         indicatorsWrapper: {
             flexDirection: 'row',

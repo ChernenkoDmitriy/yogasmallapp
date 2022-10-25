@@ -1,14 +1,14 @@
 import { StyleSheet } from 'react-native';
-import { IColors } from '../../../../../src/UIProvider/colorTheme';
-import { FONTS } from '../../../../../src/utils/Fonts';
-import { scaleHorizontal, scaleVertical } from '../../../../../src/utils/Utils';
+import { IColors } from '../../../src/UIProvider/colorTheme';
+import { FONTS } from '../../../src/utils/Fonts';
+import { scaleHorizontal, scaleVertical } from '../../../src/utils/Utils';
 
 export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
         container: {
             height: scaleVertical(160),
             backgroundColor: colors.blockBackground,
-            marginTop: scaleVertical(16),
+            // marginTop: scaleVertical(16),
             borderRadius: 16,
         },
         mainInfoWrapper: {

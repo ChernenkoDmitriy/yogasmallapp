@@ -6,6 +6,7 @@ interface IFonts {
     TITLE_22: TextStyle,
     TITLE_20: TextStyle,
     TITLE_20_LIGHT: TextStyle,
+    TITLE_18: TextStyle,
     TEXT_REGULAR_18: TextStyle,
     TEXT_REGULAR_16: TextStyle,
     ADDITIONAL_TEXT_14: TextStyle,
@@ -38,6 +39,12 @@ export const FONTS: IFonts = {
         fontWeight: '400',
         fontSize: scaleFontSize(20),
         lineHeight: scaleFontSize(22),
+    },
+    TITLE_18:  {
+        fontFamily: 'SourceSansPro-Regular',
+        fontWeight: '700',
+        fontSize: scaleFontSize(18),
+        lineHeight: scaleFontSize(22.63),
     },
     TEXT_REGULAR_18: {
         fontFamily: 'SourceSansPro-Regular',

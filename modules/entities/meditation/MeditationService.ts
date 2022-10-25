@@ -9,7 +9,7 @@ class MeditationService {
     requestMeditations = async (): Promise<{ meditations: IMeditation[] | null, error: string | null }> => {
         try {
             const response = require('../../../__mocks__/meditations.json');
-                return { meditations: response, error: null };
+            return { meditations: response?.data, error: null };
         } catch (error) {
             console.warn('UserService -> authorizeStaticUsers: ', error);
             return { meditations: null, error: 'requestError' };
