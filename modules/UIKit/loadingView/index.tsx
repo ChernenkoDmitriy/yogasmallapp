@@ -11,7 +11,7 @@ export const LoadingView: FC = observer(() => {
 
     return (appStateModel.isLoading
         ? <View style={styles.container} >
-            <ActivityIndicator size={'large'} />
+            <ActivityIndicator color={colors.playerProgress} size={'large'} />
         </View>
         : null
     );
