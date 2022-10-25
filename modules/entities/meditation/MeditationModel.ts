@@ -2,7 +2,7 @@ import { MobXRepository } from "../../../src/repository/MobXRepository";
 import { IMeditation } from "./IMeditation";
 
 export interface IMeditationModel {
-    meditations: IMeditation[];
+    meditations: IMeditation[] | null;
     chosenMeditations: IMeditation | null;
 }
 
@@ -11,10 +11,10 @@ class MeditationModel implements IMeditationModel {
     private chosenMeditationsRepository = new MobXRepository<IMeditation | null>(null);
 
     get meditations() {
-        return this.meditationsRepository.data || [];
+        return this.meditationsRepository.data || null;
     }
 
-    set meditations(data: IMeditation[]) {
+    set meditations(data: IMeditation[] | null) {
         this.meditationsRepository.save(data);
     }
 
@@ -33,4 +33,4 @@ class MeditationModel implements IMeditationModel {
 
 }
 
-export const practiceModel = new MeditationModel();
+export const meditationModel = new MeditationModel();
