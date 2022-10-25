@@ -22,7 +22,7 @@ export const HomeSection: FC<IProps> = ({ icon, timeIcon, title, item, sectionSc
         <View style={styles.container}>
             <HomeSectionHeader title={title} screen={sectionScreen} />
             {!!item
-                ? <HomeSectionItem icon={icon} timeIcon={timeIcon} item={item} screen={itemScreen} />
+                ? <HomeSectionItem icon={icon} timeIcon={timeIcon} item={item} stack={sectionScreen} screen={itemScreen} />
                 : <Text style={styles.emptyText}>{t('empty')}</Text>
             }
         </View>

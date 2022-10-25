@@ -14,7 +14,7 @@ export const RootNavigator: FC = observer(() => {
     const { colors, theme } = useUiContext();
 
     return (
-        <KeyboardAvoidingView style={{ flex: 1, backgroundColor: colors.background }} behavior={Utils.isIOS ? 'padding' : 'height'}>
+        <KeyboardAvoidingView style={{ flex: 1, backgroundColor: colors.background }} behavior={Utils.isIOS ? 'padding' : undefined}>
             <StatusBar backgroundColor={colors.background} barStyle={theme === 'dark' ? 'light-content' : 'dark-content'} />
             <NavigationContainer>
                 {!userModel.user

@@ -10,15 +10,20 @@ interface IProps {
     timeIcon?: ReactNode;
     item?: { title: string, description: string, duration: number, durationMeasuring: 'minutes' | 'hours' | 'days' };
     screen?: string;
+    stack?: string;
 };
 
-export const HomeSectionItem: FC<IProps> = ({ icon, timeIcon, item, screen }) => {
+export const HomeSectionItem: FC<IProps> = ({ icon, timeIcon, item, stack, screen }) => {
     const { colors } = useUiContext();
     const { title, description, duration, durationMeasuring } = item || { title: '', description: '' };
     const styles = useMemo(() => getStyle(colors), [colors]);
     const navigation = useNavigation<NavigationProp<ParamListBase>>();
 
-    const onPress = useCallback(()=> screen && navigation.navigate(screen),[screen]);
+    const onPress = useCallback(() => {
+        if (screen && stack) {
+            navigation.navigate(stack, { screen });
+        }
+    }, [screen, stack]);
 
     return (
         <TouchableOpacity style={styles.container} onPress={onPress}>

@@ -9,15 +9,16 @@ interface Props {
     titleStyle?: ViewStyle;
     title?: string;
     isBackButton?: boolean;
+    onGoBack?: () => void;
 }
 
-export const AppHeader: FC<Props> = memo(({ title, isBackButton = false, containerStyle = {}, titleStyle = {} }) => {
+export const AppHeader: FC<Props> = memo(({ title, isBackButton = false, containerStyle = {}, titleStyle = {}, onGoBack }) => {
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors, isBackButton), [colors]);
 
     return (
         <View style={[styles.container, containerStyle]}>
-            <TouchableOpacity style={styles.backButton} disabled={!isBackButton}>
+            <TouchableOpacity style={styles.backButton} disabled={!isBackButton} onPress={onGoBack}>
                 <ArrowBackIcon />
             </TouchableOpacity>
             {!!title && <Text style={[styles.title, titleStyle]}>{title}</Text>}

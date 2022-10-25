@@ -19,7 +19,7 @@ export const HomeView: FC = () => {
     return (
         <ScreenContainer containerStyle={styles.container} headerComponent={<AppHeader title={t('startJourneyOneLine')} />} >
             <HomeBannersCarousel banners={MOCK_BANNERS} />
-            <HomeSection icon={<MeditationSectionIcon/>} timeIcon={<ClockIcon/>} title={t('meditations')} item={MOCK_MEDITATIONS[0]} sectionScreen={'MeditationStackNavigator'} itemScreen={''} />
+            <HomeSection icon={<MeditationSectionIcon/>} timeIcon={<ClockIcon/>} title={t('meditations')} item={MOCK_MEDITATIONS[0]} sectionScreen={'MeditationStackNavigator'} itemScreen={'MeditationDetailsView'} />
             <HomeSection title={t('courses')} />
         </ScreenContainer>
     )
