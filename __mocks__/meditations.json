@@ -8,7 +8,15 @@
             "accessCode": "string",
             "durationMeasuring": "minutes",
             "lessonTitle": "string",
-            "lessonContent": [],
+            "lessonContent": [
+                "Take a seat. Find place to sit that feels calm and quiet to you.",
+                "Set a time limit. ...",
+                "Notice your body. ...",
+                "Feel your breath. ...",
+                "Notice when your mind has wandered. ...",
+                "Be kind to your wandering mind. ...",
+                "Close with kindness. ..."
+            ],
             "media": {
                 "uri": "string",
                 "type": "audio"
