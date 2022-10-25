@@ -3,6 +3,7 @@ import { scaleFontSize } from "./Utils";
 
 interface IFonts {
     TITLE_34: TextStyle,
+    TITLE_32: TextStyle,
     TITLE_22: TextStyle,
     TITLE_20: TextStyle,
     TITLE_20_LIGHT: TextStyle,
@@ -21,6 +22,12 @@ export const FONTS: IFonts = {
         fontWeight: '700',
         fontSize: scaleFontSize(34),
         lineHeight: scaleFontSize(42.74),
+    },
+    TITLE_32: {
+        fontFamily: 'SourceSansPro-Regular',
+        fontWeight: '700',
+        fontSize: scaleFontSize(32),
+        lineHeight: scaleFontSize(42.22),
     },
     TITLE_22: {
         fontFamily: 'SourceSansPro-Regular',
