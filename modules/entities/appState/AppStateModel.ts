@@ -7,6 +7,7 @@ export interface ISettingModel {
 
 class AppStateModel implements ISettingModel {
     private isLoadingRepository = new MobXRepository(false);
+    private isTabBarRepository = new MobXRepository(true);
 
     constructor() {
 
@@ -21,11 +22,11 @@ class AppStateModel implements ISettingModel {
     }
     
     get isTabBar() {
-        return this.isLoadingRepository.data || true;
+        return this.isTabBarRepository.data ?? true;
     }
 
     set isTabBar(data: boolean) {
-        this.isLoadingRepository.save(data);
+        this.isTabBarRepository.save(data);
     }
 
 }
