@@ -1,21 +1,14 @@
 import { StyleSheet } from 'react-native';
-import { IColors } from '../../../src/UIProvider/colorTheme';
+import { scaleVertical } from '../../../src/utils/Utils';
 
-export const getStyle = (colors: IColors) => {
+export const getStyle = () => {
     const styles = StyleSheet.create({
         container: {
-            backgroundColor: colors.accentColorDark,
-            borderRadius: 4,
-            elevation: 4,
-            minHeight: 48,
+            overflow: 'hidden',
             justifyContent: 'center',
-        },
-        text: {
-            fontSize: 18,
-            lineHeight: 22,
-            color: colors.buttonText,
-            fontWeight: 'bold',
-            textAlign: 'center',
+            alignItems: 'center',
+            height: scaleVertical(54),
+            borderRadius: 16,
         },
         absoluteSheet: {
             ...StyleSheet.absoluteFillObject,

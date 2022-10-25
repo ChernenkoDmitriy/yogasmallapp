@@ -58,8 +58,8 @@ export class Utils {
 
 }
 
-const idealWidth: number = 375;
-const idealHeight: number = 812;
+const idealWidth: number = 414;
+const idealHeight: number = 896;
 const size: { width: number, height: number } = Dimensions.get('window');
 const ratio: number = PixelRatio.getFontScale();
 

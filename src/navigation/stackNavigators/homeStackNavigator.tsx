@@ -5,7 +5,7 @@ import { MainView } from '../../../modules/main/ui';
 
 const Stack = createStackNavigator();
 
-export const StackNavigator: FC = observer(() => {
+export const HomeStackNavigator: FC = observer(() => {
 
     return (
         <Stack.Navigator initialRouteName='AuthorizationView' screenOptions={{ headerShown: false }} >
