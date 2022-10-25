@@ -1,7 +1,6 @@
 export type IColors = {
     background: string;
     regularText: string;
-    additionalText: string;
     subText: string;
     blockBackground: string;
     buttonGradientStart: string;
@@ -9,4 +8,6 @@ export type IColors = {
     focusedTab: string;
     blurredTab: string;
     tabBarBackground: string;
+    activeIndicator: string;
+    iconBackground: string;
 }
