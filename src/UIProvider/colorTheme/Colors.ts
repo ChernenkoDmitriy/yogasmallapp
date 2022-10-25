@@ -11,6 +11,7 @@ export const COLORS = {
         tabBarBackground: '#000A40',
         activeIndicator: '#4858B0',
         iconBackground: '#1D2A73',
+        playerProgress: '#4F5CA4',
     },
     dark: {
         background: '#000935',
@@ -24,5 +25,6 @@ export const COLORS = {
         tabBarBackground: '#000A40',
         activeIndicator: '#4858B0',
         iconBackground: '#1D2A73',
+        playerProgress: '#4F5CA4',
     },
 };
