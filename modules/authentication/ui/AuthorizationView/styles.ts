@@ -42,11 +42,12 @@ export const getStyle = (colors: IColors, isError: boolean) => {
         },
         tip: {
             ...FONTS.ADDITIONAL_TEXT_12,
-            color: colors.additionalText,
+            color: colors.regularText,
             textAlign: 'center',
             paddingHorizontal: scaleHorizontal(37),
         },
         authButtonWrapper: {
+            marginTop: scaleVertical(20),
             marginBottom: scaleVertical(57),
             marginHorizontal: scaleHorizontal(20),
             backgroundColor:'gray',
