@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@color/bootsplash_background" />
+    <!-- <item android:drawable="@colors/bootsplash_background" /> -->
     <item>
         <bitmap
+        android:width="400dp"
+        android:height="400dp"
         android:src="@mipmap/bootsplash_logo"
         android:gravity="fill"
         />
