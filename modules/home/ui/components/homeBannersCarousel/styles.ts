@@ -1,12 +1,13 @@
 import { StyleSheet } from 'react-native';
-import { scaleHorizontal, scaleVertical } from '../../../../../src/utils/Utils';
+import { scaleHorizontal, scaleVertical, Utils } from '../../../../../src/utils/Utils';
 
 export const getStyle = () => {
     const styles = StyleSheet.create({
         container: {
             alignItems: 'center',
             justifyContent: 'center',
-            width: '100%',
+            width: Utils.size.width,
+            marginTop: scaleVertical(10),
         },
         indicatorsWrapper: {
             flexDirection: 'row',

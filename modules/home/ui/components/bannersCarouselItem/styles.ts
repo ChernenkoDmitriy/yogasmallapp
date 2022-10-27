@@ -4,12 +4,13 @@ import { scaleHorizontal, Utils } from '../../../../../src/utils/Utils';
 export const getStyle = () => {
     const styles = StyleSheet.create({
         container: {
-            width: Utils.size.width - scaleHorizontal(30),
+            width: Utils.size.width,
             height: '100%',
-            marginHorizontal: scaleHorizontal(15),
+            alignItems:'center',
         },
         image: {
-            flex: 1,
+            width: Utils.size.width - scaleHorizontal(40),
+            height: '100%',
             borderRadius: 16,
         },
     });
