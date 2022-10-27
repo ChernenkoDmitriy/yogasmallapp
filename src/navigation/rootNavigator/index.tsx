@@ -14,7 +14,7 @@ import RNBootSplash from "react-native-bootsplash";
 export const RootNavigator: FC = observer(() => {
     const { colors, theme } = useUiContext();
 
-    const onReady = () => { setTimeout(() => RNBootSplash.hide({ fade: true }), 1000) };
+    const onReady = () => { setTimeout(() =>{ RNBootSplash.hide({ fade: true })}, 1000) };
 
     return (
         <KeyboardAvoidingView style={{ flex: 1, backgroundColor: colors.background }} behavior={Utils.isIOS ? 'padding' : undefined}>
