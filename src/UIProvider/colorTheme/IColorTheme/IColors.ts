@@ -10,4 +10,5 @@ export type IColors = {
     tabBarBackground: string;
     activeIndicator: string;
     iconBackground: string;
+    playerProgress: string;
 }

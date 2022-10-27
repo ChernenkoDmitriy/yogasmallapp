@@ -3,6 +3,7 @@ import React, { FC, ReactNode, useCallback, useMemo } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { PlayIcon } from '../../../assets/icons/playIcon';
 import { useUiContext } from '../../../src/UIProvider';
+import { appStateModel } from '../../entities/appState/AppStateModel';
 import { getStyle } from './styles';
 
 interface IProps {
@@ -13,7 +14,7 @@ interface IProps {
     stack?: string;
 };
 
-export const SectionItem: FC<IProps> = ({ icon, timeIcon, item, stack, screen }) => {
+export const SectionItem: FC<IProps> = ({ icon, timeIcon, item = null, stack, screen }) => {
     const { colors } = useUiContext();
     const { title, description, duration, durationMeasuring } = item || { title: '', description: '' };
     const styles = useMemo(() => getStyle(colors), [colors]);
@@ -21,7 +22,8 @@ export const SectionItem: FC<IProps> = ({ icon, timeIcon, item, stack, screen })
 
     const onPress = useCallback(() => {
         if (screen && stack) {
-            navigation.navigate(stack, { screen });
+            appStateModel.isTabBar = false;
+            navigation.navigate(stack, { screen, params: { item } });
         }
     }, [screen, stack]);
 
