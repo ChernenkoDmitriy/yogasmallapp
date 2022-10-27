@@ -1,19 +1,19 @@
 import { NavigationProp, ParamListBase, useNavigation } from '@react-navigation/native';
 import React, { FC, ReactNode, useCallback, useMemo } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { PlayIcon } from '../../../../../assets/icons/playIcon';
-import { useUiContext } from '../../../../../src/UIProvider';
+import { PlayIcon } from '../../../assets/icons/playIcon';
+import { useUiContext } from '../../../src/UIProvider';
 import { getStyle } from './styles';
 
 interface IProps {
-    icon: ReactNode;
+    icon?: ReactNode;
     timeIcon?: ReactNode;
     item?: { title: string, description: string, duration: number, durationMeasuring: 'minutes' | 'hours' | 'days' };
     screen?: string;
     stack?: string;
 };
 
-export const HomeSectionItem: FC<IProps> = ({ icon, timeIcon, item, stack, screen }) => {
+export const SectionItem: FC<IProps> = ({ icon, timeIcon, item, stack, screen }) => {
     const { colors } = useUiContext();
     const { title, description, duration, durationMeasuring } = item || { title: '', description: '' };
     const styles = useMemo(() => getStyle(colors), [colors]);

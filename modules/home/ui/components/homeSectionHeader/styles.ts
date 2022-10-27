@@ -11,6 +11,7 @@ export const getStyle = (colors: IColors) => {
             alignItems:'center',
             height: scaleVertical(25),
             width: '100%',
+            marginBottom: scaleVertical(16),
         },
         title: {
             textAlign: 'left',

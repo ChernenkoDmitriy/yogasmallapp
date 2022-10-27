@@ -2,7 +2,7 @@ import React, { FC, ReactNode, useMemo } from 'react';
 import { View, Text } from 'react-native';
 import { getStyle } from './styles';
 import { HomeSectionHeader } from '../homeSectionHeader';
-import { HomeSectionItem } from '../homeSectionItem';
+import { SectionItem } from '../../../../UIKit/sectionItem';
 import { useUiContext } from '../../../../../src/UIProvider';
 
 interface IProps {
@@ -22,7 +22,7 @@ export const HomeSection: FC<IProps> = ({ icon, timeIcon, title, item, sectionSc
         <View style={styles.container}>
             <HomeSectionHeader title={title} screen={sectionScreen} />
             {!!item
-                ? <HomeSectionItem icon={icon} timeIcon={timeIcon} item={item} stack={sectionScreen} screen={itemScreen} />
+                ? <SectionItem icon={icon} timeIcon={timeIcon} item={item} stack={sectionScreen} screen={itemScreen} />
                 : <Text style={styles.emptyText}>{t('empty')}</Text>
             }
         </View>
