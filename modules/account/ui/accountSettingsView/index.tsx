@@ -1,15 +1,20 @@
-import React, { FC, useMemo } from 'react';
-import { View, Text } from 'react-native';
+import React, { FC, useCallback, useMemo } from 'react';
+import { View } from 'react-native';
 import { useUiContext } from '../../../../src/UIProvider';
+import { userModel } from '../../../entities/user/UserModel';
+import { MainButton } from '../../../UIKit/mainButton';
 import { getStyle } from './styles';
 
 export const AccountSettingsView: FC = () => {
-    const { colors} = useUiContext();
+    const { colors, t } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
+
+    const onLogout = useCallback(() => { userModel.clear() }, []);
 
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Account Settings</Text>
+            <View></View>
+            <MainButton title={t('logout')} colorEnd={colors.blockBackground} colorStart={colors.blockBackground} onPress={onLogout} containerStyle={styles.logoutButton} />
         </View>
     )
 };
