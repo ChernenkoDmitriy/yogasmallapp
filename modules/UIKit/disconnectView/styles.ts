@@ -18,7 +18,7 @@ export const getStyle = (colors: IColors) => {
         },
         text: {
             ...FONTS.TITLE_34,
-            color: colors.additionalText,
+            color: colors.focusedTab,
         },
     });
     return styles;
