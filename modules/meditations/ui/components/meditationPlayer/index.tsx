@@ -5,6 +5,7 @@ import { useUiContext } from '../../../../../src/UIProvider';
 import { PlayIcon } from '../../../../../assets/icons/playIcon';
 import { Slider } from '@miblanchard/react-native-slider';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { scaleHorizontal } from '../../../../../src/utils/Utils';
 
 
 interface IProps {
@@ -33,7 +34,7 @@ export const MeditationPlayer: FC<IProps> = ({ }) => {
                 // onValueChange={onValueChange}
                 />
                 <TouchableOpacity>
-                    <PlayIcon />
+                    <PlayIcon width={scaleHorizontal(56)} height={scaleHorizontal(56)} />
                 </TouchableOpacity>
             </View>
             <Text style={styles.timeText}>{`05:04`}</Text>

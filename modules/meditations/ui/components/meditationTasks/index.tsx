@@ -4,9 +4,6 @@ import { getStyle } from './styles';
 import { useUiContext } from '../../../../../src/UIProvider';
 import { FlatList } from 'react-native-gesture-handler';
 import { observer } from 'mobx-react-lite';
-import { useNavigation } from '@react-navigation/native';
-import { IMeditation } from '../../../../entities/meditation/IMeditation';
-
 
 interface IProps {
     title?: string;
@@ -17,7 +14,7 @@ export const MeditationTasks: FC<IProps> = observer(({ title, tasks }) => {
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
 
-    const keyExtractor = useCallback((item: string) => item, []);
+    const keyExtractor = useCallback((item: string, index: number) => item + index, []);
 
     const renderItem = useCallback(({ item, index }: { item: string, index: number }) => (
         <Text style={styles.taskText}>{`${index + 1}) ${item}`}</Text>

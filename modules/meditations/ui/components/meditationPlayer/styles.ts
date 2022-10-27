@@ -8,8 +8,6 @@ export const getStyle = (colors: IColors) => {
         container: {
             width: '100%',
             alignItems: 'center',
-            justifyContent: 'space-between',
-            paddingVertical: scaleVertical(14)
         },
         player: {
             flexDirection: 'row',
@@ -17,16 +15,17 @@ export const getStyle = (colors: IColors) => {
             paddingHorizontal: scaleHorizontal(31),
         },
         track: {
+            borderRadius: 16,
             height: scaleVertical(8),
         },
         trackContainer: {
             flex: 1,
             marginRight: scaleHorizontal(9),
+            height: scaleVertical(40),
         },
         timeWrapper: {
             flexDirection: 'row',
             alignItems: 'center',
-            marginTop: scaleVertical(15),
         },
         timeText: {
             ...FONTS.TEXT_REGULAR_16,

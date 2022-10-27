@@ -13,7 +13,7 @@ export const PlayIcon: FC<IProps> = ({ width, height, colorIcon, colorStart, col
     <Svg
         width={width || 50}
         height={height || 50}
-        viewBox="0 0 60 60"
+        viewBox="0 0 56 56"
         fill="none"
     >
         <Circle cx={28} cy={28} r={28} fill="url(#paint0_linear_115_185)" />

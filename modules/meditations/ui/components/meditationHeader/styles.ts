@@ -7,7 +7,6 @@ export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
         container: {
             width: '100%',
-            // height: scaleVertical(379),
             alignItems: 'center',
             justifyContent: 'space-between',
             paddingVertical: scaleVertical(14)
@@ -30,6 +29,7 @@ export const getStyle = (colors: IColors) => {
         },
         timeText: {
             ...FONTS.TEXT_REGULAR_18,
+            fontWeight: '400',
             color: colors.focusedTab,
             textAlign: 'center',
             marginLeft: scaleHorizontal(6),
