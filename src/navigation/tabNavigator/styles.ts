@@ -9,10 +9,10 @@ export const getStyle = (colors: IColors) => {
             flex: 1,
         },
         tabBarStyle: {
-            height: scaleVertical(79),
+            height: Utils.isIOS ? scaleVertical(90) : scaleVertical(79),
             backgroundColor: colors.tabBarBackground,
             borderTopWidth: 0,
-            paddingBottom: Utils.isIOS ? scaleVertical(40) : scaleVertical(20),
+            paddingBottom: Utils.isIOS ? scaleVertical(30) : scaleVertical(20),
             paddingTop: scaleVertical(11),
         },
         tabBarLabelStyle:{
