@@ -47,6 +47,7 @@ export const getStyle = (colors: IColors, isError: boolean) => {
             paddingHorizontal: scaleHorizontal(37),
         },
         authButtonWrapper: {
+            marginTop: scaleVertical(20),
             marginBottom: scaleVertical(57),
             marginTop: scaleVertical(16),
             marginHorizontal: scaleHorizontal(20),
