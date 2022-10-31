@@ -10,7 +10,7 @@ interface Props {
     meditations?: IMeditation[];
 }
 
-export const SectionContentList: FC<Props> = ({ meditations }) => {
+export const MeditationsList: FC<Props> = ({ meditations }) => {
     const styles = useMemo(() => getStyle(), []);
 
     const keyExtractor = useCallback((item: IMeditation) => String(item.id), []);
