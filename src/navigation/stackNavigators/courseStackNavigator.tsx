@@ -4,7 +4,7 @@ import { observer } from 'mobx-react';
 import { CoursesView } from '../../../modules/courses/ui/coursesView';
 import { CoursesDaysView } from '../../../modules/courses/ui/coursesDaysView';
 import { IMeditation } from '../../../modules/entities/meditation/IMeditation';
-import { MeditationDetailsView } from '../../../modules/UIKit/meditationDetailsView';
+import { MeditationDetailsView } from '../../../modules/meditationDetails/ui/meditationDetailsView';
 
 const Stack = createStackNavigator();
 
