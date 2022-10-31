@@ -1,10 +1,10 @@
 import React, { FC, useMemo } from 'react';
 import { Text, View, Image } from 'react-native';
 import { getStyle } from './styles';
-import { useUiContext } from '../../../src/UIProvider';
-import { ClockIcon } from '../../../assets/icons/clockIcon';
+import { useUiContext } from '../../../../../src/UIProvider';
+import { ClockIcon } from '../../../../../assets/icons/clockIcon';
 
-const IMAGE = require('../../../assets/icons/goldOrnament.png');
+const IMAGE = require('../../../../../assets/icons/goldOrnament.png');
 
 interface IProps {
     title?: string;
