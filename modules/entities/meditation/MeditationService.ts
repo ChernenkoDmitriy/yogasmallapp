@@ -11,7 +11,7 @@ class MeditationService {
             const response = require('../../../__mocks__/meditations.json');
             return { meditations: response?.data, error: null };
         } catch (error) {
-            console.warn('UserService -> authorizeStaticUsers: ', error);
+            console.warn('MeditationService -> requestMeditations: ', error);
             return { meditations: null, error: 'requestError' };
         }
     }

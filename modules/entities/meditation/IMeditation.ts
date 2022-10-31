@@ -1,6 +1,7 @@
 export interface IMeditation {
     id: number;
     title: string;
+    banner?: string;
     description: string;
     duration: number;
     accessCode: string;
