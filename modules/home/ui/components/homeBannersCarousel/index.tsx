@@ -29,17 +29,17 @@ export const HomeBannersCarousel: FC<IProps> = ({ banners }) => {
                 width={Utils.size.width}
                 height={scaleHorizontal(200)}
                 autoPlay={true}
-                autoPlayInterval={20000}
+                autoPlayInterval={5000}
                 onProgressChange={(_, absoluteProgress) =>
                     (progressValue.value = absoluteProgress)
                 }
-                mode="parallax"
+                
                 modeConfig={{
                     parallaxScrollingScale: 0.9,
                     parallaxScrollingOffset: 50,
                 }}
                 data={banners}
-                scrollAnimationDuration={1500}
+                scrollAnimationDuration={1000}
                 renderItem={renderItem}
             />
             {!!progressValue &&

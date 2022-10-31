@@ -9,7 +9,7 @@ export const AuthTitle: FC = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.subText}>{t('welcome')}</Text>
+            <Text style={styles.welcomeText}>{t('welcome')}</Text>
             <Text numberOfLines={2} style={styles.title}>{t('startJourney')}</Text>
             <Text style={styles.subText}>{t('useLoginCode')}</Text>
         </View>

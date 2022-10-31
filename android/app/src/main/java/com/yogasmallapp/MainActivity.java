@@ -1,10 +1,10 @@
 package com.yogasmallapp;
-import android.os.Bundle;
+import android.os.Bundle; 
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
-import com.zoontek.rnbootsplash.RNBootSplash;
+import org.devio.rn.splashscreen.SplashScreen;
 
 public class MainActivity extends ReactActivity {
 
@@ -17,10 +17,10 @@ public class MainActivity extends ReactActivity {
     return "yogasmallapp";
   }
 
- @Override
+  @Override
   protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(null); // or super.onCreate(null) with react-native-screens
-    RNBootSplash.init(this); // <- initialize the splash screen
+      SplashScreen.show(this);  // here
+      super.onCreate(null);
   }
 
   /**

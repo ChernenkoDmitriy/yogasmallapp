@@ -12,10 +12,11 @@ export const getStyle = (colors: IColors) => {
         welcomeText:{
             ...FONTS.ADDITIONAL_TEXT_13,
             color: colors.focusedTab,
+            textTransform:'uppercase'
         },
         subText: {
             ...FONTS.ADDITIONAL_TEXT_14,
-            color: colors.focusedTab,
+            color: colors.regularText,
         },
         title: {
             ...FONTS.TITLE_34,

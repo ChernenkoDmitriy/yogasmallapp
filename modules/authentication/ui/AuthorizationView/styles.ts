@@ -38,7 +38,7 @@ export const getStyle = (colors: IColors, isError: boolean) => {
         },
         errorText: {
             ...FONTS.ADDITIONAL_TEXT_14,
-            color: colors.buttonGradientEnd,
+            color: colors.regularText,
         },
         tip: {
             ...FONTS.ADDITIONAL_TEXT_12,
@@ -49,8 +49,8 @@ export const getStyle = (colors: IColors, isError: boolean) => {
         authButtonWrapper: {
             marginTop: scaleVertical(20),
             marginBottom: scaleVertical(57),
+            marginTop: scaleVertical(16),
             marginHorizontal: scaleHorizontal(20),
-            backgroundColor:'gray',
         },
     });
     return styles;

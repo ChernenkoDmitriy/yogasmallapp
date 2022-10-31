@@ -13,15 +13,18 @@ interface Props {
 
 export const AuthInput: FC<Props> = ({ value, onChangeText, title, containerStyle, isPassword = false }) => {
     const { colors } = useUiContext();
-    const styles = useMemo(() => getStyle(colors), [colors]);
+    const styles = useMemo(() => getStyle(colors, value.length >= 19), [colors, value]);
 
     return (
         <View style={[styles.container, containerStyle]}>
-            <Text style={styles.title}>{title}</Text>
+            <View style={styles.titleWrapper}>
+                <Text style={styles.title}>{title}</Text>
+            </View>
             <TextInput
                 placeholderTextColor={colors.background}
                 style={styles.textInput}
                 value={value}
+                cursorColor={colors.focusedTab}
                 onChangeText={onChangeText}
                 secureTextEntry={isPassword}
             />
