@@ -1,13 +1,14 @@
 import { StyleSheet } from 'react-native';
-import { IColors } from '../../../src/UIProvider/colorTheme';
-import { FONTS } from '../../../src/utils/Fonts';
-import { scaleHorizontal, scaleVertical } from '../../../src/utils/Utils';
+import { IColors } from '../../../../../src/UIProvider/colorTheme';
+import { FONTS } from '../../../../../src/utils/Fonts';
+import { scaleHorizontal, scaleVertical } from '../../../../../src/utils/Utils';
 
-export const getStyle = (colors: IColors) => {
+export const getStyle = (colors: IColors, isAvailable: boolean) => {
     const styles = StyleSheet.create({
         container: {
-            flex:1,
+            flex: 1,
             paddingHorizontal: scaleHorizontal(31),
+            opacity: isAvailable ? 1 : 0.5,
         },
         title: {
             ...FONTS.TEXT_REGULAR_18,

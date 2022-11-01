@@ -1,14 +1,35 @@
+import { IStorage, storage } from "../../../libs/storage";
 import { MobXRepository } from "../../../src/repository/MobXRepository";
 import { IMeditation } from "./IMeditation";
 
 export interface IMeditationModel {
     meditations: IMeditation[] | null;
-    chosenMeditations: IMeditation | null;
+    meditationsCodes: IMeditationsCode[];
 }
+
+interface IMeditationsCode { meditationId: number, accessCode: string };
 
 class MeditationModel implements IMeditationModel {
     private meditationsRepository = new MobXRepository<IMeditation[]>([]);
-    private chosenMeditationsRepository = new MobXRepository<IMeditation | null>(null);
+    private meditationsCodesRepository = new MobXRepository<IMeditationsCode[]>([]);
+
+    constructor(private storage: IStorage) {
+        this.load();
+    }
+
+    private persistMeditationsCodes = (data: IMeditationsCode[]) => {
+        if (data) {
+            this.storage.set('MEDITATIONS_CODES', data);
+        } else {
+            this.storage.remove('MEDITATIONS_CODES');
+        }
+    }
+
+    private load = () => {
+        this.storage.get('MEDITATIONS_CODES')
+            .then(data => { data && this.meditationsCodesRepository.save(data) })
+            .catch(error => console.warn('MeditationModel -> load: ', error));
+    }
 
     get meditations() {
         return this.meditationsRepository.data || null;
@@ -18,19 +39,20 @@ class MeditationModel implements IMeditationModel {
         this.meditationsRepository.save(data);
     }
 
-    get chosenMeditations() {
-        return this.chosenMeditationsRepository.data || null;
+    get meditationsCodes() {
+        return this.meditationsCodesRepository.data || [];
     }
 
-    set chosenMeditations(data: IMeditation | null) {
-        this.chosenMeditationsRepository.save(data);
+    set meditationsCodes(data: IMeditationsCode[]) {
+        this.meditationsCodesRepository.save(data);
+        this.persistMeditationsCodes(data);
     }
 
     clear = () => {
         this.meditations = [];
-        this.chosenMeditations = null;
+        this.meditationsCodes = [];
     }
 
 }
 
-export const meditationModel = new MeditationModel();
+export const meditationModel = new MeditationModel(storage);
