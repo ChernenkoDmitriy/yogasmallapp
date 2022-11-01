@@ -1,9 +1,10 @@
 import { ParamListBase, useNavigation, useRoute } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { useState, useMemo, useCallback } from "react";
+import { useCallback } from "react";
 import { appStateModel } from "../../entities/appState/AppStateModel";
 import { IMeditation } from "../../entities/meditation/IMeditation";
 import { meditationModel } from "../../entities/meditation/MeditationModel";
+import { useAvailability } from "../../../libs/hooks/useAvailability";
 
 const DEFAULT_ITEM = {
     id: -1,
@@ -25,26 +26,7 @@ export const useMeditationDetails = () => {
     const { item, prevScreen } = useRoute().params as IRouteParams;
     const { id, accessCode, title, duration, durationMeasuring, lessonTitle, lessonContent } = item || DEFAULT_ITEM;
 
-    const [code, setCode] = useState('');
-
-    const isAvailable = useMemo(() => {
-        if (meditationModel.meditationsCodes && accessCode) {
-            const match = meditationModel.meditationsCodes.find(item => item.meditationId === id && item.accessCode === accessCode);
-            return !!match;
-        } else {
-            return !accessCode;
-        }
-    }, [accessCode, id, meditationModel.meditationsCodes]);
-
-    const onGetAccess = useCallback(() => {
-        if (accessCode === code) {
-            meditationModel.meditationsCodes = [
-                ...meditationModel.meditationsCodes,
-                { meditationId: id, accessCode: code }
-            ]
-        };
-        setCode('');
-    }, [accessCode, code]);
+    const { code, setCode, isAvailable, onGetAccess } = useAvailability(meditationModel, accessCode, id);
 
     const onGoBack = useCallback(() => {
         if (prevScreen) {

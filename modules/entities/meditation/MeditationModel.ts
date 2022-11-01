@@ -1,23 +1,22 @@
 import { IStorage, storage } from "../../../libs/storage";
 import { MobXRepository } from "../../../src/repository/MobXRepository";
+import { IAccessCode } from "./IAccessCode";
 import { IMeditation } from "./IMeditation";
 
 export interface IMeditationModel {
     meditations: IMeditation[] | null;
-    meditationsCodes: IMeditationsCode[];
+    accessCodes: IAccessCode[];
 }
-
-interface IMeditationsCode { meditationId: number, accessCode: string };
 
 class MeditationModel implements IMeditationModel {
     private meditationsRepository = new MobXRepository<IMeditation[]>([]);
-    private meditationsCodesRepository = new MobXRepository<IMeditationsCode[]>([]);
+    private accessCodesRepository = new MobXRepository<IAccessCode[]>([]);
 
     constructor(private storage: IStorage) {
         this.load();
     }
 
-    private persistMeditationsCodes = (data: IMeditationsCode[]) => {
+    private persistMeditationsCodes = (data: IAccessCode[]) => {
         if (data) {
             this.storage.set('MEDITATIONS_CODES', data);
         } else {
@@ -27,7 +26,7 @@ class MeditationModel implements IMeditationModel {
 
     private load = () => {
         this.storage.get('MEDITATIONS_CODES')
-            .then(data => { data && this.meditationsCodesRepository.save(data) })
+            .then(data => { data && this.accessCodesRepository.save(data) })
             .catch(error => console.warn('MeditationModel -> load: ', error));
     }
 
@@ -39,18 +38,18 @@ class MeditationModel implements IMeditationModel {
         this.meditationsRepository.save(data);
     }
 
-    get meditationsCodes() {
-        return this.meditationsCodesRepository.data || [];
+    get accessCodes() {
+        return this.accessCodesRepository.data || [];
     }
 
-    set meditationsCodes(data: IMeditationsCode[]) {
-        this.meditationsCodesRepository.save(data);
+    set accessCodes(data: IAccessCode[]) {
+        this.accessCodesRepository.save(data);
         this.persistMeditationsCodes(data);
     }
 
     clear = () => {
         this.meditations = [];
-        this.meditationsCodes = [];
+        this.accessCodes = [];
     }
 
 }
