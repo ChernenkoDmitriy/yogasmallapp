@@ -19,7 +19,7 @@ export const RootNavigator: FC = observer(() => {
     return (
         <KeyboardAvoidingView style={{ flex: 1, backgroundColor: colors.background }} behavior={Utils.isIOS ? 'padding' : undefined}>
             <StatusBar backgroundColor={colors.background} barStyle={theme === 'dark' ? 'light-content' : 'dark-content'} />
-            <NavigationContainer onReady={onReady}>
+            <NavigationContainer theme={{ colors } as any} onReady={onReady}>
                 {!userModel.user
                     ? <AuthStackNavigator />
                     : <TabNavigator />
