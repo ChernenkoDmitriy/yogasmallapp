@@ -1,33 +1,31 @@
 import React, { FC, useCallback, useMemo } from 'react';
 import { View, FlatList } from 'react-native';
-import { ClockIcon } from '../../../../../assets/icons/clockIcon';
-import { MeditationSectionIcon } from '../../../../../assets/icons/meditationSectionIcon';
 import { IMeditation } from '../../../../entities/meditation/IMeditation';
-import { SectionItem } from '../../../../UIKit/sectionItem';
+import { DaysListItem } from '../daysListItem';
 import { getStyle } from './styles';
 
-interface Props {
-    meditations?: IMeditation[];
-}
+interface IProps {
+    days?: IMeditation[];
+};
 
-export const SectionContentList: FC<Props> = ({ meditations }) => {
+export const DaysList: FC<IProps> = ({ days }) => {
     const styles = useMemo(() => getStyle(), []);
 
     const keyExtractor = useCallback((item: IMeditation) => String(item.id), []);
     const itemSeparatorComponent = useCallback(() => <View style={styles.separator} />, []);
 
-    const renderItem = useCallback(({ item }: { item: IMeditation }) => (
-        <SectionItem icon={<MeditationSectionIcon />} timeIcon={<ClockIcon />} item={item} stack={'MeditationStackNavigator'} screen={'MeditationDetailsView'} />
+    const renderItem = useCallback(({ item, index }: { item: IMeditation, index: number }) => (
+        <DaysListItem courseDay={item} numberOfDay={index + 1} />
     ), []);
 
     return (
         <FlatList
             showsVerticalScrollIndicator={false}
-            data={meditations || []}
+            data={days || []}
             renderItem={renderItem}
             keyExtractor={keyExtractor}
             ItemSeparatorComponent={itemSeparatorComponent}
-            numColumns={1}
+            numColumns={2}
             initialNumToRender={4}
             contentContainerStyle={styles.container}
         />

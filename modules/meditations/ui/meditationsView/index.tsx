@@ -4,18 +4,18 @@ import { useUiContext } from '../../../../src/UIProvider';
 import { meditationModel } from '../../../entities/meditation/MeditationModel';
 import { AppHeader } from '../../../UIKit/appHeader';
 import { ScreenContainer } from '../../../UIKit/screenContainer';
-import { SectionContentList } from '../components/sectionContentList';
-import { SectionDescription } from '../components/sectionDescription';
+import { MeditationsList } from '../components/meditationsList';
+import { SectionDescription } from '../../../UIKit/sectionDescription';
 import { getStyle } from './styles';
 
 export const MeditationsView: FC = observer(() => {
-    const { colors, t} = useUiContext();
+    const { colors, t } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
 
     return (
-        <ScreenContainer containerStyle={styles.container} headerComponent={<AppHeader title={t('meditations')}/>}>
-            <SectionDescription/>
-            <SectionContentList meditations={meditationModel.meditations || []}/>
+        <ScreenContainer containerStyle={styles.container} headerComponent={<AppHeader title={t('meditations')} />}>
+            <SectionDescription title={t('meditationIs')} subText={t('meditationExperience')} />
+            <MeditationsList meditations={meditationModel.meditations || []} />
         </ScreenContainer>
     )
 });

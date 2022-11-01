@@ -1,3 +1,176 @@
 {
-    "data": []
+    "data": [
+        {
+            "id": 1,
+            "title": "Learning how to do it right",
+            "description": "I had spent the prior days learning how to navigate glacial terrain and appropriately use gear because I didn’t yet have these skills. Similarly, I have found that, unfortunately, many of us confuse guided meditation with “how to meditate,” and that couldn’t be further from the truth. In guided meditation, someone is helping us to anchor our mind. When learning “how to meditate,” we develop the necessary skills to practice and anchor our mind on our own. Learning these skills gives us a powerful foundation for navigating life more mindfully both on and off the cushion.",
+            "duration": 10,
+            "accessCode": "string",
+            "durationMeasuring": "hours",
+            "availableDays": 90,
+            "startDate": 10,
+            "content": [
+                {
+                    "id": 1,
+                    "title": "Day one",
+                    "description": "I had spent the prior days learning how to navigate glacial terrain and appropriately use gear because I didn’t yet have these skills. Similarly, I have found that, unfortunately, many of us confuse guided meditation with “how to meditate,” and that couldn’t be further from the truth. In guided meditation, someone is helping us to anchor our mind. When learning “how to meditate,” we develop the necessary skills to practice and anchor our mind on our own. Learning these skills gives us a powerful foundation for navigating life more mindfully both on and off the cushion.",
+                    "duration": 10,
+                    "accessCode": "string",
+                    "durationMeasuring": "minutes",
+                    "lessonTitle": "string",
+                    "lessonContent": [
+                        "Take a seat. Find place to sit that feels calm and quiet to you.",
+                        "Set a time limit. ...",
+                        "Notice your body. ...",
+                        "Feel your breath. ...",
+                        "Notice when your mind has wandered. ...",
+                        "Be kind to your wandering mind. ...",
+                        "Close with kindness. ...",
+                        "Take a seat. Find place to sit that feels calm and quiet to you.",
+                        "Set a time limit. ...",
+                        "Notice your body. ...",
+                        "Feel your breath. ...",
+                        "Notice when your mind has wandered. ...",
+                        "Be kind to your wandering mind. ...",
+                        "Close with kindness. ..."
+                    ],
+                    "media": {
+                        "uri": "string",
+                        "type": "audio"
+                    },
+                    "availableDays": 90,
+                    "startDate": null,
+                    "isAvailable": true
+                },
+                {
+                    "id": 2,
+                    "title": "Day two",
+                    "description": "I had spent the prior days learning how to navigate glacial terrain and appropriately use gear because I didn’t yet have these skills. Similarly, I have found that, unfortunately, many of us confuse guided meditation with “how to meditate,” and that couldn’t be further from the truth. In guided meditation, someone is helping us to anchor our mind. When learning “how to meditate,” we develop the necessary skills to practice and anchor our mind on our own. Learning these skills gives us a powerful foundation for navigating life more mindfully both on and off the cushion.",
+                    "duration": 15,
+                    "accessCode": "string",
+                    "durationMeasuring": "minutes",
+                    "lessonTitle": "string",
+                    "lessonContent": [
+                        "Take a seat. Find place to sit that feels calm and quiet to you.",
+                        "Set a time limit. ...",
+                        "Notice your body. ...",
+                        "Feel your breath. ...",
+                        "Notice when your mind has wandered. ...",
+                        "Be kind to your wandering mind. ...",
+                        "Close with kindness. ...",
+                        "Take a seat. Find place to sit that feels calm and quiet to you.",
+                        "Set a time limit. ...",
+                        "Notice your body. ...",
+                        "Feel your breath. ...",
+                        "Notice when your mind has wandered. ...",
+                        "Be kind to your wandering mind. ...",
+                        "Close with kindness. ..."
+                    ],
+                    "media": {
+                        "uri": "string",
+                        "type": "audio"
+                    },
+                    "availableDays": 90,
+                    "startDate": null,
+                    "isAvailable": true
+                },
+                {
+                    "id": 3,
+                    "title": "Day three",
+                    "description": "I had spent the prior days learning how to navigate glacial terrain and appropriately use gear because I didn’t yet have these skills. Similarly, I have found that, unfortunately, many of us confuse guided meditation with “how to meditate,” and that couldn’t be further from the truth. In guided meditation, someone is helping us to anchor our mind. When learning “how to meditate,” we develop the necessary skills to practice and anchor our mind on our own. Learning these skills gives us a powerful foundation for navigating life more mindfully both on and off the cushion.",
+                    "duration": 5,
+                    "accessCode": "string",
+                    "durationMeasuring": "minutes",
+                    "lessonTitle": "string",
+                    "lessonContent": [
+                        "Take a seat. Find place to sit that feels calm and quiet to you.",
+                        "Set a time limit. ...",
+                        "Notice your body. ...",
+                        "Feel your breath. ...",
+                        "Notice when your mind has wandered. ...",
+                        "Be kind to your wandering mind. ...",
+                        "Close with kindness. ...",
+                        "Take a seat. Find place to sit that feels calm and quiet to you.",
+                        "Set a time limit. ...",
+                        "Notice your body. ...",
+                        "Feel your breath. ...",
+                        "Notice when your mind has wandered. ...",
+                        "Be kind to your wandering mind. ...",
+                        "Close with kindness. ..."
+                    ],
+                    "media": {
+                        "uri": "string",
+                        "type": "audio"
+                    },
+                    "availableDays": 90,
+                    "startDate": null,
+                    "isAvailable": true
+                },
+                {
+                    "id": 4,
+                    "title": "Day four",
+                    "description": "I had spent the prior days learning how to navigate glacial terrain and appropriately use gear because I didn’t yet have these skills. Similarly, I have found that, unfortunately, many of us confuse guided meditation with “how to meditate,” and that couldn’t be further from the truth. In guided meditation, someone is helping us to anchor our mind. When learning “how to meditate,” we develop the necessary skills to practice and anchor our mind on our own. Learning these skills gives us a powerful foundation for navigating life more mindfully both on and off the cushion.",
+                    "duration": 20,
+                    "accessCode": "string",
+                    "durationMeasuring": "minutes",
+                    "lessonTitle": "string",
+                    "lessonContent": [
+                        "Take a seat. Find place to sit that feels calm and quiet to you.",
+                        "Set a time limit. ...",
+                        "Notice your body. ...",
+                        "Feel your breath. ...",
+                        "Notice when your mind has wandered. ...",
+                        "Be kind to your wandering mind. ...",
+                        "Close with kindness. ...",
+                        "Take a seat. Find place to sit that feels calm and quiet to you.",
+                        "Set a time limit. ...",
+                        "Notice your body. ...",
+                        "Feel your breath. ...",
+                        "Notice when your mind has wandered. ...",
+                        "Be kind to your wandering mind. ...",
+                        "Close with kindness. ..."
+                    ],
+                    "media": {
+                        "uri": "string",
+                        "type": "audio"
+                    },
+                    "availableDays": 90,
+                    "startDate": null,
+                    "isAvailable": true
+                },
+                {
+                    "id": 5,
+                    "title": "Learning how to do it right",
+                    "description": "I had spent the prior days learning how to navigate glacial terrain and appropriately use gear because I didn’t yet have these skills. Similarly, I have found that, unfortunately, many of us confuse guided meditation with “how to meditate,” and that couldn’t be further from the truth. In guided meditation, someone is helping us to anchor our mind. When learning “how to meditate,” we develop the necessary skills to practice and anchor our mind on our own. Learning these skills gives us a powerful foundation for navigating life more mindfully both on and off the cushion.",
+                    "duration": 11,
+                    "accessCode": "string",
+                    "durationMeasuring": "minutes",
+                    "lessonTitle": "string",
+                    "lessonContent": [
+                        "Take a seat. Find place to sit that feels calm and quiet to you.",
+                        "Set a time limit. ...",
+                        "Notice your body. ...",
+                        "Feel your breath. ...",
+                        "Notice when your mind has wandered. ...",
+                        "Be kind to your wandering mind. ...",
+                        "Close with kindness. ...",
+                        "Take a seat. Find place to sit that feels calm and quiet to you.",
+                        "Set a time limit. ...",
+                        "Notice your body. ...",
+                        "Feel your breath. ...",
+                        "Notice when your mind has wandered. ...",
+                        "Be kind to your wandering mind. ...",
+                        "Close with kindness. ..."
+                    ],
+                    "media": {
+                        "uri": "string",
+                        "type": "audio"
+                    },
+                    "availableDays": 90,
+                    "startDate": null,
+                    "isAvailable": true
+                }
+            ]
+        }
+    ]
 }

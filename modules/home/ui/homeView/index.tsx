@@ -13,6 +13,7 @@ import { meditationModel } from '../../../entities/meditation/MeditationModel';
 import { observer } from 'mobx-react';
 import { CourseSectionIcon } from '../../../../assets/icons/courseSectionIcon';
 import { CalendarIcon } from '../../../../assets/icons/calendarIcon';
+import { practiceModel } from '../../../entities/practice/PracticeModel';
 
 export const HomeView: FC = observer(() => {
     const { colors, t } = useUiContext();
@@ -23,7 +24,7 @@ export const HomeView: FC = observer(() => {
         <ScreenContainer containerStyle={styles.container} headerComponent={<AppHeader title={t('startJourneyOneLine')} />} >
             <HomeBannersCarousel banners={bannerModel.bannersList || []} />
             <HomeSection icon={<MeditationSectionIcon />} timeIcon={<ClockIcon />} title={t('meditations')} item={meditationModel.meditations?.[0]} sectionScreen={'MeditationStackNavigator'} itemScreen={'MeditationDetailsView'} />
-            <HomeSection icon={<CourseSectionIcon />} timeIcon={<CalendarIcon />} title={t('courses')} item={meditationModel.meditations?.[0]} sectionScreen={'CourseStackNavigator'}/>
+            <HomeSection icon={<CourseSectionIcon />} timeIcon={<CalendarIcon />} title={t('courses')} item={practiceModel.practices?.[0]} sectionScreen={'CourseStackNavigator'} itemScreen={'CoursesDaysView'}/>
         </ScreenContainer>
     )
 });

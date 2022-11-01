@@ -26,5 +26,6 @@ export const translations = {
         meditationIs: 'Meditation is something everyone can do, here\'s how.',
         meditationExperience: 'If you\'ve had little or no meditation experience, these guided meditations will help you start a regular practice. Each session is about 10 minutes.',
         logout: 'Logout',
+        day: 'Day',
     }
 }

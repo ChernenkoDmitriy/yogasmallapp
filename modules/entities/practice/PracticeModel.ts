@@ -2,7 +2,7 @@ import { MobXRepository } from "../../../src/repository/MobXRepository";
 import { IPractice } from "./IPractice";
 
 export interface IPracticeModel {
-    practices: IPractice[];
+    practices: IPractice[] | null;
     chosenPractice: IPractice | null;
 }
 
@@ -14,7 +14,7 @@ class PracticeModel implements IPracticeModel {
         return this.practicesRepository.data || [];
     }
 
-    set practices(data: IPractice[]) {
+    set practices(data: IPractice[] | null) {
         this.practicesRepository.save(data);
     }
 

@@ -1,7 +1,7 @@
 import React, { FC, useCallback, useMemo } from 'react';
 import { Text, View } from 'react-native';
 import { getStyle } from './styles';
-import { useUiContext } from '../../../../../src/UIProvider';
+import { useUiContext } from '../../../src/UIProvider';
 import { FlatList } from 'react-native-gesture-handler';
 import { observer } from 'mobx-react-lite';
 

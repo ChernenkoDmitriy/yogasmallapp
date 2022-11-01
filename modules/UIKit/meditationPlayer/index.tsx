@@ -1,11 +1,11 @@
 import React, { FC, useMemo, useState } from 'react';
 import { Text, View } from 'react-native';
 import { getStyle } from './styles';
-import { useUiContext } from '../../../../../src/UIProvider';
-import { PlayIcon } from '../../../../../assets/icons/playIcon';
+import { useUiContext } from '../../../src/UIProvider';
+import { PlayIcon } from '../../../assets/icons/playIcon';
 import { Slider } from '@miblanchard/react-native-slider';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import { scaleHorizontal } from '../../../../../src/utils/Utils';
+import { scaleHorizontal } from '../../../src/utils/Utils';
 
 
 interface IProps {
