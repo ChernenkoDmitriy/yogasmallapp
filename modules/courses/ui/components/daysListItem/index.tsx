@@ -13,9 +13,10 @@ const IMAGE = require('../../../../../assets/icons/goldOrnament.png');
 interface IProps {
     courseDay?: IMeditation;
     numberOfDay: number;
+    isAvailable: boolean;
 };
 
-export const DaysListItem: FC<IProps> = ({ courseDay, numberOfDay }) => {
+export const DaysListItem: FC<IProps> = ({ courseDay, numberOfDay, isAvailable }) => {
     const { colors, t } = useUiContext()
     const styles = useMemo(() => getStyle(colors), [colors]);
     const { title, banner, duration, durationMeasuring } = courseDay || { title: '', banner: '', duration: null, durationMeasuring: 'hours' };
@@ -27,7 +28,7 @@ export const DaysListItem: FC<IProps> = ({ courseDay, numberOfDay }) => {
     }, [courseDay]);
 
     return (
-        <TouchableOpacity style={styles.container} onPress={onPress}>
+        <TouchableOpacity style={styles.container} onPress={onPress} disabled={!isAvailable}>
             <View style={styles.dayWrapper}>
                 <CalendarIcon color={colors.regularText} height={scaleVertical(15.19)} />
                 <Text style={styles.timeText}>{`${numberOfDay} ${t('day')}`}</Text>
