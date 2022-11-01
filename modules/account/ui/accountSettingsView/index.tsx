@@ -1,3 +1,4 @@
+import { NavigationProp, ParamListBase, useNavigation } from '@react-navigation/native';
 import React, { FC, useCallback, useMemo } from 'react';
 import { View } from 'react-native';
 import { useUiContext } from '../../../../src/UIProvider';
@@ -11,8 +12,10 @@ import { getStyle } from './styles';
 export const AccountSettingsView: FC = () => {
     const { colors, t } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
-
+    const navigation = useNavigation<NavigationProp<ParamListBase>>();
+    
     const onLogout = useCallback(() => { 
+        navigation.navigate('HomeStackNavigator');
         userModel.clear();
         bannerModel.clear();
         meditationModel.clear();

@@ -9,13 +9,14 @@ import { ParamListBase, useNavigation, useRoute } from '@react-navigation/native
 import { StackNavigationProp } from '@react-navigation/stack';
 import { IPractice } from '../../../entities/practice/IPractice';
 import { DaysList } from '../components/daysList';
+import { practiceModel } from '../../../entities/practice/PracticeModel';
 
 export const CoursesDaysView: FC = () => {
     const { colors, t } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
     const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
     const { item } = useRoute().params as { item: IPractice | null };
-    const { title, description, content } = item || { title: '', description: '', content: [] };
+    const { id, title, description, content, accessCode } = item || { title: '', description: '', content: [], accessCode: '', id: -1 };
 
     const onGoBack = useCallback(() => {
         navigation.navigate('CoursesView');
@@ -25,7 +26,7 @@ export const CoursesDaysView: FC = () => {
     return (
         <ScreenContainer containerStyle={styles.container} headerComponent={<AppHeader isBackButton={true} onGoBack={onGoBack} title={title} />}>
             <SectionDescription title={t('meditationIs')} subText={description} />
-            <DaysList days={content} />
+            <DaysList days={content} model={practiceModel} accessCode={accessCode} id={id} />
         </ScreenContainer>
     )
 };

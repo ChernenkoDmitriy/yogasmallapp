@@ -27,8 +27,11 @@ export const translations = {
         meditationExperience: 'If you\'ve had little or no meditation experience, these guided meditations will help you start a regular practice. Each session is about 10 minutes.',
         logout: 'Logout',
         day: 'Day',
-        enterPasscode: 'Enter passcode to listel tis meditation',
+        enterPasscode: 'Enter passcode to listen this meditation',
         getAccess: 'Get access',
         passcode: 'Passcode',
+        applyCourse: 'Apply for a course',
+        send: 'Send',
+        enterPasscodeCourse: 'Enter passcode to listen this course'
     }
 }

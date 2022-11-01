@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { IColors } from '../../../../../src/UIProvider/colorTheme';
-import { FONTS } from '../../../../../src/utils/Fonts';
-import { scaleHorizontal, scaleVertical } from '../../../../../src/utils/Utils';
+import { IColors } from '../../../src/UIProvider/colorTheme';
+import { FONTS } from '../../../src/utils/Fonts';
+import { scaleHorizontal, scaleVertical } from '../../../src/utils/Utils';
 
 export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
@@ -32,6 +32,9 @@ export const getStyle = (colors: IColors) => {
         button: {
             width: '100%',
             marginTop: scaleVertical(24)
+        },
+        applyButton: {
+            marginTop: scaleVertical(6),
         }
     });
     return styles;

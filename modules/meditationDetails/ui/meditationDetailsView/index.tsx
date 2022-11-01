@@ -7,7 +7,7 @@ import { MeditationHeader } from '../components/meditationHeader';
 import { observer } from 'mobx-react';
 import { MeditationPlayer } from '../components/meditationPlayer';
 import { MeditationTasks } from '../components/meditationTasks';
-import { AccessInput } from '../components/accessInput';
+import { AccessInput } from '../../../UIKit/accessInput';
 import { useMeditationDetails } from '../../presenters/useMeditationDetails';
 
 
