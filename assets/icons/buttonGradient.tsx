@@ -18,9 +18,9 @@ export const ButtonGradient: FC<IProps> = ({ width, height, colorStart, colorEnd
     fill="none"
   >
     <Path
-        d="M358 0H16C7.163 0 0 7.163 0 16v22c0 8.837 7.163 16 16 16h342c8.837 0 16-7.163 16-16V16c0-8.837-7.163-16-16-16z"
-        fill="url(#paint0_linear_7_6)"
-      />
+      d="M358 0H16C7.163 0 0 7.163 0 16v22c0 8.837 7.163 16 16 16h342c8.837 0 16-7.163 16-16V16c0-8.837-7.163-16-16-16z"
+      fill="url(#paint0_linear_7_6)"
+    />
     <Defs>
       <LinearGradient
         id="paint0_linear_7_6"
@@ -39,12 +39,11 @@ export const ButtonGradient: FC<IProps> = ({ width, height, colorStart, colorEnd
       fontSize="20"
       fontWeight="700"
       fontFamily={'SourceSansPro-Regular'}
-      x="30"
-      y="30"
-      alignmentBaseline="middle"
+      y={((height || scaleVertical(64)) / 2) + 2}
+      alignmentBaseline="central"
       textAnchor={"middle"}
     >
-      <TSpan inlineSize="300">
+      <TSpan inlineSize="374">
         {title}
       </TSpan>
     </Text>
