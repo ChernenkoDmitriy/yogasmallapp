@@ -30,7 +30,7 @@ export const translations = {
         enterPasscode: 'Enter passcode to listen this meditation',
         getAccess: 'Get access',
         passcode: 'Passcode',
-        applyCourse: 'Apply for a course',
+        applyCourse: 'Do you need to apply for a course?',
         send: 'Send',
         enterPasscodeCourse: 'Enter passcode to listen this course'
     }
