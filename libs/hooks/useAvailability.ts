@@ -18,9 +18,13 @@ export const useAvailability = (model: { accessCodes: IAccessCode[] }, accessCod
             model.accessCodes = [
                 ...model.accessCodes,
                 { meditationId: id, accessCode: code }
-            ]
-        };
-        setCode('');
+            ];
+            setCode('');
+            return true;
+        } else {
+            setCode('');
+            return false;
+        }
     }, [accessCode, code]);
 
     return { code, setCode, isAvailable, onGetAccess };

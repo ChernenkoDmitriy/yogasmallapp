@@ -32,6 +32,7 @@ export const translations = {
         passcode: 'Passcode',
         applyCourse: 'Do you need to apply for a course?',
         send: 'Send',
-        enterPasscodeCourse: 'Enter passcode to listen this course'
+        enterPasscodeCourse: 'Enter passcode to listen this course',
+        incorrectPasscode: 'Incorrect passcode!',
     }
 }

@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useMemo } from 'react';
+import React, { FC, useCallback, useMemo, useState } from 'react';
 import { Text, View, TextInput, TouchableOpacity, Linking } from 'react-native';
 import { getStyle } from './styles';
 import { useUiContext } from '../../../src/UIProvider';
@@ -11,18 +11,21 @@ interface IProps {
     code: string;
     applyText?: string;
     setCode: (value: string) => void;
-    onGetAccess: () => void;
+    onGetAccess: () => boolean;
 };
 
 export const AccessInput: FC<IProps> = ({ title, code, applyText, setCode, onGetAccess }) => {
     const { colors, t } = useUiContext();
-    const styles = useMemo(() => getStyle(colors), [colors]);
+    const [isCorrectCode, setIsCorrectCode] = useState(true);
+    const styles = useMemo(() => getStyle(colors, isCorrectCode), [colors, isCorrectCode]);
+    const inputTitle = useMemo(() => isCorrectCode ? (title || t('enterPasscode')) : t('incorrectPasscode'), [title, isCorrectCode]);
 
     const onOpenMail = useCallback(async () => { await Linking.canOpenURL(MAIL) && await Linking.openURL(MAIL) }, []);
+    const handleOnGetAccess = () => { setIsCorrectCode(onGetAccess()) };
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>{title || t('enterPasscode')}</Text>
+            <Text style={styles.title}>{inputTitle}</Text>
             <View style={styles.inputWrapper}>
                 <TextInput
                     style={styles.input}
@@ -33,7 +36,7 @@ export const AccessInput: FC<IProps> = ({ title, code, applyText, setCode, onGet
                     placeholderTextColor={colors.subText}
                 />
             </View>
-            <MainButton title={t('getAccess')} onPress={onGetAccess} containerStyle={styles.button} />
+            <MainButton title={t('getAccess')} onPress={handleOnGetAccess} containerStyle={styles.button} />
             {!!applyText &&
                 <TouchableOpacity onPress={onOpenMail} style={styles.applyButton}>
                     <Text style={styles.title}>{applyText}</Text>

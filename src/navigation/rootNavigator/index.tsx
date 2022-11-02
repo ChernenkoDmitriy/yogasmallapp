@@ -14,7 +14,7 @@ import SplashScreen from 'react-native-splash-screen';
 export const RootNavigator: FC = observer(() => {
     const { colors, theme } = useUiContext();
 
-    const onReady = useCallback(() => setTimeout(() => SplashScreen.hide(), 1000), []);
+    const onReady = useCallback(() => { setTimeout(() => SplashScreen.hide(), 1000) }, []);
 
     return (
         <KeyboardAvoidingView style={{ flex: 1, backgroundColor: colors.background }} behavior={Utils.isIOS ? 'padding' : undefined}>
