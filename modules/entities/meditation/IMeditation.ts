@@ -8,7 +8,7 @@ export interface IMeditation {
     durationMeasuring: 'minutes' | 'hours' | 'days';
     lessonTitle: string;
     lessonContent: string[];
-    media: { uri: string; type: 'audio' | 'vide' };
+    media: { uri: string; type: 'audio' | 'video' };
     availableDays: number;
     startDate: number;
     isAvailable: boolean;

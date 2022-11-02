@@ -15,6 +15,7 @@
                     "title": "Day one",
                     "description": "I had spent the prior days learning how to navigate glacial terrain and appropriately use gear because I didn’t yet have these skills. Similarly, I have found that, unfortunately, many of us confuse guided meditation with “how to meditate,” and that couldn’t be further from the truth. In guided meditation, someone is helping us to anchor our mind. When learning “how to meditate,” we develop the necessary skills to practice and anchor our mind on our own. Learning these skills gives us a powerful foundation for navigating life more mindfully both on and off the cushion.",
                     "duration": 10,
+                    "banner": "https://nebula.org/blog/wp-content/uploads/2020/08/woman-doing-yoga-at-sunset-1024x683.jpg",
                     "accessCode": null,
                     "durationMeasuring": "minutes",
                     "lessonTitle": "string",
@@ -35,8 +36,8 @@
                         "Close with kindness. ..."
                     ],
                     "media": {
-                        "uri": "string",
-                        "type": "audio"
+                        "uri": "",
+                        "type": "video"
                     },
                     "availableDays": 90,
                     "startDate": null,
@@ -67,8 +68,8 @@
                         "Close with kindness. ..."
                     ],
                     "media": {
-                        "uri": "string",
-                        "type": "audio"
+                        "uri": "",
+                        "type": "video"
                     },
                     "availableDays": 90,
                     "startDate": null,
@@ -99,8 +100,8 @@
                         "Close with kindness. ..."
                     ],
                     "media": {
-                        "uri": "string",
-                        "type": "audio"
+                        "uri": "",
+                        "type": "video"
                     },
                     "availableDays": 90,
                     "startDate": null,
@@ -131,8 +132,8 @@
                         "Close with kindness. ..."
                     ],
                     "media": {
-                        "uri": "string",
-                        "type": "audio"
+                        "uri": "",
+                        "type": "video"
                     },
                     "availableDays": 90,
                     "startDate": null,
@@ -163,8 +164,8 @@
                         "Close with kindness. ..."
                     ],
                     "media": {
-                        "uri": "string",
-                        "type": "audio"
+                        "uri": "",
+                        "type": "video"
                     },
                     "availableDays": 90,
                     "startDate": null,
