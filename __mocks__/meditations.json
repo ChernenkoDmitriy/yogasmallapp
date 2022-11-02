@@ -8,6 +8,7 @@
             "accessCode": "1111",
             "durationMeasuring": "minutes",
             "lessonTitle": "string",
+            "banner": "",
             "lessonContent": [
                 "Take a seat. Find place to sit that feels calm and quiet to you.",
                 "Set a time limit. ...",
@@ -25,7 +26,7 @@
                 "Close with kindness. ..."
             ],
             "media": {
-                "uri": "string",
+                "uri": "",
                 "type": "audio"
             },
             "availableDays": 90,
