@@ -3,7 +3,7 @@ import { IColors } from '../../../../../src/UIProvider/colorTheme';
 import { FONTS } from '../../../../../src/utils/Fonts';
 import { scaleHorizontal, scaleVertical } from '../../../../../src/utils/Utils';
 
-export const getStyle = (colors: IColors) => {
+export const getStyle = (colors: IColors, isBanner: boolean) => {
     const styles = StyleSheet.create({
         container: {
             width: '100%',
@@ -11,9 +11,19 @@ export const getStyle = (colors: IColors) => {
             justifyContent: 'space-between',
             paddingVertical: scaleVertical(14)
         },
+        mediaWrapper: {
+            width: '100%',
+            height: isBanner ? scaleHorizontal(271) : scaleHorizontal(222),
+            alignItems: 'center',
+            justifyContent: 'center',
+        },
         image: {
-            width: scaleHorizontal(222),
-            height: scaleHorizontal(222),
+            width: isBanner ? '100%' : scaleHorizontal(222),
+            height: isBanner ? '100%' : scaleHorizontal(222),
+        },
+        video: {
+            width: '100%',
+            height: scaleHorizontal(271),
         },
         title: {
             ...FONTS.TITLE_32,
@@ -24,7 +34,7 @@ export const getStyle = (colors: IColors) => {
         },
         timeWrapper: {
             flexDirection: 'row',
-            alignItems:'center',
+            alignItems: 'center',
             marginTop: scaleVertical(15),
         },
         timeText: {

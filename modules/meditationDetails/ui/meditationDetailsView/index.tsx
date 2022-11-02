@@ -15,22 +15,33 @@ export const MeditationDetailsView: FC = observer(() => {
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
     const {
-        title, duration, durationMeasuring, lessonTitle, lessonContent,
-        code, setCode,
-        isAvailable,
-        onGetAccess,
-        onGoBack,
+        title, duration, durationMeasuring, lessonTitle, lessonContent, media, banner,
+        code, isAvailable, onGetAccess, onGoBack, setCode,
+        mediaRef, isPaused, currentTime, mediaDuration, setCurrentTime,
+        setMediaDuration, onMediaValueChange, onSetIsPaused
     } = useMeditationDetails();
 
     return (
         <ScreenContainer containerStyle={styles.container} headerComponent={<AppHeader isBackButton={true} onGoBack={onGoBack} />}>
             <MeditationHeader
                 title={title}
+                banner={banner}
                 duration={duration}
                 durationMeasuring={durationMeasuring}
+                media={media}
+                mediaRef={mediaRef}
+                isPaused={isPaused}
+                setCurrentTime={setCurrentTime}
+                setDuration={setMediaDuration}
             />
             {isAvailable
-                ? <MeditationPlayer />
+                ? <MeditationPlayer
+                    currentTime={currentTime}
+                    duration={mediaDuration}
+                    isPaused={isPaused}
+                    onValueChange={onMediaValueChange}
+                    onSetIsPaused={onSetIsPaused}
+                />
                 : <AccessInput code={code} setCode={setCode} onGetAccess={onGetAccess} />
             }
             <MeditationTasks

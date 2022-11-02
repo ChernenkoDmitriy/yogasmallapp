@@ -1,4 +1,4 @@
-import React, { FC, useMemo, useState } from 'react';
+import React, { FC, useEffect, useMemo, useState } from 'react';
 import { Text, View } from 'react-native';
 import { getStyle } from './styles';
 import { useUiContext } from '../../../../../src/UIProvider';
@@ -6,19 +6,33 @@ import { PlayIcon } from '../../../../../assets/icons/playIcon';
 import { Slider } from '@miblanchard/react-native-slider';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { scaleHorizontal } from '../../../../../src/utils/Utils';
+import { PauseIcon } from '../../../../../assets/icons/pauseIcon';
+import { formatTimeMMSS } from '../../../../../src/utils/formatTimeMMSS';
 
 
 interface IProps {
-
+    currentTime: number;
+    duration: number;
+    isPaused: boolean;
+    onValueChange: (value: number) => void;
+    onSetIsPaused: () => void;
 };
 
-export const MeditationPlayer: FC<IProps> = ({ }) => {
+export const MeditationPlayer: FC<IProps> = ({ currentTime, duration, isPaused, onValueChange, onSetIsPaused }) => {
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
-    const [currentTime, setCurrentTime] = useState(5);
-    const [duration, setDuration] = useState(10);
+    const timeLeft = useMemo(() => formatTimeMMSS(Math.floor(duration - currentTime)), [duration, currentTime]);
+    const [isFinished, setIsFinished] = useState(false);
 
-    // const onValueChange = (value: number) => { video?.seek(value * duration) };
+    useEffect(() => {
+        if (Math.floor(currentTime) === Math.floor(duration) && !isFinished && currentTime !== 0) {
+            setIsFinished(true);
+            onSetIsPaused();
+        };
+        if (Math.floor(currentTime) < Math.floor(duration)) {
+            setIsFinished(false);
+        };
+    }, [currentTime, duration, isFinished]);
 
     return (
         <View style={styles.container}>
@@ -30,14 +44,17 @@ export const MeditationPlayer: FC<IProps> = ({ }) => {
                     trackStyle={styles.track}
                     thumbStyle={{ width: 0 }}
                     containerStyle={styles.trackContainer}
-                //@ts-ignore
-                // onValueChange={onValueChange}
+                    //@ts-ignore
+                    onValueChange={onValueChange}
                 />
-                <TouchableOpacity>
-                    <PlayIcon width={scaleHorizontal(56)} height={scaleHorizontal(56)} />
+                <TouchableOpacity onPress={onSetIsPaused}>
+                    {isPaused
+                        ? <PlayIcon width={scaleHorizontal(56)} height={scaleHorizontal(56)} />
+                        : <PauseIcon width={scaleHorizontal(56)} height={scaleHorizontal(56)} />
+                    }
                 </TouchableOpacity>
             </View>
-            <Text style={styles.timeText}>{`05:04`}</Text>
+            <Text style={styles.timeText}>{timeLeft}</Text>
         </View>
     )
 };
