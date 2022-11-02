@@ -35,7 +35,9 @@ export const getStyle = (colors: IColors) => {
         },
         applyButton: {
             marginTop: scaleVertical(6),
-        }
+            borderBottomWidth: 1,
+            borderBottomColor: colors.subText,
+        },
     });
     return styles;
 }
