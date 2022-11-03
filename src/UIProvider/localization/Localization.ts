@@ -3,7 +3,6 @@ import { translations } from './translation';
 import { ILocalization } from './ILocalization';
 import { IRepository } from '../../repository/IRepository';
 import { MobXRepository } from '../../repository/MobXRepository';
-import { getLocales } from "react-native-localize";
 import { IStorage, storage } from '../../../libs/storage';
 
 class Localization implements ILocalization {
@@ -13,25 +12,26 @@ class Localization implements ILocalization {
         this.load();
     }
 
-    private setLocaleByDeviceLocale = () => {
-        const deviceLocales = getLocales() || [];
-        if (deviceLocales[0]?.languageCode === 'ru' || deviceLocales[0]?.languageCode === 'uk') {
-            this.setLocale('ru');
+    private persistLanguage = (data: string | null) => {
+        if (data) {
+            this.storage.set('LANGUAGE', data);
         } else {
-            this.setLocale('en');
+            this.storage.remove('LANGUAGE');
         }
     }
 
     private load = () => {
-        this.setLocaleByDeviceLocale();
+        this.storage.get('LANGUAGE')
+            .then(data => { data && this.localizationStore.save(data); })
+            .catch(error => console.warn('Localization -> load: ', error));
     }
 
     get locales() {
-        return Object.keys(this.i18n.translations);
+        return Object.keys(i18n.translations);
     }
 
     get locale() {
-        return this.localizationStore.data || 'en';
+        return this.localizationStore.data || 'ru';
     }
 
     setTranslation = (translations: any) => {
@@ -47,6 +47,7 @@ class Localization implements ILocalization {
 
     setLocale = (locale: string) => {
         this.localizationStore.save(locale);
+        this.persistLanguage(locale);
     }
 
 }
