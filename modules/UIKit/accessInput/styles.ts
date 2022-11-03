@@ -26,7 +26,9 @@ export const getStyle = (colors: IColors, isCorrectCode: boolean) => {
         },
         title: {
             ...FONTS.ADDITIONAL_TEXT_14,
+            fontWeight: isCorrectCode ? '400' : '700',
             color: isCorrectCode ? colors.subText : colors.buttonGradientEnd,
+            textTransform: isCorrectCode ? undefined : 'uppercase',
             textAlign: 'center',
         },
         button: {
