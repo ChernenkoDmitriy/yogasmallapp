@@ -39,7 +39,7 @@ export const DaysListItem: FC<IProps> = ({ courseDay, numberOfDay, isAvailable }
             </View>
             <View style={styles.timeWrapper}>
                 <ClockIcon />
-                <Text style={styles.timeText}>{`${duration} ${durationMeasuring}`}</Text>
+                <Text style={styles.timeText}>{`${duration} ${t(durationMeasuring)}`}</Text>
             </View>
         </TouchableOpacity>
     )
