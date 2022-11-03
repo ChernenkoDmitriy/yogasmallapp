@@ -50,7 +50,9 @@ export const MeditationHeader: FC<IProps> = ({ title, banner, duration, duration
                     onLoad={onLoad}
                     onError={onError}
                     style={videoStyle}
-                    resizeMode={'cover'}
+                    resizeMode={'cover'} 
+                    playWhenInactive={true}
+                    playInBackground={true}
                 />
             </View>
             <Text style={styles.title}>{title}</Text>
