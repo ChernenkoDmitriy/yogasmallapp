@@ -1,5 +1,3 @@
-// import { IRestPost, requester } from "../../../libs/requester";
-// import { ILinks, links } from "../../../src/utils/Links";
 import { IUser } from "./IUser";
 
 interface IDefaultUser extends IUser {
@@ -8,13 +6,12 @@ interface IDefaultUser extends IUser {
 
 class UserService {
     constructor(
-        // private requestor: IRestPost,
-        // private links: ILinks,
     ) { }
 
     authorizeStaticUsers = async (login: string, password: string): Promise<{ user: IUser | null, error: string | null }> => {
         try {
-            const users = require('../../../__mocks__/users.json');
+            const response = await fetch('https://ta-samaya.github.io/TA.SAMAYA-DATA/files/users.json');
+            const users = await response.json();
             const result = this.processingStaticUsers(users, login, password);
             if (!result) {
                 return { user: null, error: 'incorrectLoginCode' };
