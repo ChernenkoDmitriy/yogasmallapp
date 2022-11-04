@@ -3,7 +3,7 @@ import { IColors } from '../../../src/UIProvider/colorTheme';
 import { FONTS } from '../../../src/utils/Fonts';
 import { scaleHorizontal, scaleVertical } from '../../../src/utils/Utils';
 
-export const getStyle = (colors: IColors) => {
+export const getStyle = (colors: IColors, isCorrectCode: boolean) => {
     const styles = StyleSheet.create({
         container: {
             alignItems: 'center',
@@ -26,7 +26,9 @@ export const getStyle = (colors: IColors) => {
         },
         title: {
             ...FONTS.ADDITIONAL_TEXT_14,
-            color: colors.subText,
+            fontWeight: isCorrectCode ? '400' : '700',
+            color: isCorrectCode ? colors.subText : colors.buttonGradientEnd,
+            textTransform: isCorrectCode ? undefined : 'uppercase',
             textAlign: 'center',
         },
         button: {

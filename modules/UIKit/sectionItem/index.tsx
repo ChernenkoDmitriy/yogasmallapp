@@ -15,7 +15,7 @@ interface IProps {
 };
 
 export const SectionItem: FC<IProps> = ({ icon, timeIcon, item = null, stack, screen }) => {
-    const { colors } = useUiContext();
+    const { colors, t } = useUiContext();
     const { title, description, duration, durationMeasuring } = item || { title: '', description: '' };
     const styles = useMemo(() => getStyle(colors), [colors]);
     const navigation = useNavigation<NavigationProp<ParamListBase>>();
@@ -37,7 +37,7 @@ export const SectionItem: FC<IProps> = ({ icon, timeIcon, item = null, stack, sc
                     <Text numberOfLines={2} style={styles.title}>{title}</Text>
                     <View style={styles.timeWrapper}>
                         {timeIcon}
-                        <Text style={styles.timeText}>{`${duration} ${durationMeasuring}`}</Text>
+                        <Text style={styles.timeText}>{`${duration} ${t(durationMeasuring || 'noText')}`}</Text>
                     </View>
                 </View>
             </View>

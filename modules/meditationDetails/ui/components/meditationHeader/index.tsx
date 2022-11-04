@@ -6,8 +6,9 @@ import { ClockIcon } from '../../../../../assets/icons/clockIcon';
 import Video, { OnLoadData, OnProgressData } from 'react-native-video';
 
 const IMAGE = require('../../../../../assets/icons/goldOrnament.png');
-const DEFAULT_AUDIO = require('../../../../../__mocks__/brendaLee.mp3');
-const DEFAULT_VIDEO = require('../../../../../__mocks__/SKALDRan.mp4');
+const DEFAULT_VIDEO = 'https://ta-samaya.github.io/TA.SAMAYA-DATA/media/video/defaultVideo.mp4';
+const DEFAULT_AUDIO = 'https://ta-samaya.github.io/TA.SAMAYA-DATA/media/audio/defaultAudio.mp3';
+
 
 interface IProps {
     title?: string;
@@ -27,7 +28,9 @@ export const MeditationHeader: FC<IProps> = ({ title, banner, duration, duration
     const videoStyle = useMemo(() => media.type === 'audio' || isPaused ? { height: 0 } : styles.video, [media, styles]);
     const currentMedia = useMemo(() => {
         if (!media.uri) {
-            return media.type === 'audio' ? DEFAULT_AUDIO : DEFAULT_VIDEO;
+            return media.type === 'audio'
+                ? { uri: DEFAULT_AUDIO, type: media.type }
+                : { uri: DEFAULT_VIDEO, type: media.type };
         } else {
             return media;
         };
@@ -51,6 +54,8 @@ export const MeditationHeader: FC<IProps> = ({ title, banner, duration, duration
                     onError={onError}
                     style={videoStyle}
                     resizeMode={'cover'}
+                    playWhenInactive={true}
+                    playInBackground={true}
                 />
             </View>
             <Text style={styles.title}>{title}</Text>

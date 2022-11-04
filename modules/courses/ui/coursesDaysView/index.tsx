@@ -25,7 +25,7 @@ export const CoursesDaysView: FC = () => {
 
     return (
         <ScreenContainer containerStyle={styles.container} headerComponent={<AppHeader isBackButton={true} onGoBack={onGoBack} title={title} />}>
-            <SectionDescription title={t('meditationIs')} subText={description} />
+            <SectionDescription title={t('aboutPractice')} subText={description} />
             <DaysList days={content} model={practiceModel} accessCode={accessCode} id={id} />
         </ScreenContainer>
     )

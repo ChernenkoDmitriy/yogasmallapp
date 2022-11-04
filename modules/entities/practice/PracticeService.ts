@@ -2,14 +2,13 @@ import { IPractice } from "./IPractice";
 
 class PracticeService {
     constructor(
-        // private requestor: IRestPost,
-        // private links: ILinks,
     ) { }
 
     requestPractices = async (): Promise<{ practices: IPractice[] | null, error: string | null }> => {
         try {
-            const response = require('../../../__mocks__/practices.json');
-            return { practices: response?.data, error: null };
+            const response = await fetch('https://ta-samaya.github.io/TA.SAMAYA-DATA/files/practices.json');
+            const practices = await response.json();
+            return { practices: practices?.data, error: null };
         } catch (error) {
             console.warn('PracticeService -> requestPractices: ', error);
             return { practices: null, error: 'requestError' };
