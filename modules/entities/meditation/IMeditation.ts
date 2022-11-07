@@ -10,6 +10,6 @@ export interface IMeditation {
     lessonContent: string[];
     media: { uri: string; type: 'audio' | 'video' };
     availableDays: number;
-    startDate: number;
+    startDate: string;
     isAvailable: boolean;
 }

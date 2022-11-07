@@ -7,8 +7,8 @@
             "duration": 10,
             "accessCode": "0000",
             "durationMeasuring": "hours",
-            "availableDays": 90,
-            "startDate": 10,
+            "availableDays": 2,
+            "startDate": "2022-11-05",
             "content": [
                 {
                     "id": 1,
