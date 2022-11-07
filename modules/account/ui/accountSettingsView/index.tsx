@@ -30,12 +30,12 @@ export const AccountSettingsView: FC = observer(() => {
     }, []);
 
     return (
-        <ScreenContainer containerStyle={styles.container} headerComponent={<AppHeader title={userModel.user?.name} />}>
+        <ScreenContainer containerStyle={styles.container} headerComponent={<AppHeader title={userModel.user?.name || t('user')} />}>
             <TouchableOpacity style={styles.settingsBlock} onPress={onSetIsVisible}>
                 <Text style={styles.settingsTitle}>{t('language')}</Text>
                 <Text style={styles.localeText}>{locale}</Text>
             </TouchableOpacity>
-            <MainButton title={t('logout')} colorEnd={colors.blockBackground} colorStart={colors.blockBackground} onPress={onLogout} containerStyle={styles.logoutButton} />
+            {/* <MainButton title={t('logout')} colorEnd={colors.blockBackground} colorStart={colors.blockBackground} onPress={onLogout} containerStyle={styles.logoutButton} /> */}
             <AccountLanguageModal isVisible={isVisible} onClose={onSetIsVisible} />
         </ScreenContainer>
     )
