@@ -44,6 +44,9 @@ export const translations = {
         aboutApp: 'О приложении',
         appDescription: 'Йога — это практика ума и тела. Различные стили йоги сочетают физические позы, дыхательные техники и медитацию или релаксацию. Йога — древняя практика, которая, возможно, зародилась в Индии. Он включает в себя движения, медитацию и дыхательные техники для улучшения психического и физического благополучия.',
         user: 'Пользователь',
+        applyForCourse: 'Подать заявку на курс',
+        openMail: "Открыть почту",
+        mailTip: "Пожалуйста, укажите в письме ваш номер телефона, имя и курс, на который хотите записаться."
     },
     en: {
         login: "Login",
@@ -90,7 +93,10 @@ export const translations = {
         noText: '',
         aboutApp: 'About app',
         appDescription: 'Yoga is a mind and body practice. Various styles of yoga combine physical postures, breathing techniques, and meditation or relaxation. Yoga is an ancient practice that may have originated in India. It involves movement, meditation, and breathing techniques to promote mental and physical well-being',
-        user: "User",
+        user: 'User',
+        applyForCourse: 'Apply for a course',
+        openMail: 'Open mail',
+        mailTip: 'Please include in your email your phone number, name and the course you would like to enroll in.',
     },
     ua: {
         login: "Логін",
@@ -137,5 +143,8 @@ export const translations = {
         aboutApp: 'Про додаток',
         appDescription: 'Йога – це практика розуму та тіла. Різні стилі йоги поєднують фізичні пози, дихальні техніки та медитацію чи релаксацію. Йога – давня практика, яка, можливо, зародилася в Індії. Він включає в себе рухи, медитацію та дихальні техніки для покращення психічного та фізичного благополуччя.',
         user: "Користувач",
+        applyForCourse: 'Подати заявку на курс',
+        openMail: 'Відкрити пошту',
+        mailTip: 'Будь ласка, вкажіть у листі ваш номер телефону, ім\'я та курс, на який хочете записатися.',
     },
 }
