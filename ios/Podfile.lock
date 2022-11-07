@@ -76,6 +76,9 @@ PODS:
   - hermes-engine (0.70.3)
   - libevent (2.1.12)
   - OpenSSL-Universal (1.1.1100)
+  - PromisesObjC (2.1.1)
+  - PromisesSwift (2.1.1):
+    - PromisesObjC (= 2.1.1)
   - RCT-Folly (2021.07.22.00):
     - boost
     - DoubleConversion
@@ -310,6 +313,14 @@ PODS:
     - RCTTypeSafety
     - React-Core
     - ReactCommon/turbomodule/core
+  - react-native-splash-screen (3.3.0):
+    - React-Core
+  - react-native-video (6.0.0-alpha.1):
+    - React-Core
+    - react-native-video/Video (= 6.0.0-alpha.1)
+  - react-native-video/Video (6.0.0-alpha.1):
+    - PromisesSwift
+    - React-Core
   - React-perflogger (0.70.3)
   - React-RCTActionSheet (0.70.3):
     - React-Core/RCTActionSheetHeaders (= 0.70.3)
@@ -468,6 +479,8 @@ DEPENDENCIES:
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
+  - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
+  - react-native-video (from `../node_modules/react-native-video`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -503,6 +516,8 @@ SPEC REPOS:
     - fmt
     - libevent
     - OpenSSL-Universal
+    - PromisesObjC
+    - PromisesSwift
     - SocketRocket
     - YogaKit
 
@@ -553,6 +568,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-community/netinfo"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
+  react-native-splash-screen:
+    :path: "../node_modules/react-native-splash-screen"
+  react-native-video:
+    :path: "../node_modules/react-native-video"
   React-perflogger:
     :path: "../node_modules/react-native/ReactCommon/reactperflogger"
   React-RCTActionSheet:
@@ -612,6 +631,8 @@ SPEC CHECKSUMS:
   hermes-engine: bb344d89a0d14c2c91ad357480a79698bb80e186
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
+  PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
+  PromisesSwift: 99fddfe4a0ec88a56486644c0da106694c92a604
   RCT-Folly: 0080d0a6ebf2577475bda044aa59e2ca1f909cda
   RCTRequired: 5cf7e7d2f12699724b59f90350257a422eaa9492
   RCTTypeSafety: 3f3ead9673d1ab8bb1aea85b0894ab3220f8f06e
@@ -629,6 +650,8 @@ SPEC CHECKSUMS:
   React-logger: cffcc09e8aba8a3014be8d18da7f922802e9f19e
   react-native-netinfo: 85b2a435c4d3705c08b0c42ff2d6ef6b9622ea0a
   react-native-safe-area-context: 99b24a0c5acd0d5dcac2b1a7f18c49ea317be99a
+  react-native-splash-screen: 4312f786b13a81b5169ef346d76d33bc0c6dc457
+  react-native-video: bb6f12a7198db53b261fefb5d609dc77417acc8b
   React-perflogger: 082b4293f0b3914ff41da35a6c06ac4490fcbcc8
   React-RCTActionSheet: 83da3030deb5dea54b398129f56540a44e64d3ae
   React-RCTAnimation: bac3a4f4c0436554d9f7fbb1352a0cdcb1fb0f1c

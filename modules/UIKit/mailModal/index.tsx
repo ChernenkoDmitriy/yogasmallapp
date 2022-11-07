@@ -7,7 +7,7 @@ import { MainButton } from '../mainButton';
 import { CrossIcon } from '../../../assets/icons/crossIcon';
 import { scaleVertical } from '../../../src/utils/Utils';
 
-const MAIL = 'mailto:mlagency.dating@gmail.com';
+const MAIL = 'mailto:mlagency.dating@gmail.com?cc=&';
 
 interface IProps {
     isVisible: boolean;
