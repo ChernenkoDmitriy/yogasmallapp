@@ -5,8 +5,7 @@ import { scaleVertical } from '../../../../src/utils/Utils';
 export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
         container: {
-            justifyContent: 'space-between',
-            paddingBottom: scaleVertical(28),
+            paddingBottom: scaleVertical(23),
         },
         text: {
             color: colors.regularText

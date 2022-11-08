@@ -7,18 +7,23 @@ export const getStyle = (colors: IColors, isAvailable: boolean) => {
     const styles = StyleSheet.create({
         container: {
             flex: 1,
-            paddingHorizontal: scaleHorizontal(31),
-            opacity: isAvailable ? 1 : 0.5,
         },
         title: {
             ...FONTS.TEXT_REGULAR_18,
             color: colors.regularText,
+            paddingHorizontal: scaleHorizontal(31),
             marginBottom: scaleVertical(10),
+            opacity: isAvailable ? 1 : 0.5,
         },
         taskText: {
             ...FONTS.TEXT_REGULAR_16,
+            paddingHorizontal: scaleHorizontal(31),
             color: colors.regularText,
+            opacity: isAvailable ? 1 : 0.5,
         },
+        contentContainerStyle: {
+            paddingBottom: scaleVertical(23),
+        }
     });
     return styles;
 }

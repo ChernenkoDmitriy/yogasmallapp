@@ -7,7 +7,7 @@ export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
         container: {
             alignItems:'center',
-            height: scaleVertical(225),
+            // height: scaleVertical(225),
             paddingTop: scaleVertical(25),
             paddingHorizontal: scaleHorizontal(20),
             width: '100%',
