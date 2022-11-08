@@ -20,7 +20,7 @@ export const MeditationTasks: FC<IProps> = observer(({ header, title, tasks, isA
 
     const renderItem = useCallback(({ item, index }: { item: string, index: number }) => (
         <Text style={styles.taskText}>{`${index + 1}) ${item}`}</Text>
-    ), []);
+    ), [styles]);
 
     return (
         <View style={styles.container}>
