@@ -8,6 +8,6 @@ export interface IPractice {
     accessCode: string;
     durationMeasuring: 'minutes' | 'hours' | 'days';
     availableDays: number;
-    startDate: number;
+    startDate: string;
     content: IMeditation[];
 }

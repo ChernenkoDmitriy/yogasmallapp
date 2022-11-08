@@ -1,10 +1,9 @@
 import React, { FC, useCallback, useMemo, useState } from 'react';
-import { Text, View, TextInput, TouchableOpacity, Linking } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { getStyle } from './styles';
 import { useUiContext } from '../../../src/UIProvider';
 import { MainButton } from '../mainButton';
-
-const MAIL = 'mailto:mlagency.dating@gmail.com';
+import { MailModal } from '../mailModal';
 
 interface IProps {
     title?: string;
@@ -17,11 +16,12 @@ interface IProps {
 export const AccessInput: FC<IProps> = ({ title, code, applyText, setCode, onGetAccess }) => {
     const { colors, t } = useUiContext();
     const [isCorrectCode, setIsCorrectCode] = useState(true);
+    const [isVIsible, setIsVIsible] = useState(false);
     const styles = useMemo(() => getStyle(colors, isCorrectCode), [colors, isCorrectCode]);
     const inputTitle = useMemo(() => isCorrectCode ? (title || t('enterPasscode')) : t('incorrectPasscode'), [title, isCorrectCode]);
 
-    const onOpenMail = useCallback(async () => { await Linking.canOpenURL(MAIL) && await Linking.openURL(MAIL) }, []);
     const handleOnGetAccess = () => { setIsCorrectCode(onGetAccess()) };
+    const onSetIsVisible = useCallback(() => { setIsVIsible(prevState => !prevState) }, []);
 
     return (
         <View style={styles.container}>
@@ -38,10 +38,11 @@ export const AccessInput: FC<IProps> = ({ title, code, applyText, setCode, onGet
             </View>
             <MainButton title={t('getAccess')} onPress={handleOnGetAccess} containerStyle={styles.button} />
             {!!applyText &&
-                <TouchableOpacity onPress={onOpenMail} style={styles.applyButton}>
+                <TouchableOpacity onPress={onSetIsVisible} style={styles.applyButton}>
                     <Text style={styles.title}>{applyText}</Text>
                 </TouchableOpacity>
             }
+            <MailModal isVisible={isVIsible} onClose={onSetIsVisible} />
         </View>
     )
 };
