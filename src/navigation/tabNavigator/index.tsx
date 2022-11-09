@@ -31,7 +31,7 @@ export const TabNavigator: FC = observer(() => {
             tabBarActiveTintColor: colors.focusedTab,
             tabBarInactiveTintColor: colors.blurredTab,
             tabBarHideOnKeyboard: true,
-            unmountOnBlur: true,
+            // unmountOnBlur: true,
         }}
         >
             <Tab.Screen

@@ -13,7 +13,7 @@ export const getStyle = (colors: IColors, isCorrectCode: boolean) => {
         },
         inputWrapper: {
             width: '100%',
-            height: scaleVertical(44),
+            height: scaleHorizontal(44),
             borderRadius: 8,
             marginTop: scaleVertical(10),
             paddingHorizontal: scaleHorizontal(16),

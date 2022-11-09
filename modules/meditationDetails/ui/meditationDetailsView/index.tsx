@@ -9,6 +9,7 @@ import { MeditationPlayer } from '../components/meditationPlayer';
 import { MeditationTasks } from '../components/meditationTasks';
 import { AccessInput } from '../../../UIKit/accessInput';
 import { useMeditationDetails } from '../../presenters/useMeditationDetails';
+import { View } from 'react-native';
 
 
 export const MeditationDetailsView: FC = observer(() => {
@@ -22,29 +23,33 @@ export const MeditationDetailsView: FC = observer(() => {
     } = useMeditationDetails();
 
     return (
-        <ScreenContainer containerStyle={styles.container} headerComponent={<AppHeader isBackButton={true} onGoBack={onGoBack} />}>
-            <MeditationHeader
-                title={title}
-                banner={banner}
-                duration={duration}
-                durationMeasuring={durationMeasuring}
-                media={media}
-                mediaRef={mediaRef}
-                isPaused={isPaused}
-                setCurrentTime={setCurrentTime}
-                setDuration={setMediaDuration}
-            />
-            {isAvailable
-                ? <MeditationPlayer
-                    currentTime={currentTime}
-                    duration={mediaDuration}
-                    isPaused={isPaused}
-                    onValueChange={onMediaValueChange}
-                    onSetIsPaused={onSetIsPaused}
-                />
-                : <AccessInput code={code} setCode={setCode} onGetAccess={onGetAccess} />
-            }
+        <ScreenContainer headerComponent={<AppHeader isBackButton={true} onGoBack={onGoBack} />}>
             <MeditationTasks
+                header={
+                    <View style={styles.container}>
+                        <MeditationHeader
+                            title={title}
+                            banner={banner}
+                            duration={duration}
+                            durationMeasuring={durationMeasuring}
+                            media={media}
+                            mediaRef={mediaRef}
+                            isPaused={isPaused}
+                            setCurrentTime={setCurrentTime}
+                            setDuration={setMediaDuration}
+                        />
+                        {isAvailable
+                            ? <MeditationPlayer
+                                currentTime={currentTime}
+                                duration={mediaDuration}
+                                isPaused={isPaused}
+                                onValueChange={onMediaValueChange}
+                                onSetIsPaused={onSetIsPaused}
+                            />
+                            : <AccessInput code={code} setCode={setCode} onGetAccess={onGetAccess} />
+                        }
+                    </View>
+                }
                 title={lessonTitle}
                 tasks={lessonContent}
                 isAvailable={isAvailable}

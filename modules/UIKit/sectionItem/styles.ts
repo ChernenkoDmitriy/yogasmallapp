@@ -6,9 +6,10 @@ import { scaleHorizontal, scaleVertical } from '../../../src/utils/Utils';
 export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
         container: {
-            height: scaleVertical(160),
+            flex: 1,
+            // width: scaleHorizontal(374),
+            paddingBottom: scaleVertical(11),
             backgroundColor: colors.blockBackground,
-            // marginTop: scaleVertical(16),
             borderRadius: 16,
         },
         mainInfoWrapper: {
@@ -27,6 +28,7 @@ export const getStyle = (colors: IColors) => {
         },
         titleWrapper: {
             justifyContent: 'space-between',
+            width: scaleHorizontal(256),
             height: scaleHorizontal(70),
         },
         title: {
@@ -45,13 +47,16 @@ export const getStyle = (colors: IColors) => {
         descriptionWrapper: {
             flexDirection: 'row',
             justifyContent: 'space-between',
-            paddingHorizontal: scaleHorizontal(11),
+            alignItems:'flex-end',
+            width: scaleHorizontal(352),
+            marginHorizontal: scaleHorizontal(11),
             marginTop: scaleVertical(3),
         },
         descriptionText: {
             ...FONTS.ADDITIONAL_TEXT_13,
             color: colors.regularText,
-            maxWidth: scaleHorizontal(315),
+            maxWidth: scaleHorizontal(290),
+            textAlign: 'justify'
         },
     });
     return styles;

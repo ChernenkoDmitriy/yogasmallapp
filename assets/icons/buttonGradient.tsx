@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import Svg, { Defs, LinearGradient, Path, Stop, Text, TSpan } from "react-native-svg";
-import { scaleHorizontal, scaleVertical } from "../../src/utils/Utils";
+import { scaleHorizontal } from "../../src/utils/Utils";
 
 interface IProps {
   width?: number;
@@ -13,7 +13,7 @@ interface IProps {
 export const ButtonGradient: FC<IProps> = ({ width, height, colorStart, colorEnd, title }) => (
   <Svg
     width={width || scaleHorizontal(474)}
-    height={height || scaleVertical(64)}
+    height={height || scaleHorizontal(54)}
     viewBox="0 0 374 54"
     fill="none"
   >
@@ -39,8 +39,9 @@ export const ButtonGradient: FC<IProps> = ({ width, height, colorStart, colorEnd
       fontSize="20"
       fontWeight="700"
       fontFamily={'SourceSansPro-Regular'}
-      y={((height || scaleVertical(64)) / 2) + 2}
-      alignmentBaseline="central"
+      y={32}
+      alignmentBaseline="middle"
+
       textAnchor={"middle"}
     >
       <TSpan inlineSize="374">

@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useMemo, useState } from 'react';
-import { Text, View } from 'react-native';
+import { ActivityIndicator, Text, View } from 'react-native';
 import { getStyle } from './styles';
 import { useUiContext } from '../../../../../src/UIProvider';
 import { PlayIcon } from '../../../../../assets/icons/playIcon';
@@ -54,7 +54,10 @@ export const MeditationPlayer: FC<IProps> = ({ currentTime, duration, isPaused, 
                     }
                 </TouchableOpacity>
             </View>
-            <Text style={styles.timeText}>{timeLeft}</Text>
+            {timeLeft === '00:00'
+                ? <ActivityIndicator color={colors.playerProgress} size={'small'} />
+                : <Text style={styles.timeText}>{timeLeft}</Text>
+            }
         </View>
     )
 };

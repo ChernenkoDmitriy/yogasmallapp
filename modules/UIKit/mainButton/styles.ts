@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { scaleVertical } from '../../../src/utils/Utils';
+import { scaleHorizontal } from '../../../src/utils/Utils';
 
 export const getStyle = () => {
     const styles = StyleSheet.create({
@@ -7,7 +7,7 @@ export const getStyle = () => {
             overflow: 'hidden',
             justifyContent: 'center',
             alignItems: 'center',
-            height: scaleVertical(54),
+            height: scaleHorizontal(54),
             borderRadius: 16,
         },
         absoluteSheet: {
