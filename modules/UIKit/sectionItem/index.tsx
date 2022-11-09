@@ -42,7 +42,7 @@ export const SectionItem: FC<IProps> = ({ icon, timeIcon, item = null, stack, sc
                 </View>
             </View>
             <View style={styles.descriptionWrapper}>
-                <Text numberOfLines={2} style={styles.descriptionText}>{description}</Text>
+                <Text style={styles.descriptionText}>{description}</Text>
                 <PlayIcon />
             </View>
         </TouchableOpacity>

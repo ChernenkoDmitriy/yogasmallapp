@@ -18,7 +18,7 @@ const DEFAULT_ITEM: IMeditation = {
     media: { uri: '', type: 'audio' },
     description: "",
     availableDays: 0,
-    startDate: 0,
+    startDate: "2022-11-09",
     isAvailable: false,
     banner: ''
 };

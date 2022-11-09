@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
-import { scaleHorizontal, scaleVertical, Utils } from '../../../../../src/utils/Utils';
+import { scaleVertical, Utils } from '../../../../../src/utils/Utils';
 
-export const getStyle = () => {
+export const getStyle = (indicatorWidth: number) => {
     const styles = StyleSheet.create({
         container: {
             alignItems: 'center',
@@ -12,7 +12,7 @@ export const getStyle = () => {
         indicatorsWrapper: {
             flexDirection: 'row',
             justifyContent: 'space-between',
-            width: scaleHorizontal(68),
+            width: indicatorWidth,
             marginTop: scaleVertical(20),
             alignSelf: 'center',
         }

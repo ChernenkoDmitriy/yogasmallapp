@@ -21,9 +21,9 @@ export const HomeView: FC = observer(() => {
     useHome();
 
     return (
-        <ScreenContainer scrollEnabled={true} contentContainerStyle={styles.container} headerComponent={<AppHeader title={t('startJourneyOneLine')} />} >
+        <ScreenContainer scrollEnabled={true} contentContainerStyle={styles.container} headerComponent={<AppHeader title={t('homeTitle')} />} >
             <HomeBannersCarousel banners={bannerModel.bannersList || []} />
-            <HomeSection icon={<MeditationSectionIcon />} timeIcon={<ClockIcon />} title={t('meditations')} item={meditationModel.meditations?.[0]} sectionScreen={'MeditationStackNavigator'} itemScreen={'MeditationDetailsView'} />
+            <HomeSection icon={<MeditationSectionIcon />} timeIcon={<ClockIcon />} title={t('meditationsAndPractices')} item={meditationModel.meditations?.[0]} sectionScreen={'MeditationStackNavigator'} itemScreen={'MeditationDetailsView'} />
             <HomeSection icon={<CourseSectionIcon />} timeIcon={<CalendarIcon />} title={t('courses')} item={practiceModel.practices?.[0]} sectionScreen={'CourseStackNavigator'} itemScreen={'CoursesDaysView'} />
         </ScreenContainer>
     )

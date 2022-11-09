@@ -7,15 +7,17 @@ export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
         container: {
             paddingHorizontal: scaleHorizontal(20),
-            paddingBottom: scaleVertical(23)
+            paddingBottom: scaleVertical(23),
         },
         title: {
             ...FONTS.TITLE_18,
+            maxHeight: scaleVertical(200),
             color: colors.regularText,
         },
         subText: {
             ...FONTS.TEXT_REGULAR_16,
             lineHeight: scaleFontSize(20),
+            maxHeight: scaleVertical(300),
             color: colors.regularText,
             marginTop: scaleVertical(10),
         },

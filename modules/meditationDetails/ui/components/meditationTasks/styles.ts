@@ -14,6 +14,7 @@ export const getStyle = (colors: IColors, isAvailable: boolean) => {
             paddingHorizontal: scaleHorizontal(31),
             marginBottom: scaleVertical(10),
             opacity: isAvailable ? 1 : 0.5,
+            marginTop: scaleVertical(33),
         },
         taskText: {
             ...FONTS.TEXT_REGULAR_16,

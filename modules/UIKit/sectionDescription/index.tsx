@@ -14,8 +14,8 @@ export const SectionDescription: FC<IProps> = ({ title, subText }) => {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>{title}</Text>
-            <Text style={styles.subText}>{subText}</Text>
+            <Text numberOfLines={8} style={styles.title}>{title}</Text>
+            <Text numberOfLines={13} style={styles.subText}>{subText}</Text>
         </View>
     )
 }
