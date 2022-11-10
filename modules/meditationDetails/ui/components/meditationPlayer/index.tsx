@@ -25,7 +25,7 @@ export const MeditationPlayer: FC<IProps> = ({ currentTime, duration, isPaused, 
     const [isFinished, setIsFinished] = useState(false);
 
     useEffect(() => {
-        if (Math.floor(currentTime) === Math.floor(duration) && !isFinished && currentTime !== 0) {
+        if (Math.round(currentTime) === Math.round(duration) && !isFinished && currentTime !== 0) {
             setIsFinished(true);
             onSetIsPaused();
         };
@@ -54,7 +54,7 @@ export const MeditationPlayer: FC<IProps> = ({ currentTime, duration, isPaused, 
                     }
                 </TouchableOpacity>
             </View>
-            {timeLeft === '00:00'
+            {timeLeft === '00:00' && currentTime === 0
                 ? <ActivityIndicator color={colors.playerProgress} size={'small'} />
                 : <Text style={styles.timeText}>{timeLeft}</Text>
             }
