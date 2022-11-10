@@ -1,8 +1,10 @@
 const addZero = (time: number) => {
     if (time > 9) {
         return time;
-    } else {
+    } else if (time >= 0) {
         return `0${time}`;
+    } else {
+        return '00';
     }
 };
 
