@@ -2,13 +2,13 @@
     "data": [
         {
             "id": 1,
-            "title": "Learning how to do it right",
-            "description": "I had spent the prior days learning how to navigate glacial terrain and appropriately use gear because I didn’t yet have these skills. Similarly, I have found that, unfortunately, many of us confuse guided meditation with “how to meditate,” and that couldn’t be further from the truth. In guided meditation, someone is helping us to anchor our mind. When learning “how to meditate,” we develop the necessary skills to practice and anchor our mind on our own. Learning these skills gives us a powerful foundation for navigating life more mindfully both on and off the cushion.",
-            "duration": 10,
+            "title": "КОД УСПЕХА",
+            "description": "Курс, который позволит тебе, за год создать базу для спокойной жизни",
+            "duration": 14,
             "accessCode": "0000",
-            "durationMeasuring": "hours",
+            "durationMeasuring": "days",
             "availableDays": 2,
-            "startDate": "2022-11-05",
+            "startDate": null,
             "content": [
                 {
                     "id": 1,

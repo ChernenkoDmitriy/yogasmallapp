@@ -15,7 +15,8 @@ interface IProps {
 
 export const HomeBannersCarousel: FC<IProps> = ({ banners }) => {
     const { colors } = useUiContext();
-    const styles = useMemo(() => getStyle(), []);
+    const indicatorWidth = useMemo(() => scaleHorizontal(10) * banners.length, [banners]);
+    const styles = useMemo(() => getStyle(indicatorWidth), [indicatorWidth]);
     const progressValue = useSharedValue<number>(0);
 
     const renderItem = useCallback(({ item }: { item: IBanner }) => (<BannersCarouselItem item={item} />), []);
@@ -33,7 +34,7 @@ export const HomeBannersCarousel: FC<IProps> = ({ banners }) => {
                 onProgressChange={(_, absoluteProgress) =>
                     (progressValue.value = absoluteProgress)
                 }
-                
+
                 modeConfig={{
                     parallaxScrollingScale: 0.9,
                     parallaxScrollingOffset: 50,

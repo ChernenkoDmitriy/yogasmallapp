@@ -13,8 +13,8 @@ export const MeditationsView: FC = observer(() => {
     const styles = useMemo(() => getStyle(colors), [colors]);
 
     return (
-        <ScreenContainer containerStyle={styles.container} headerComponent={<AppHeader title={t('meditations')} />}>
-            <SectionDescription title={t('meditationIs')} subText={t('meditationExperience')} />
+        <ScreenContainer containerStyle={styles.container} headerComponent={<AppHeader title={t('meditationsAndPractices')} />}>
+            <SectionDescription title={t('meditationTitle')} subText={t('meditationDescription')} />
             <MeditationsList meditations={meditationModel.meditations || []} />
         </ScreenContainer>
     )

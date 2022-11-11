@@ -9,7 +9,7 @@ export const getStyle = (colors: IColors, isBanner: boolean) => {
             width: '100%',
             alignItems: 'center',
             justifyContent: 'space-between',
-            paddingVertical: scaleVertical(14)
+            paddingBottom: scaleVertical(14)
         },
         mediaWrapper: {
             width: '100%',

@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useMemo } from 'react';
+import React, { FC, ReactNode, useCallback, useMemo } from 'react';
 import { Text, View } from 'react-native';
 import { getStyle } from './styles';
 import { useUiContext } from '../../../../../src/UIProvider';
@@ -6,12 +6,13 @@ import { FlatList } from 'react-native-gesture-handler';
 import { observer } from 'mobx-react-lite';
 
 interface IProps {
+    header?: ReactNode;
     title?: string;
     tasks?: string[];
     isAvailable: boolean;
 };
 
-export const MeditationTasks: FC<IProps> = observer(({ title, tasks, isAvailable }) => {
+export const MeditationTasks: FC<IProps> = observer(({ header, title, tasks, isAvailable }) => {
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors, isAvailable), [colors, isAvailable]);
 
@@ -19,12 +20,17 @@ export const MeditationTasks: FC<IProps> = observer(({ title, tasks, isAvailable
 
     const renderItem = useCallback(({ item, index }: { item: string, index: number }) => (
         <Text style={styles.taskText}>{`${index + 1}) ${item}`}</Text>
-    ), []);
+    ), [styles]);
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>{title}</Text>
             <FlatList
+                ListHeaderComponent={
+                    <View>
+                        {header}
+                        <Text style={styles.title}>{title}</Text>
+                    </View>
+                }
                 showsVerticalScrollIndicator={false}
                 data={tasks || []}
                 renderItem={renderItem}
@@ -33,6 +39,7 @@ export const MeditationTasks: FC<IProps> = observer(({ title, tasks, isAvailable
                 initialNumToRender={4}
                 style={{ flex: 1 }}
                 scrollEnabled={isAvailable}
+                contentContainerStyle={styles.contentContainerStyle}
             />
         </View>
     )
