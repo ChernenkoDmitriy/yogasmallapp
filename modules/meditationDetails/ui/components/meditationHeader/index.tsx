@@ -53,7 +53,7 @@ export const MeditationHeader: FC<IProps> = ({ title, banner, duration, duration
                     onLoad={onLoad}
                     onError={onError}
                     style={videoStyle}
-                    resizeMode={'cover'}
+                    resizeMode={'contain'}
                     playWhenInactive={true}
                     playInBackground={true}
                 />

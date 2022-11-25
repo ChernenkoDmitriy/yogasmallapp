@@ -41,7 +41,7 @@ class Localization implements ILocalization {
     }
 
     t = (key: string) => {
-        const locale = this.localizationStore.data;
+        const locale = this.localizationStore.data || 'ru';
         return this.i18n.t(key, { locale: locale });
     }
 

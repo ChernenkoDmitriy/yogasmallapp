@@ -16,6 +16,8 @@ export const getStyle = (colors: IColors) => {
             color: colors.regularText,
             marginTop: scaleVertical(21),
             paddingHorizontal: scaleHorizontal(31),
+            textAlign:'justify',
+            marginBottom: scaleVertical(10)
         }
     });
     return styles;

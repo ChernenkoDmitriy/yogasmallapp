@@ -10,7 +10,7 @@ export const AboutAppView: FC = () => {
     const styles = useMemo(() => getStyle(colors), [colors]);
 
     return (
-        <ScreenContainer headerComponent={<AppHeader title={t('more')}/>}>
+        <ScreenContainer scrollEnabled={true} headerComponent={<AppHeader title={t('more')}/>}>
             <Text style={styles.title}>{t('aboutApp')}</Text>
             <Text style={styles.text}>{t('appDescription')}</Text>
         </ScreenContainer>
