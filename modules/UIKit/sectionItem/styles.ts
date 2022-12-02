@@ -6,8 +6,7 @@ import { scaleHorizontal, scaleVertical } from '../../../src/utils/Utils';
 export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
         container: {
-            flex: 1,
-            // width: scaleHorizontal(374),
+            width: '100%',
             paddingBottom: scaleVertical(11),
             backgroundColor: colors.blockBackground,
             borderRadius: 16,
@@ -47,7 +46,7 @@ export const getStyle = (colors: IColors) => {
         descriptionWrapper: {
             flexDirection: 'row',
             justifyContent: 'space-between',
-            alignItems:'flex-end',
+            alignItems: 'flex-end',
             width: scaleHorizontal(352),
             marginHorizontal: scaleHorizontal(11),
             marginTop: scaleVertical(3),

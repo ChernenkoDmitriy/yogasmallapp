@@ -1,4 +1,4 @@
-import React, { FC, MutableRefObject, useMemo } from 'react';
+import React, { FC, MutableRefObject, useEffect, useMemo, useState } from 'react';
 import { Text, View, Image } from 'react-native';
 import { getStyle } from './styles';
 import { useUiContext } from '../../../../../src/UIProvider';
@@ -8,7 +8,6 @@ import Video, { OnLoadData, OnProgressData } from 'react-native-video';
 const IMAGE = require('../../../../../assets/icons/goldOrnament.png');
 const DEFAULT_VIDEO = 'https://ta-samaya.github.io/TA.SAMAYA-DATA/media/video/defaultVideo.mp4';
 const DEFAULT_AUDIO = 'https://ta-samaya.github.io/TA.SAMAYA-DATA/media/audio/defaultAudio.mp3';
-
 
 interface IProps {
     title?: string;
@@ -23,9 +22,15 @@ interface IProps {
 };
 
 export const MeditationHeader: FC<IProps> = ({ title, banner, duration, durationMeasuring, media, mediaRef, isPaused, setCurrentTime, setDuration }) => {
+    const [showPlayer, setShowPlayer] = useState(false)
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors, !!banner || media.type === 'video'), [colors, banner, media, isPaused]);
     const videoStyle = useMemo(() => media.type === 'audio' || isPaused ? { height: 0 } : styles.video, [media, styles]);
+
+    useEffect(() => {
+        setTimeout(() => { setShowPlayer(true) }, 600)
+    }, [])
+
     const currentMedia = useMemo(() => {
         if (!media.uri) {
             return media.type === 'audio'
@@ -44,7 +49,7 @@ export const MeditationHeader: FC<IProps> = ({ title, banner, duration, duration
         <View style={styles.container}>
             <View style={styles.mediaWrapper}>
                 {(media.type === 'audio' || isPaused) && <Image source={banner ? { uri: banner } : IMAGE} style={styles.image} resizeMode={'cover'} />}
-                <Video
+                {showPlayer && <Video
                     ref={ref => mediaRef.current = ref}
                     source={currentMedia}
                     paused={isPaused}
@@ -56,7 +61,8 @@ export const MeditationHeader: FC<IProps> = ({ title, banner, duration, duration
                     resizeMode={'contain'}
                     playWhenInactive={true}
                     playInBackground={true}
-                />
+                    ignoreSilentSwitch='ignore'
+                />}
             </View>
             <Text style={styles.title}>{title}</Text>
             <View style={styles.timeWrapper}>

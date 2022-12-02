@@ -24,6 +24,7 @@ export const TabNavigator: FC = observer(() => {
 
     return (
         <Tab.Navigator screenOptions={{
+            lazy: false,
             headerShown: false,
             tabBarShowLabel: true,
             tabBarStyle: appStateModel.isTabBar ? styles.tabBarStyle : styles.noTabBar,
@@ -31,7 +32,6 @@ export const TabNavigator: FC = observer(() => {
             tabBarActiveTintColor: colors.focusedTab,
             tabBarInactiveTintColor: colors.blurredTab,
             tabBarHideOnKeyboard: true,
-            // unmountOnBlur: true,
         }}
         >
             <Tab.Screen

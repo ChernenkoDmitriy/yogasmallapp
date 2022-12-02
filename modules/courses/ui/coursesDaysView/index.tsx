@@ -10,8 +10,9 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { IPractice } from '../../../entities/practice/IPractice';
 import { DaysList } from '../components/daysList';
 import { practiceModel } from '../../../entities/practice/PracticeModel';
+import { observer } from 'mobx-react';
 
-export const CoursesDaysView: FC = () => {
+export const CoursesDaysView: FC = observer(() => {
     const { colors, t } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
     const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
@@ -29,4 +30,4 @@ export const CoursesDaysView: FC = () => {
             <DaysList days={content} model={practiceModel} accessCode={accessCode} id={id} />
         </ScreenContainer>
     )
-};
+});

@@ -38,7 +38,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = yogasmallapp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = yogasmallapp/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-yogasmallapp-yogasmallappTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-yogasmallapp-yogasmallappTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		273129DD1B914BB2A9F788A6 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-Regular.ttf"; path = "../assets/fonts/SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
+		273129DD1B914BB2A9F788A6 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-Regular.ttf"; path = "../assets/fonts/SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-yogasmallapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yogasmallapp.debug.xcconfig"; path = "Target Support Files/Pods-yogasmallapp/Pods-yogasmallapp.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-yogasmallapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yogasmallapp.release.xcconfig"; path = "Target Support Files/Pods-yogasmallapp/Pods-yogasmallapp.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-yogasmallapp-yogasmallappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yogasmallapp-yogasmallappTests.debug.xcconfig"; path = "Target Support Files/Pods-yogasmallapp-yogasmallappTests/Pods-yogasmallapp-yogasmallappTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,7 +157,6 @@
 				273129DD1B914BB2A9F788A6 /* SourceSansPro-Regular.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

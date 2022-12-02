@@ -10,54 +10,55 @@ import { PaginationItem } from '../BannersPaginationItem';
 import { BannersCarouselItem } from '../bannersCarouselItem';
 
 interface IProps {
-    banners: IBanner[];
+    banners: IBanner[] | null;
 };
 
 export const HomeBannersCarousel: FC<IProps> = ({ banners }) => {
     const { colors } = useUiContext();
-    const indicatorWidth = useMemo(() => scaleHorizontal(10) * banners.length, [banners]);
-    const styles = useMemo(() => getStyle(indicatorWidth), [indicatorWidth]);
+    const styles = useMemo(() => getStyle(colors), [colors]);
     const progressValue = useSharedValue<number>(0);
 
     const renderItem = useCallback(({ item }: { item: IBanner }) => (<BannersCarouselItem item={item} />), []);
 
     return (
-        <View style={styles.container}>
-            <Carousel
-                loop
-                pagingEnabled={true}
-                snapEnabled={true}
-                width={Utils.size.width}
-                height={scaleHorizontal(200)}
-                autoPlay={true}
-                autoPlayInterval={5000}
-                onProgressChange={(_, absoluteProgress) =>
-                    (progressValue.value = absoluteProgress)
-                }
+        banners?.length ?
+            <View style={styles.container}>
+                <Carousel
+                    loop
+                    pagingEnabled={true}
+                    snapEnabled={true}
+                    width={Utils.size.width}
+                    height={scaleHorizontal(200)}
+                    autoPlay={true}
+                    autoPlayInterval={5000}
+                    onProgressChange={(_, absoluteProgress) =>
+                        (progressValue.value = absoluteProgress)
+                    }
 
-                modeConfig={{
-                    parallaxScrollingScale: 0.9,
-                    parallaxScrollingOffset: 50,
-                }}
-                data={banners}
-                scrollAnimationDuration={1000}
-                renderItem={renderItem}
-            />
-            {!!progressValue &&
-                <View style={styles.indicatorsWrapper}>
-                    {banners.map((item) => {
-                        return (
-                            <PaginationItem
-                                backgroundColor={colors.activeIndicator}
-                                animValue={progressValue}
-                                index={item.id}
-                                key={item.id}
-                                length={banners.length}
-                            />
-                        );
-                    })}
-                </View>
-            }
-        </View>
+                    modeConfig={{
+                        parallaxScrollingScale: 0.9,
+                        parallaxScrollingOffset: 50,
+                    }}
+                    data={banners}
+                    scrollAnimationDuration={1000}
+                    renderItem={renderItem}
+                />
+                {!!progressValue &&
+                    <View style={styles.indicatorsWrapper}>
+                        {banners.map((item) => {
+                            return (
+                                <PaginationItem
+                                    backgroundColor={colors.activeIndicator}
+                                    animValue={progressValue}
+                                    index={item.id}
+                                    key={item.id}
+                                    length={banners.length}
+                                />
+                            );
+                        })}
+                    </View>
+                }
+            </View>
+            : null
     )
 };

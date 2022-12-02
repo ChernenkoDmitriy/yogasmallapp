@@ -9,6 +9,7 @@ export const getStyle = (colors: IColors, width: number, backgroundColor: string
             height: width,
             borderRadius: 50,
             overflow: 'hidden',
+            marginHorizontal: 4,
         },
         indicator: {
             borderRadius: 50,

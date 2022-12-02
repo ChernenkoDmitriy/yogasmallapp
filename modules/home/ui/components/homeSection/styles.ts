@@ -14,7 +14,7 @@ export const getStyle = (colors: IColors) => {
         emptyText: {
             ...FONTS.TITLE_20_LIGHT,
             color: colors.regularText,
-            marginTop: scaleVertical(50)
+            marginTop: scaleVertical(50),
         }
     });
     return styles;

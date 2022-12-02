@@ -49,7 +49,14 @@ export const useMeditationDetails = () => {
         };
     }, [prevScreen]);
 
-    const onMediaValueChange = (value: number) => { mediaRef.current?.seek(value * mediaDuration) };
+    const onMediaValueChange = (value: number | Array<number>) => {
+        if (Array.isArray(value) && mediaDuration && (typeof value[0] === 'number')) {
+            mediaRef.current?.seek(value[0] * mediaDuration)
+        } else if (typeof value === 'number' && mediaDuration) {
+            mediaRef.current?.seek(value * mediaDuration)
+        }
+    };
+
     const onSetIsPaused = () => { setIsPaused(prevState => !prevState) };
 
     return {

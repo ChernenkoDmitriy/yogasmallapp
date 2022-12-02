@@ -1,3 +1,4 @@
+import { observer } from 'mobx-react';
 import React, { FC, useMemo } from 'react';
 import { useUiContext } from '../../../../src/UIProvider';
 import { practiceModel } from '../../../entities/practice/PracticeModel';
@@ -7,7 +8,7 @@ import { ScreenContainer } from '../../../UIKit/screenContainer';
 import { CoursesList } from '../components/coursesList';
 import { getStyle } from './styles';
 
-export const CoursesView: FC = () => {
+export const CoursesView: FC = observer(() => {
     const { colors, t} = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
 
@@ -17,4 +18,4 @@ export const CoursesView: FC = () => {
             <CoursesList courses={practiceModel.practices || []}/>
         </ScreenContainer>
     )
-};
+});

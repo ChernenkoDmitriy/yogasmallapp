@@ -35,7 +35,7 @@ export const getStyle = (colors: IColors) => {
             paddingHorizontal: scaleHorizontal(16),
         },
         title: {
-            ...FONTS.TEXT_REGULAR_16,
+            ...FONTS.ADDITIONAL_TEXT_14,
             color: colors.regularText,
         },
         timeWrapper: {

@@ -14,7 +14,7 @@ interface IProps {
     currentTime: number;
     duration: number;
     isPaused: boolean;
-    onValueChange: (value: number) => void;
+    onValueChange: (value: number | Array<number>) => void;
     onSetIsPaused: () => void;
 };
 
@@ -44,7 +44,6 @@ export const MeditationPlayer: FC<IProps> = ({ currentTime, duration, isPaused, 
                     trackStyle={styles.track}
                     thumbStyle={{ width: 0 }}
                     containerStyle={styles.trackContainer}
-                    //@ts-ignore
                     onValueChange={onValueChange}
                 />
                 <TouchableOpacity onPress={onSetIsPaused}>

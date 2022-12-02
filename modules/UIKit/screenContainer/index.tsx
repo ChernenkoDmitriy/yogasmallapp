@@ -24,7 +24,6 @@ export const ScreenContainer: FC<IProps> = ({ headerComponent, edges, children, 
             {scrollEnabled
                 ? <ScrollView
                     scrollEnabled={scrollEnabled}
-                    bounces={false}
                     showsVerticalScrollIndicator={false}
                     contentContainerStyle={[styles.contentContainerStyle, contentContainerStyle]}
                     style={styles.contentContainerStyle}
