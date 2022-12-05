@@ -63,7 +63,7 @@ export const FONTS: IFonts = {
         fontFamily: 'SourceSansPro-Regular',
         fontWeight: '400',
         fontSize: scaleFontSize(16),
-        lineHeight: scaleFontSize(22),
+        lineHeight: scaleFontSize(23),
     },
     ADDITIONAL_TEXT_14: {
         fontFamily: 'SourceSansPro-Regular',

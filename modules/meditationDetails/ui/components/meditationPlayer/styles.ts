@@ -10,6 +10,7 @@ export const getStyle = (colors: IColors) => {
             alignItems: 'center',
         },
         player: {
+            width: '100%',
             flexDirection: 'row',
             alignItems: 'center',
             paddingHorizontal: scaleHorizontal(31),
@@ -24,8 +25,9 @@ export const getStyle = (colors: IColors) => {
             height: scaleVertical(40),
         },
         timeWrapper: {
-            flexDirection: 'row',
             alignItems: 'center',
+            justifyContent:'center',
+            height: scaleVertical(20)
         },
         timeText: {
             ...FONTS.TEXT_REGULAR_16,

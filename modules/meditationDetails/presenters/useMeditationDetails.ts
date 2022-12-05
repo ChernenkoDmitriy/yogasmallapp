@@ -1,7 +1,6 @@
 import { ParamListBase, useNavigation, useRoute } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { useCallback, useRef, useState } from "react";
-import { appStateModel } from "../../entities/appState/AppStateModel";
 import { IMeditation } from "../../entities/meditation/IMeditation";
 import { meditationModel } from "../../entities/meditation/MeditationModel";
 import { useAvailability } from "../../../libs/hooks/useAvailability";
@@ -43,19 +42,18 @@ export const useMeditationDetails = () => {
     const onGoBack = useCallback(() => {
         if (prevScreen) {
             navigation.navigate(prevScreen);
-            appStateModel.isTabBar = true;
         } else if (navigation.canGoBack()) {
             navigation.goBack();
         };
     }, [prevScreen]);
 
-    const onMediaValueChange = (value: number | Array<number>) => {
+    const onMediaValueChange = useCallback((value: number | Array<number>) => {
         if (Array.isArray(value) && mediaDuration && (typeof value[0] === 'number')) {
-            mediaRef.current?.seek(value[0] * mediaDuration)
+            mediaRef.current?.seek(value[0] * mediaDuration);
         } else if (typeof value === 'number' && mediaDuration) {
-            mediaRef.current?.seek(value * mediaDuration)
-        }
-    };
+            mediaRef.current?.seek(value * mediaDuration);
+        };
+    }, [mediaDuration]);
 
     const onSetIsPaused = () => { setIsPaused(prevState => !prevState) };
 
