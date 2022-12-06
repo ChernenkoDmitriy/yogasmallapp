@@ -32,6 +32,7 @@ export const getStyle = (colors: IColors) => {
         },
         title: {
             ...FONTS.TEXT_REGULAR_18,
+            flex: 1,
             color: colors.regularText,
         },
         timeWrapper: {

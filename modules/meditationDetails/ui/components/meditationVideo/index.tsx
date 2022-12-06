@@ -17,12 +17,13 @@ interface IProps {
     media: { uri: string; type: 'audio' | 'video' };
     mediaRef: MutableRefObject<Video | null>;
     isPaused: boolean;
+    isSeek: boolean;
     setCurrentTime: (value: number) => void;
     setDuration: (value: number) => void;
 };
 
-export const MeditationHeader: FC<IProps> = ({ title, banner, duration, durationMeasuring, media, mediaRef, isPaused, setCurrentTime, setDuration }) => {
-    const [showPlayer, setShowPlayer] = useState(false)
+export const MeditationVideo: FC<IProps> = ({ title, banner, duration, durationMeasuring, media, mediaRef, isPaused, isSeek, setCurrentTime, setDuration }) => {
+    const [showPlayer, setShowPlayer] = useState(false);
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors, !!banner || media.type === 'video'), [colors, banner, media, isPaused]);
     const videoStyle = useMemo(() => media.type === 'audio' || isPaused ? { height: 0 } : styles.video, [media, styles]);
@@ -41,7 +42,7 @@ export const MeditationHeader: FC<IProps> = ({ title, banner, duration, duration
         };
     }, [media]);
 
-    const onProgress = ({ currentTime }: OnProgressData) => { setCurrentTime(currentTime) };
+    const onProgress = ({ currentTime }: OnProgressData) => { !isSeek && setCurrentTime(currentTime) };
     const onLoad = ({ duration }: OnLoadData) => { setDuration(duration) };
     const onError = (error: any) => { console.warn('MeditationHeader -> Video: ', error) };
 
@@ -61,7 +62,7 @@ export const MeditationHeader: FC<IProps> = ({ title, banner, duration, duration
                     resizeMode={'contain'}
                     playWhenInactive={true}
                     playInBackground={true}
-                    ignoreSilentSwitch='ignore'
+                    ignoreSilentSwitch={'ignore'}
                 />}
             </View>
             <Text style={styles.title}>{title}</Text>

@@ -21,7 +21,7 @@ export const CoursesDaysView: FC = observer(() => {
 
     const onGoBack = useCallback(() => {
         navigation.navigate('CoursesView');
-        appStateModel.isTabBar = true;
+        // appStateModel.isTabBar = true;
     }, []);
 
     return (
