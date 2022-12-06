@@ -65,7 +65,7 @@ export const MeditationPlayer: FC<IProps> = ({ code, setCode, isAvailable, onGet
                         </TouchableOpacity>
                     </View>
                     <View style={styles.timeWrapper}>
-                        {(timeLeft === '00:00' && currentTime === 0)
+                        {timeLeft === '00:00' && currentTime === 0
                             ? <ActivityIndicator color={colors.playerProgress} size={'small'} />
                             : <Text style={styles.timeText}>{timeLeft}</Text>
                         }

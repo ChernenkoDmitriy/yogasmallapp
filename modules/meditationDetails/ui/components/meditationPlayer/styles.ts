@@ -6,8 +6,7 @@ import { scaleHorizontal, scaleVertical } from '../../../../../src/utils/Utils';
 export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
         container: {
-            width: '100%',
-            alignItems: 'center',
+            flex: 1,
         },
         player: {
             width: '100%',
