@@ -7,12 +7,20 @@ import { MeditationTasks } from '../components/meditationTasks';
 import { useMeditationDetails } from '../../presenters/useMeditationDetails';
 
 export const MeditationDetailsView: FC = observer(() => {
-    const { lessonTitle, lessonContent, isAvailable, onGoBack } = useMeditationDetails();
+    const {
+        lessonTitle, lessonContent, onGoBack,
+        code, setCode, isAvailable, onGetAccess
+    } = useMeditationDetails();
 
     return (
         <ScreenContainer headerComponent={<AppHeader isBackButton={true} onGoBack={onGoBack} />}>
             <MeditationTasks
-                header={<MeditationPlayer />}
+                header={<MeditationPlayer
+                    code={code}
+                    setCode={setCode}
+                    onGetAccess={onGetAccess}
+                    isAvailable={isAvailable}
+                />}
                 title={lessonTitle}
                 tasks={lessonContent}
                 isAvailable={isAvailable}

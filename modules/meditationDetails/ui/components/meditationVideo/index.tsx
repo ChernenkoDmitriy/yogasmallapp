@@ -17,13 +17,13 @@ interface IProps {
     media: { uri: string; type: 'audio' | 'video' };
     mediaRef: MutableRefObject<Video | null>;
     isPaused: boolean;
+    isSeek: boolean;
     setCurrentTime: (value: number) => void;
     setDuration: (value: number) => void;
-    isSeek: boolean;
 };
 
 export const MeditationVideo: FC<IProps> = ({ title, banner, duration, durationMeasuring, media, mediaRef, isPaused, isSeek, setCurrentTime, setDuration }) => {
-    const [showPlayer, setShowPlayer] = useState(false)
+    const [showPlayer, setShowPlayer] = useState(false);
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors, !!banner || media.type === 'video'), [colors, banner, media, isPaused]);
     const videoStyle = useMemo(() => media.type === 'audio' || isPaused ? { height: 0 } : styles.video, [media, styles]);
