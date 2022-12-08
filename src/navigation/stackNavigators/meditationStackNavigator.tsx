@@ -15,7 +15,7 @@ export interface IRouteParams {
 export const MeditationStackNavigator: FC = observer(() => {
 
     return (
-        <Stack.Navigator initialRouteName='MeditationsView' screenOptions={{ headerShown: false, animationEnabled: false }} >
+        <Stack.Navigator initialRouteName='MeditationsView' screenOptions={{ headerShown: false }} >
             <Stack.Screen name='MeditationsView' component={MeditationsView} />
             <Stack.Screen
                 name='MeditationDetailsView'
