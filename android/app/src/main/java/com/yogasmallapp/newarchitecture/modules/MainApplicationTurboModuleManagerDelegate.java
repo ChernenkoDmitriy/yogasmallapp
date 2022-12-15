@@ -1,4 +1,4 @@
-package com.yogasmallapp.newarchitecture.modules;
+package com.gcode.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;

@@ -1,4 +1,4 @@
-package com.yogasmallapp;
+package com.gcode;
 import android.os.Bundle; 
 
 import com.facebook.react.ReactActivity;
