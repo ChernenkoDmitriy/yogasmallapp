@@ -5,7 +5,7 @@
             "title": "Практика прощения обид",
             "description": "Избавляемся от самобичевания, осуждения себя и других, высвобождаем эту энергию",
             "duration": 18,
-            "accessCode": null,
+            "accessCode": ["0000", "1111"],
             "durationMeasuring": "minutes",
             "lessonTitle": "string",
             "banner": "",

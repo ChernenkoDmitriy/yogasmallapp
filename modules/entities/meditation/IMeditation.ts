@@ -4,7 +4,7 @@ export interface IMeditation {
     banner?: string;
     description: string;
     duration: number;
-    accessCode: string;
+    accessCode: string[];
     durationMeasuring: 'minutes' | 'hours' | 'days';
     lessonTitle: string;
     lessonContent: string[];

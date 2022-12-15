@@ -5,7 +5,7 @@ export interface IPractice {
     title: string;
     description: string;
     duration: number;
-    accessCode: string;
+    accessCode: string[];
     durationMeasuring: 'minutes' | 'hours' | 'days';
     availableDays: number;
     startDate: string;

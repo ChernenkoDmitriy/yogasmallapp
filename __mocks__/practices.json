@@ -5,7 +5,7 @@
             "title": "КОД УСПЕХА",
             "description": "Курс, который позволит тебе, за год создать базу для спокойной жизни",
             "duration": 14,
-            "accessCode": "0000",
+            "accessCode": ["0000", "1111"],
             "durationMeasuring": "days",
             "availableDays": 2,
             "startDate": null,
