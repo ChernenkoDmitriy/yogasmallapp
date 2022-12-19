@@ -2,7 +2,6 @@ import { NavigationProp, ParamListBase, useNavigation } from '@react-navigation/
 import React, { FC, useCallback, useMemo } from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 import { CalendarIcon } from '../../../../../assets/icons/calendarIcon';
-import { ClockIcon } from '../../../../../assets/icons/clockIcon';
 import { useUiContext } from '../../../../../src/UIProvider';
 import { scaleVertical } from '../../../../../src/utils/Utils';
 import { IMeditation } from '../../../../entities/meditation/IMeditation';
@@ -12,7 +11,7 @@ const IMAGE = require('../../../../../assets/icons/goldOrnament.png');
 
 interface IProps {
     courseDay?: IMeditation;
-    numberOfDay: number;
+    numberOfDay: string;
     isAvailable: boolean;
 };
 

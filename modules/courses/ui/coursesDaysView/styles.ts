@@ -4,7 +4,7 @@ import { IColors } from '../../../../src/UIProvider/colorTheme';
 export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
         container: {
-            // flex: 1,
+            flex: 1,
             // alignItems:'center',
             // justifyContent:'center',
         },

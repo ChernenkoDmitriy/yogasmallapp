@@ -1,7 +1,7 @@
 import { useCallback, useMemo, useState } from 'react';
 import { IAccessCode } from '../../modules/entities/meditation/IAccessCode';
 
-export const useAvailability = (model: { accessCodes: IAccessCode[] }, accessCode: string[], id: number) => {
+export const useAvailability = (model: { accessCodes: IAccessCode[] }, accessCode: string[] | null, id: number) => {
     const [code, setCode] = useState('');
 
     const isAvailable = useMemo(() => {
@@ -14,7 +14,7 @@ export const useAvailability = (model: { accessCodes: IAccessCode[] }, accessCod
     }, [accessCode, id, model.accessCodes]);
 
     const onGetAccess = useCallback(() => {
-        if (accessCode.includes(code)) {
+        if (accessCode?.includes(code)) {
             model.accessCodes = [
                 ...model.accessCodes,
                 { meditationId: id, accessCode: code }

@@ -13,13 +13,14 @@ import { useMeditationPlayer } from '../../../presenters/useMeditationPlayer';
 
 interface IProps {
     code: string;
-    setCode: (value: string) => void;
+    connectionLink: string;
     isAvailable: boolean;
+    setCode: (value: string) => void;
     onGetAccess: () => boolean;
 };
 
-export const MeditationPlayer: FC<IProps> = ({ code, setCode, isAvailable, onGetAccess }) => {
-    const { colors } = useUiContext();
+export const MeditationPlayer: FC<IProps> = ({ code, isAvailable,connectionLink, setCode, onGetAccess }) => {
+    const { colors, t } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
     const {
         title, duration, durationMeasuring, media, banner,
@@ -71,7 +72,7 @@ export const MeditationPlayer: FC<IProps> = ({ code, setCode, isAvailable, onGet
                         }
                     </View>
                 </View>
-                : <AccessInput code={code} setCode={setCode} onGetAccess={onGetAccess} />
+                : <AccessInput link={connectionLink} code={code} setCode={setCode} onGetAccess={onGetAccess} applyText={t('getAccess')} modalText={t('connectionMeditationTip')} modalButtonTitle={t('want')} />
             }
         </View>
     )

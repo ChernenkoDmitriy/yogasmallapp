@@ -38,7 +38,6 @@ export const MeditationTasks: FC<IProps> = observer(({ header, title, tasks, isA
                 numColumns={1}
                 initialNumToRender={4}
                 style={{ flex: 1 }}
-                scrollEnabled={isAvailable}
                 contentContainerStyle={styles.contentContainerStyle}
             />
         </View>
