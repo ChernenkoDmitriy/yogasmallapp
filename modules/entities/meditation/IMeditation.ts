@@ -1,6 +1,6 @@
 export interface IMeditation {
     id: number;
-    dayNumber: string;
+    dayNumber?: string;
     title: string;
     banner?: string;
     description: string;
