@@ -25,7 +25,7 @@ export const DaysList: FC<IProps> = ({ days, model, accessCode, id, connectionLi
     const itemSeparatorComponent = useCallback(() => <View style={styles.separator} />, []);
 
     const renderItem = useCallback(({ item }: { item: IMeditation, index: number }) => (
-        <DaysListItem courseDay={item} numberOfDay={item.dayNumber} isAvailable={isAvailable} />
+        <DaysListItem courseDay={item} numberOfDay={item.dayNumber || ''} isAvailable={isAvailable} />
     ), [isAvailable]);
 
     return (

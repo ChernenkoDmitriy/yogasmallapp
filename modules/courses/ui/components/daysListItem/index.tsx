@@ -34,7 +34,7 @@ export const DaysListItem: FC<IProps> = ({ courseDay, numberOfDay, isAvailable }
             </View>
             <Image source={source} style={styles.image} />
             <View style={styles.titleWrapper}>
-                <Text numberOfLines={2} style={styles.title}>{title}</Text>
+                <Text numberOfLines={3} style={styles.title}>{title}</Text>
             </View>
             {/* <View style={styles.timeWrapper}>
                 <ClockIcon />
