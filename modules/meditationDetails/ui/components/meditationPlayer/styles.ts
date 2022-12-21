@@ -25,14 +25,13 @@ export const getStyle = (colors: IColors) => {
         },
         timeWrapper: {
             alignItems: 'center',
-            justifyContent:'center',
-            height: scaleVertical(20)
+            justifyContent: 'center',
+            marginBottom: scaleVertical(20),
         },
         timeText: {
             ...FONTS.TEXT_REGULAR_16,
             color: colors.regularText,
-            textAlign: 'center',
-            marginLeft: scaleHorizontal(6),
+            padding: 0,
         }
     });
     return styles;

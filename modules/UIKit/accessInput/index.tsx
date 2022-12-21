@@ -3,17 +3,21 @@ import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { getStyle } from './styles';
 import { useUiContext } from '../../../src/UIProvider';
 import { MainButton } from '../mainButton';
-import { MailModal } from '../mailModal';
+import { ConnectionModal } from '../connectionModal';
 
 interface IProps {
     title?: string;
+    modalTitle?: string;
+    modalText?: string;
+    modalButtonTitle?: string;
+    link: string;
     code: string;
     applyText?: string;
     setCode: (value: string) => void;
     onGetAccess: () => boolean;
 };
 
-export const AccessInput: FC<IProps> = ({ title, code, applyText, setCode, onGetAccess }) => {
+export const AccessInput: FC<IProps> = ({ title, code, applyText, modalTitle, modalText, modalButtonTitle, link, setCode, onGetAccess }) => {
     const { colors, t } = useUiContext();
     const [isCorrectCode, setIsCorrectCode] = useState(true);
     const [isVIsible, setIsVIsible] = useState(false);
@@ -36,13 +40,20 @@ export const AccessInput: FC<IProps> = ({ title, code, applyText, setCode, onGet
                     placeholderTextColor={colors.subText}
                 />
             </View>
-            <MainButton title={t('getAccess')} onPress={handleOnGetAccess} containerStyle={styles.button} />
+            <MainButton title={t('Listen')} onPress={handleOnGetAccess} containerStyle={styles.button} />
             {!!applyText &&
                 <TouchableOpacity onPress={onSetIsVisible} style={styles.applyButton}>
                     <Text style={styles.title}>{applyText}</Text>
                 </TouchableOpacity>
             }
-            <MailModal isVisible={isVIsible} onClose={onSetIsVisible} />
+            <ConnectionModal
+                isVisible={isVIsible}
+                onClose={onSetIsVisible}
+                modalTitle={modalTitle}
+                modalText={modalText}
+                modalButtonTitle={modalButtonTitle}
+                link={link}
+            />
         </View>
     )
 };

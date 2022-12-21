@@ -8,7 +8,7 @@ export const bannersUseCase = async (): Promise<{ error: string | null }> => {
         bannerModel.bannersList = response.banners;
         return { error: response.error };
     } catch (error: any) {
-        console.warn('authorizationUseCase: ', error);
+        console.warn('bannersUseCase: ', error);
         appStateModel.isLoading = false;
         return { error: 'requestError' }
     }

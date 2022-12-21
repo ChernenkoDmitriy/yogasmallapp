@@ -7,7 +7,7 @@ import { IRouteParams } from "../../../src/navigation/stackNavigators/meditation
 
 const DEFAULT_ITEM: IMeditation = {
     id: -1,
-    accessCode: '',
+    accessCode: [],
     title: '',
     duration: 0,
     durationMeasuring: 'minutes',

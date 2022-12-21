@@ -19,14 +19,15 @@ export const getStyle = (colors: IColors) => {
         },
         header: {
             flexDirection: 'row',
-            justifyContent: 'space-between',
             width: '100%',
-            paddingHorizontal: scaleHorizontal(10),
+            paddingLeft: scaleHorizontal(50),
             paddingVertical: scaleVertical(10),
             borderBottomWidth: 1,
             borderColor: colors.background,
         },
         title: {
+            flex: 1,
+            textAlign:'center',
             ...FONTS.TEXT_REGULAR_18,
             color: colors.regularText,
         },
@@ -37,9 +38,9 @@ export const getStyle = (colors: IColors) => {
             marginHorizontal: scaleHorizontal(20),
         },
         closeButton: {
-            width: scaleHorizontal(20),
-            justifyContent:'center',
-            alignItems:'center',
+            width: scaleHorizontal(50),
+            justifyContent: 'center',
+            alignItems: 'center',
         },
         mailButton: {
             width: scaleHorizontal(200),

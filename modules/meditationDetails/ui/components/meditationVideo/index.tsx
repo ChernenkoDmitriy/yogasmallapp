@@ -1,4 +1,4 @@
-import React, { FC, MutableRefObject, useEffect, useMemo, useState } from 'react';
+import React, { FC, memo, MutableRefObject, useEffect, useMemo, useState } from 'react';
 import { Text, View, Image } from 'react-native';
 import { getStyle } from './styles';
 import { useUiContext } from '../../../../../src/UIProvider';
@@ -22,15 +22,15 @@ interface IProps {
     setDuration: (value: number) => void;
 };
 
-export const MeditationVideo: FC<IProps> = ({ title, banner, duration, durationMeasuring, media, mediaRef, isPaused, isSeek, setCurrentTime, setDuration }) => {
+export const MeditationVideo: FC<IProps> = memo(({ title, banner, duration, durationMeasuring, media, mediaRef, isPaused, isSeek, setCurrentTime, setDuration }) => {
     const [showPlayer, setShowPlayer] = useState(false);
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors, !!banner || media.type === 'video'), [colors, banner, media, isPaused]);
     const videoStyle = useMemo(() => media.type === 'audio' || isPaused ? { height: 0 } : styles.video, [media, styles]);
 
     useEffect(() => {
-        setTimeout(() => { setShowPlayer(true) }, 600)
-    }, [])
+        setTimeout(() => { setShowPlayer(true) }, 600);
+    }, []);
 
     const currentMedia = useMemo(() => {
         if (!media.uri) {
@@ -72,4 +72,4 @@ export const MeditationVideo: FC<IProps> = ({ title, banner, duration, durationM
             </View>
         </View>
     )
-};
+});

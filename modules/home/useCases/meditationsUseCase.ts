@@ -8,7 +8,7 @@ export const meditationsUseCase = async (): Promise<{ error: string | null }> =>
         meditationModel.meditations = response.meditations;
         return { error: response.error };
     } catch (error: any) {
-        console.warn('authorizationUseCase: ', error);
+        console.warn('meditationsUseCase: ', error);
         appStateModel.isLoading = false;
         return { error: 'requestError' }
     }

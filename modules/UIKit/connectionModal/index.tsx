@@ -7,18 +7,20 @@ import { MainButton } from '../mainButton';
 import { CrossIcon } from '../../../assets/icons/crossIcon';
 import { scaleVertical } from '../../../src/utils/Utils';
 
-const MAIL = 'mailto:mlagency.dating@gmail.com?cc=&';
-
 interface IProps {
+    modalTitle?: string;
+    modalText?: string;
+    modalButtonTitle?: string;
+    link: string;
     isVisible: boolean;
     onClose: () => void;
 }
 
-export const MailModal: FC<IProps> = ({ isVisible, onClose }) => {
-    const { colors, t } = useUiContext();
+export const ConnectionModal: FC<IProps> = ({ isVisible, modalTitle, modalText, modalButtonTitle, link, onClose }) => {
+    const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
 
-    const onOpenMail = useCallback(async () => { await Linking.canOpenURL(MAIL) && await Linking.openURL(MAIL) }, []);
+    const onOpenLink = useCallback(async () => { await Linking.canOpenURL(link) && await Linking.openURL(link) }, [link]);
 
     return (
         <ReactNativeModal
@@ -28,13 +30,13 @@ export const MailModal: FC<IProps> = ({ isVisible, onClose }) => {
         >
             <View style={styles.contentWrapper}>
                 <View style={styles.header}>
-                    <Text style={styles.title}>{t('applyForCourse')}</Text>
+                    <Text style={styles.title}>{modalTitle}</Text>
                     <TouchableOpacity style={styles.closeButton} onPress={onClose}>
                         <CrossIcon color={colors.regularText} height={scaleVertical(15)} />
                     </TouchableOpacity>
                 </View>
-                <Text style={styles.TipText}>{t('mailTip')}</Text>
-                <MainButton title={t('openMail')} onPress={onOpenMail} containerStyle={styles.mailButton} />
+                <Text style={styles.TipText}>{modalText}</Text>
+                <MainButton title={modalButtonTitle || ''} onPress={onOpenLink} containerStyle={styles.mailButton} />
             </View>
         </ReactNativeModal>
     )

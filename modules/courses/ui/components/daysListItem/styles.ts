@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { IColors } from '../../../../../src/UIProvider/colorTheme';
 import { FONTS } from '../../../../../src/utils/Fonts';
-import { scaleHorizontal, scaleVertical } from '../../../../../src/utils/Utils';
+import { scaleFontSize, scaleHorizontal, scaleVertical } from '../../../../../src/utils/Utils';
 
 export const getStyle = (colors: IColors) => {
     const styles = StyleSheet.create({
@@ -35,7 +35,9 @@ export const getStyle = (colors: IColors) => {
             paddingHorizontal: scaleHorizontal(16),
         },
         title: {
+            flex: 1,
             ...FONTS.ADDITIONAL_TEXT_14,
+            lineHeight: scaleFontSize(15),
             color: colors.regularText,
         },
         timeWrapper: {
