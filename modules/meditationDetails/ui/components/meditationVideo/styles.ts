@@ -13,7 +13,7 @@ export const getStyle = (colors: IColors, isBanner: boolean) => {
         },
         mediaWrapper: {
             width: '100%',
-            height: isBanner ? scaleHorizontal(271) : scaleHorizontal(222),
+            height: scaleVertical(250),
             alignItems: 'center',
             justifyContent: 'center',
         },
@@ -29,7 +29,6 @@ export const getStyle = (colors: IColors, isBanner: boolean) => {
             ...FONTS.TITLE_32,
             color: colors.regularText,
             textAlign: 'center',
-            marginTop: scaleVertical(25),
             marginHorizontal: scaleHorizontal(20),
         },
         timeWrapper: {

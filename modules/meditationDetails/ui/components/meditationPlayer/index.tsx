@@ -19,7 +19,7 @@ interface IProps {
     onGetAccess: () => boolean;
 };
 
-export const MeditationPlayer: FC<IProps> = ({ code, isAvailable,connectionLink, setCode, onGetAccess }) => {
+export const MeditationPlayer: FC<IProps> = ({ code, isAvailable, connectionLink, setCode, onGetAccess }) => {
     const { colors, t } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
     const {
@@ -42,6 +42,7 @@ export const MeditationPlayer: FC<IProps> = ({ code, isAvailable,connectionLink,
                 isSeek={isSeek}
                 setCurrentTime={setCurrentTime}
                 setDuration={setMediaDuration}
+                isAvailable={isAvailable}
             />
             {isAvailable
                 ? <View style={{ flex: 1 }}>

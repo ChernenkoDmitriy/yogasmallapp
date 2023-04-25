@@ -13,9 +13,9 @@ PODS:
   - glog (0.3.5)
   - hermes-engine (0.70.3)
   - libevent (2.1.12)
-  - PromisesObjC (2.1.1)
-  - PromisesSwift (2.1.1):
-    - PromisesObjC (= 2.1.1)
+  - PromisesObjC (2.2.0)
+  - PromisesSwift (2.2.0):
+    - PromisesObjC (= 2.2.0)
   - RCT-Folly (2021.07.22.00):
     - boost
     - DoubleConversion
@@ -258,6 +258,8 @@ PODS:
   - react-native-video/Video (6.0.0-alpha.1):
     - PromisesSwift
     - React-Core
+  - react-native-webview (12.0.2):
+    - React-Core
   - React-perflogger (0.70.3)
   - React-RCTActionSheet (0.70.3):
     - React-Core/RCTActionSheetHeaders (= 0.70.3)
@@ -392,6 +394,7 @@ DEPENDENCIES:
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
   - react-native-video (from `../node_modules/react-native-video`)
+  - react-native-webview (from `../node_modules/react-native-webview`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -470,6 +473,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-splash-screen"
   react-native-video:
     :path: "../node_modules/react-native-video"
+  react-native-webview:
+    :path: "../node_modules/react-native-webview"
   React-perflogger:
     :path: "../node_modules/react-native/ReactCommon/reactperflogger"
   React-RCTActionSheet:
@@ -518,8 +523,8 @@ SPEC CHECKSUMS:
   glog: 04b94705f318337d7ead9e6d17c019bd9b1f6b1b
   hermes-engine: bb344d89a0d14c2c91ad357480a79698bb80e186
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
-  PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
-  PromisesSwift: 99fddfe4a0ec88a56486644c0da106694c92a604
+  PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
+  PromisesSwift: cf9eb58666a43bbe007302226e510b16c1e10959
   RCT-Folly: 0080d0a6ebf2577475bda044aa59e2ca1f909cda
   RCTRequired: 5cf7e7d2f12699724b59f90350257a422eaa9492
   RCTTypeSafety: 3f3ead9673d1ab8bb1aea85b0894ab3220f8f06e
@@ -539,6 +544,7 @@ SPEC CHECKSUMS:
   react-native-safe-area-context: 99b24a0c5acd0d5dcac2b1a7f18c49ea317be99a
   react-native-splash-screen: 4312f786b13a81b5169ef346d76d33bc0c6dc457
   react-native-video: bb6f12a7198db53b261fefb5d609dc77417acc8b
+  react-native-webview: 203b6a1c7507737f777c91d7e10c30e7e67c1a17
   React-perflogger: 082b4293f0b3914ff41da35a6c06ac4490fcbcc8
   React-RCTActionSheet: 83da3030deb5dea54b398129f56540a44e64d3ae
   React-RCTAnimation: bac3a4f4c0436554d9f7fbb1352a0cdcb1fb0f1c
@@ -554,7 +560,7 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: 0c357f3156fcb16c8589ede67cc036330b6698ca
   RNGestureHandler: b7a872907ee289ada902127f2554fa1d2c076122
   RNLocalize: 0df7970cfc60389f00eb62fd7c097dc75af3fb4f
-  RNReanimated: 832be9e44a7a2831230ceec0416bf7645155fe7c
+  RNReanimated: a1c199bb9c49207079853360b16a31a2994e18db
   RNScreens: 34cc502acf1b916c582c60003dc3089fa01dc66d
   RNSVG: 07dbd870b0dcdecc99b3a202fa37c8ca163caec2
   Yoga: 2ed968a4f060a92834227c036279f2736de0fce3
