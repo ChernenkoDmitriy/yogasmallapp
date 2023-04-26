@@ -23,7 +23,7 @@ export const MeditationPlayer: FC<IProps> = ({ code, isAvailable, connectionLink
     const { colors, t } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
     const {
-        title, duration, durationMeasuring, media, banner,
+        title, duration, durationMeasuring, media, banner, isVideo,
         mediaRef, isPaused, currentTime, mediaDuration, setCurrentTime, setMediaDuration,
         onSetIsPaused, onSlidingComplete, onSlidingStart, onValueChange,
         timeLeft, isSeek
@@ -45,34 +45,36 @@ export const MeditationPlayer: FC<IProps> = ({ code, isAvailable, connectionLink
                 isAvailable={isAvailable}
             />
             {isAvailable
-                ? <View style={{ flex: 1 }}>
-                    <View style={styles.player}>
-                        <Slider
-                            animateTransitions={true}
-                            value={currentTime / mediaDuration}
-                            maximumTrackTintColor={colors.blockBackground}
-                            minimumTrackTintColor={colors.playerProgress}
-                            trackStyle={styles.track}
-                            thumbStyle={{ width: 0 }}
-                            containerStyle={styles.trackContainer}
-                            onSlidingStart={onSlidingStart}
-                            onValueChange={onValueChange}
-                            onSlidingComplete={onSlidingComplete}
-                        />
-                        <TouchableOpacity onPress={onSetIsPaused}>
-                            {isPaused
-                                ? <PlayIcon width={scaleHorizontal(56)} height={scaleHorizontal(56)} />
-                                : <PauseIcon width={scaleHorizontal(56)} height={scaleHorizontal(56)} />
+                ? !isVideo
+                    ? <View style={{ flex: 1 }}>
+                        <View style={styles.player}>
+                            <Slider
+                                animateTransitions={true}
+                                value={currentTime / mediaDuration}
+                                maximumTrackTintColor={colors.blockBackground}
+                                minimumTrackTintColor={colors.playerProgress}
+                                trackStyle={styles.track}
+                                thumbStyle={{ width: 0 }}
+                                containerStyle={styles.trackContainer}
+                                onSlidingStart={onSlidingStart}
+                                onValueChange={onValueChange}
+                                onSlidingComplete={onSlidingComplete}
+                            />
+                            <TouchableOpacity onPress={onSetIsPaused}>
+                                {isPaused
+                                    ? <PlayIcon width={scaleHorizontal(56)} height={scaleHorizontal(56)} />
+                                    : <PauseIcon width={scaleHorizontal(56)} height={scaleHorizontal(56)} />
+                                }
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.timeWrapper}>
+                            {timeLeft === '00:00' && currentTime === 0
+                                ? <ActivityIndicator color={colors.playerProgress} size={'small'} />
+                                : <Text style={styles.timeText}>{timeLeft}</Text>
                             }
-                        </TouchableOpacity>
+                        </View>
                     </View>
-                    <View style={styles.timeWrapper}>
-                        {timeLeft === '00:00' && currentTime === 0
-                            ? <ActivityIndicator color={colors.playerProgress} size={'small'} />
-                            : <Text style={styles.timeText}>{timeLeft}</Text>
-                        }
-                    </View>
-                </View>
+                    : null
                 : <AccessInput link={connectionLink} code={code} setCode={setCode} onGetAccess={onGetAccess} applyText={t('getAccess')} modalText={t('connectionMeditationTip')} modalButtonTitle={t('want')} />
             }
         </View>
