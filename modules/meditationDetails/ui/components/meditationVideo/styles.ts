@@ -15,6 +15,7 @@ export const getStyle = (colors: IColors, isBanner: boolean) => {
             width: '100%',
             height: scaleVertical(250),
             alignItems: 'center',
+            paddingHorizontal:15,
             justifyContent: 'center',
         },
         image: {
