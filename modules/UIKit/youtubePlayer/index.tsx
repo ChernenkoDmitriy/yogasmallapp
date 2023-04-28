@@ -3,7 +3,6 @@ import { Linking, View, ViewStyle } from 'react-native';
 import { WebView } from 'react-native-webview';
 import { useFocusEffect } from '@react-navigation/native';
 import { Utils } from '../../../src/utils/Utils';
-import { useAppState } from '@react-native-community/hooks'
 import Orientation from 'react-native-orientation-locker';
 import { useSafeState } from '../../../src/hooks/useSafeState';
 

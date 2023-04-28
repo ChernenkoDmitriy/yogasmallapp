@@ -7,6 +7,7 @@ import Video, { OnLoadData, OnProgressData } from 'react-native-video';
 import { scaleHorizontal, scaleVertical } from '../../../../../src/utils/Utils';
 import { WebView } from 'react-native-webview'
 import { YoutubePlayer } from '../../../../UIKit/youtubePlayer';
+import { log } from 'react-native-reanimated';
 
 const IMAGE = require('../../../../../assets/icons/goldOrnament.png');
 const DEFAULT_VIDEO = 'https://ta-samaya.github.io/TA.SAMAYA-DATA/media/video/defaultVideo.mp4';
@@ -54,7 +55,7 @@ export const MeditationVideo: FC<IProps> = memo(({ title, banner, duration, dura
     const onLoad = ({ duration }: OnLoadData) => { setDuration(duration) };
     const onError = (error: any) => { console.warn('MeditationHeader -> Video: ', error) };
 
-    const urlProp = 'https://www.youtube.com/watch?v=l3zipB6nek8&t=517s';
+    const urlProp = media.uri;
 
     const uri = useMemo(() => {
         let videoId = urlProp;
@@ -78,6 +79,7 @@ export const MeditationVideo: FC<IProps> = memo(({ title, banner, duration, dura
         setTimeout(() => {
             webView?.current?.injectJavaScript(exitFullscreen);
         }, 1000)
+        console.log(media.uri)
     }, []);
 
     return (
@@ -88,7 +90,7 @@ export const MeditationVideo: FC<IProps> = memo(({ title, banner, duration, dura
                     ? <Image source={banner ? { uri: banner } : IMAGE} style={styles.image} resizeMode={'cover'} />
                     : media.type === 'audio' ? <Image source={banner ? { uri: banner } : IMAGE} style={styles.image} resizeMode={'cover'} />
                         : <View style={{ paddingHorizontal: 20, width: 360, height: 200 }}>
-                            <YoutubePlayer videoIdOrLink={media.uri} />
+                            <YoutubePlayer videoIdOrLink={urlProp} />
                             </View>
                 }
                 {showPlayer &&
