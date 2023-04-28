@@ -4,10 +4,9 @@ import { getStyle } from './styles';
 import { useUiContext } from '../../../../../src/UIProvider';
 import { ClockIcon } from '../../../../../assets/icons/clockIcon';
 import Video, { OnLoadData, OnProgressData } from 'react-native-video';
-import { scaleHorizontal, scaleVertical, Utils } from '../../../../../src/utils/Utils';
-import WabView, { WebView } from 'react-native-webview'
+import { scaleHorizontal, scaleVertical } from '../../../../../src/utils/Utils';
+import { WebView } from 'react-native-webview'
 import { YoutubePlayer } from '../../../../UIKit/youtubePlayer';
-import { VideoPlayer } from '../../../../UIKit/VideoPlayer';
 
 const IMAGE = require('../../../../../assets/icons/goldOrnament.png');
 const DEFAULT_VIDEO = 'https://ta-samaya.github.io/TA.SAMAYA-DATA/media/video/defaultVideo.mp4';
@@ -31,7 +30,6 @@ export const MeditationVideo: FC<IProps> = memo(({ title, banner, duration, dura
     const [showPlayer, setShowPlayer] = useState(false);
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors, !!banner || media.type === 'video'), [colors, banner, media, isPaused]);
-    const videoStyle = useMemo(() => media.type === 'audio' || isPaused ? { height: 0 } : styles.video, [media, styles]);
     const [playing, setPlaying] = useState(true);
 
     const togglePlaying = useCallback(() => {
@@ -90,29 +88,8 @@ export const MeditationVideo: FC<IProps> = memo(({ title, banner, duration, dura
                     ? <Image source={banner ? { uri: banner } : IMAGE} style={styles.image} resizeMode={'cover'} />
                     : media.type === 'audio' ? <Image source={banner ? { uri: banner } : IMAGE} style={styles.image} resizeMode={'cover'} />
                         : <View style={{ paddingHorizontal: 20, width: 360, height: 200 }}>
-                            {/* <WabView
-                                ref={ref => webView.current = ref}
-                                domStorageEnabled={true}
-                                userAgent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 
-                                (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36"
-                                javaScriptEnabled={true}
-                                androidHardwareAccelerationDisabled={true}
-                                mediaPlaybackRequiresUserAction={false}
-                                allowsFullscreenVideo={true}
-                                automaticallyAdjustContentInsets={true}
-                                allowsInlineMediaPlayback={true}
-                                scrollEnabled={false}
-                                source={{ uri }}
-                            /> */}
-                            <YoutubePlayer videoIdOrLink={'https://www.youtube.com/watch?v=l3zipB6nek8&t=517s'} />
+                            <YoutubePlayer videoIdOrLink={media.uri} />
                             </View>
-                    //     <YoutubeIframe
-                    //     height={scaleVertical(250)}
-                    //     width={Utils.size.width}
-                    //     play={false}
-                    //     videoId={'7nFbWyb1qww'}
-                    //     webViewStyle={{ opacity: 0.99 }}
-                    // />
                 }
                 {showPlayer &&
                     <View>
