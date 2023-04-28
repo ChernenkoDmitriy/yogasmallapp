@@ -21,6 +21,7 @@ export const getStyle = (colors: IColors, isBanner: boolean) => {
         image: {
             width: isBanner ? '100%' : scaleHorizontal(222),
             height: isBanner ? '100%' : scaleHorizontal(222),
+            backgroundColor:colors.background
         },
         video: {
             width: '100%',
