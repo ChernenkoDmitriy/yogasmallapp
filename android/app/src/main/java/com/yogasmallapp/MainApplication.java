@@ -13,7 +13,7 @@ import com.gcode.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import org.wonday.orientation.OrientationActivityLifecycle;
-
+import com.brentvatne.react.ReactVideoPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 

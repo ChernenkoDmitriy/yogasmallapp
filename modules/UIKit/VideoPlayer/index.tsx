@@ -5,17 +5,18 @@ import Orientation from 'react-native-orientation-locker';
 import { useUiContext } from '../../../src/UIProvider';
 import { Utils } from '../../../src/utils/Utils';
 import { useSafeState } from '../../../src/hooks/useSafeState';
+import { getStyle } from './style';
+import { View } from 'react-native';
 
 interface IProps {
     uri: string;
-}
+};
 
 export const VideoPlayer: FC<IProps> = memo(({ uri }) => {
     const { colors } = useUiContext();
-    // const styles = useMemo(() => getStyle(colors), [colors]);
+    const styles = useMemo(() => getStyle(colors), [colors]);
     const player = useRef<Video | null>();
     const [paused, setPaused] = useSafeState(true);
-    // const company = useSelector(selectChosenCompany);
     const isFocused = useIsFocused();
     const [isFullScreen, setIsFullScreen] = useSafeState(false);
 
@@ -37,9 +38,8 @@ export const VideoPlayer: FC<IProps> = memo(({ uri }) => {
         setPaused(!data.playbackRate);
     };
 
-    
-
     return (
+        <View style={styles.container}>
         <Video
             onError={console.log}
             onFullscreenPlayerDidPresent={() => { setIsFullScreen(true) }}
@@ -57,5 +57,6 @@ export const VideoPlayer: FC<IProps> = memo(({ uri }) => {
             ignoreSilentSwitch={'ignore'}
             onPlaybackRateChange={onPlaybackRateChange}
         />
+        </View>
     );
 });

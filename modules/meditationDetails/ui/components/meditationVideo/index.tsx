@@ -6,8 +6,7 @@ import { ClockIcon } from '../../../../../assets/icons/clockIcon';
 import Video, { OnLoadData, OnProgressData } from 'react-native-video';
 import { scaleHorizontal, scaleVertical } from '../../../../../src/utils/Utils';
 import { WebView } from 'react-native-webview'
-import { YoutubePlayer } from '../../../../UIKit/youtubePlayer';
-import { log } from 'react-native-reanimated';
+import { VideoPlayer } from '../../../../UIKit/VideoPlayer';
 
 const IMAGE = require('../../../../../assets/icons/goldOrnament.png');
 const DEFAULT_VIDEO = 'https://ta-samaya.github.io/TA.SAMAYA-DATA/media/video/defaultVideo.mp4';
@@ -89,9 +88,9 @@ export const MeditationVideo: FC<IProps> = memo(({ title, banner, duration, dura
                 {!isAvailable
                     ? <Image source={banner ? { uri: banner } : IMAGE} style={styles.image} resizeMode={'cover'} />
                     : media.type === 'audio' ? <Image source={banner ? { uri: banner } : IMAGE} style={styles.image} resizeMode={'cover'} />
-                        : <View style={{ paddingHorizontal: 20, width: 360, height: 200 }}>
-                            <YoutubePlayer videoIdOrLink={urlProp} />
-                            </View>
+                        : <View style={{ paddingHorizontal: 20, width: 360, height: 200 , marginBottom:10 }}>
+                            <VideoPlayer uri={urlProp}  />
+                        </View>
                 }
                 {showPlayer &&
                     <View>
