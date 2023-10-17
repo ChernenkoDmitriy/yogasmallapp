@@ -29,9 +29,9 @@ export const useMeditationPlayer = () => {
     const [isPaused, setIsPaused] = useState(true);
     const [currentTime, setCurrentTime] = useState(0);
     const [mediaDuration, setMediaDuration] = useState(0);
-
-    const timeLeft = useMemo(() => formatTimeMMSS(Math.floor(mediaDuration - currentTime)), [mediaDuration, currentTime]);
     const [isSeek, setIsSeek] = useState(false);
+    const timeLeft = useMemo(() => formatTimeMMSS(Math.floor(mediaDuration - currentTime)), [mediaDuration, currentTime]);
+    const isVideo = item?.media.type === 'video';
 
     const onMediaValueChange = useCallback((value: number | Array<number>) => {
         if (Array.isArray(value) && mediaDuration && (typeof value[0] === 'number')) {
@@ -60,7 +60,7 @@ export const useMeditationPlayer = () => {
     };
 
     return {
-        title, duration, durationMeasuring, media, banner,
+        title, duration, durationMeasuring, media, banner,isVideo,
         mediaRef, isPaused, currentTime, mediaDuration, setCurrentTime, setMediaDuration,
         onSetIsPaused, onSlidingComplete, onSlidingStart, onValueChange,
         timeLeft, isSeek

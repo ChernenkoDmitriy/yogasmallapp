@@ -1,5 +1,5 @@
 import React, { FC, useCallback } from 'react';
-import { KeyboardAvoidingView, StatusBar } from 'react-native';
+import { KeyboardAvoidingView, StatusBar} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { observer } from 'mobx-react';
 import { Utils } from '../../utils/Utils';
