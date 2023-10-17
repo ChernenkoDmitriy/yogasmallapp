@@ -6,13 +6,13 @@ import { useUiContext } from '../../../src/UIProvider';
 import { Utils } from '../../../src/utils/Utils';
 import { useSafeState } from '../../../src/hooks/useSafeState';
 import { getStyle } from './style';
-import { View } from 'react-native';
+import { TouchableOpacity, View, Text } from 'react-native';
 
 interface IProps {
     uri: string;
 };
 
-export const VideoPlayer: FC<IProps> = memo(({ uri }) => {
+export const VideoPlayer: FC<IProps> = ({ uri }) => {
     const { colors } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
     const player = useRef<Video | null>();
@@ -40,23 +40,25 @@ export const VideoPlayer: FC<IProps> = memo(({ uri }) => {
 
     return (
         <View style={styles.container}>
-        <Video
-            onError={console.log}
-            onFullscreenPlayerDidPresent={() => { setIsFullScreen(true) }}
-            onFullscreenPlayerWillPresent={() => { setIsFullScreen(true) }}
-            onFullscreenPlayerWillDismiss={() => { setIsFullScreen(false) }}
-            paused={paused}
-            source={{uri: uri}}
-            controls={true}
-            playInBackground={false}
-            ref={(ref) => { player.current = ref }}
-            style={{width:'100%', height:'100%'}}
-            repeat={false}
-            disableFocus={false}
-            playWhenInactive={false}
-            ignoreSilentSwitch={'ignore'}
-            onPlaybackRateChange={onPlaybackRateChange}
-        />
+            <Video
+                onError={console.log}
+                onFullscreenPlayerDidPresent={() => { setIsFullScreen(true) }}
+                onFullscreenPlayerWillPresent={() => { setIsFullScreen(true) }}
+                onFullscreenPlayerWillDismiss={() => { setIsFullScreen(false) }}
+                paused={paused}
+                source={{ uri: uri }}
+                focusable
+                controls={true}
+                fullscreenOrientation='all'
+                playInBackground={false}
+                ref={(ref) => { player.current = ref }}
+                style={{ width: '100%', height: '100%' }}
+                repeat={false}
+                disableFocus={false}
+                playWhenInactive={false}
+                ignoreSilentSwitch={'ignore'}
+                onPlaybackRateChange={onPlaybackRateChange}
+            />
         </View>
     );
-});
+};

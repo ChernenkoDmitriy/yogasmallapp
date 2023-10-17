@@ -11,6 +11,13 @@ export const getStyle = (colors: IColors) => {
             borderRadius: 15,
             overflow:'hidden'
         },
+        fullScreenButton: {
+            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+            padding: 10,
+            position: 'absolute',
+            bottom: 0,
+            right: 0,
+          },
     });
     return styles;
 };
