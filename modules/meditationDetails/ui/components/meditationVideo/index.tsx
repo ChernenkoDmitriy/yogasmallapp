@@ -8,6 +8,7 @@ import { scaleHorizontal, scaleVertical } from '../../../../../src/utils/Utils';
 import { WebView } from 'react-native-webview'
 import { VideoPlayer } from '../../../../UIKit/VideoPlayer';
 import { LoadingView } from '../../../../UIKit/loadingView';
+import { YoutubePlayer } from '../../../../UIKit/youtubePlayer';
 
 const IMAGE = require('../../../../../assets/icons/goldOrnament.png');
 const DEFAULT_VIDEO = 'https://ta-samaya.github.io/TA.SAMAYA-DATA/media/video/defaultVideo.mp4';
@@ -90,7 +91,7 @@ export const MeditationVideo: FC<IProps> = memo(({ title, banner, duration, dura
                     ? <Image source={banner ? { uri: banner } : IMAGE} style={styles.image} resizeMode={'cover'} />
                     : media.type === 'audio' ? <Image source={banner ? { uri: banner } : IMAGE} style={styles.image} resizeMode={'cover'} />
                         : <View style={{ paddingHorizontal: 20, width: 360, height: 200, marginBottom: 10 }}>
-                            {showPlayer ? <VideoPlayer uri={urlProp} /> : <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.background, borderRadius: 15, }}><ActivityIndicator color={colors.playerProgress} size={'large'} /></View>}
+                            {showPlayer ? <YoutubePlayer videoIdOrLink={urlProp}  /> : <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: colors.background, borderRadius: 15, }}><ActivityIndicator color={colors.playerProgress} size={'large'} /></View>}
                         </View>
                 }
                 {showPlayer &&
