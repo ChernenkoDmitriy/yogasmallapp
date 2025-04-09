@@ -15,12 +15,14 @@ import { MeditationIcon } from '../../../assets/icons/meditationIcon';
 import { CourseIcon } from '../../../assets/icons/courseIcon';
 import { AccountIcon } from '../../../assets/icons/accountIcon';
 import { MoreIcon } from '../../../assets/icons/moreIcon';
+import { useNotifications } from '../../../libs/notificationService/useNotifications';
 
 const Tab = createBottomTabNavigator();
 
 export const TabNavigator: FC = observer(() => {
     const { colors, t } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
+    useNotifications();
 
     return (
         <Tab.Navigator screenOptions={{
@@ -79,6 +81,6 @@ export const TabNavigator: FC = observer(() => {
                         <MoreIcon color={params.focused ? colors.focusedTab : colors.blurredTab} width={scaleHorizontal(26)} height={scaleHorizontal(26)} />
                 }}
             />
-        </Tab.Navigator>
+        </Tab.Navigator >
     );
 });

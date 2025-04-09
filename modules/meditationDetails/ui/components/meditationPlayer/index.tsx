@@ -1,10 +1,9 @@
 import React, { FC, useMemo } from 'react';
-import { ActivityIndicator, Text, View } from 'react-native';
+import { ActivityIndicator, Text, View, TouchableOpacity } from 'react-native';
 import { getStyle } from './styles';
 import { useUiContext } from '../../../../../src/UIProvider';
 import { PlayIcon } from '../../../../../assets/icons/playIcon';
 import { Slider } from '@miblanchard/react-native-slider';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import { scaleHorizontal } from '../../../../../src/utils/Utils';
 import { PauseIcon } from '../../../../../assets/icons/pauseIcon';
 import { MeditationVideo } from '../meditationVideo';
@@ -19,7 +18,7 @@ interface IProps {
     onGetAccess: () => boolean;
 };
 
-export const MeditationPlayer: FC<IProps> = ({ code, isAvailable,connectionLink, setCode, onGetAccess }) => {
+export const MeditationPlayer: FC<IProps> = ({ code, isAvailable, connectionLink, setCode, onGetAccess }) => {
     const { colors, t } = useUiContext();
     const styles = useMemo(() => getStyle(colors), [colors]);
     const {

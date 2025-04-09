@@ -15,7 +15,7 @@ export const getStyle = (colors: IColors) => {
             paddingBottom: Utils.isIOS ? scaleVertical(30) : scaleVertical(20),
             paddingTop: scaleVertical(11),
         },
-        tabBarLabelStyle:{
+        tabBarLabelStyle: {
             ...FONTS.LABEL_TEXT_12,
             height: scaleVertical(12),
         },

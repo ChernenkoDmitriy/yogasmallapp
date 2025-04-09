@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "532546495005",
+    "project_id": "g-code-4c30f",
+    "storage_bucket": "g-code-4c30f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:532546495005:android:9c3f0f11638a86886b5cf4",
+        "android_client_info": {
+          "package_name": "com.g.code"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUvNvAE6ggDWcWwwaKb5gD_gjwuTDmiMc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
