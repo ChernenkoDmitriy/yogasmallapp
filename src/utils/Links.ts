@@ -4,6 +4,6 @@ export interface ILinks {
 }
 
 export const links = {
-    REGISTER_FCM_TOKEN: '',
-    DELETE_FCM_TOKEN: ''
+    REGISTER_FCM_TOKEN: 'https://g-code-dev.pp.ua/api/v1/firebase-tokens',
+    DELETE_FCM_TOKEN: 'https://g-code-dev.pp.ua/api/v1/firebase-tokens'
 }

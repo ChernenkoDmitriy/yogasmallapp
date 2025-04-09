@@ -62,6 +62,29 @@ class AxiosRequester implements IRequester {
                 headers: {
                     'Cache-Control': 'no-cache',
                     'Content-Type': 'application/json',
+                    'x-api-key': 'test'
+                },
+                url,
+                timeout: timeoutMS || 60000
+            };
+            headers && (config.headers = headers);
+            data && (config.data = data);
+            const response = await Axios(config);
+            return response;
+        } catch (error: any) {
+            this.serverError(error?.status);
+            console.warn('AxiosRequester -> post: ', error);
+            return error?.response || {};
+        }
+    }
+
+    delete = async (url: string, data?: object, headers?: object, timeoutMS?: number): Promise<any> => {
+        try {
+            const config: any = {
+                method: 'DELETE',
+                headers: {
+                    'Cache-Control': 'no-cache',
+                    'Content-Type': 'application/json',
                     // 'authorization': `Bearer ${userModel?.token}`
                 },
                 url,

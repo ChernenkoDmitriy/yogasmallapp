@@ -1,11 +1,13 @@
 import { FirebaseMessaging, IMessaging } from "./firebase";
 import { notificationHandler } from "./pushNotification/NotificationHandler";
-import { IRestPost, requester } from "../requester";
+import { IRequester, IRestPost, requester } from "../requester";
 import { IResponse } from "../requester/IRequester/IResponse";
 import { ILinks, links } from "../../src/utils/Links";
 import { Utils } from "../../src/utils/Utils";
 import { FirebaseMessagingTypes } from "@react-native-firebase/messaging";
 import { EventDetail, EventType } from "@notifee/react-native";
+import Axios from "axios";
+import axios from "axios";
 
 class NotificationService {
     private static instance: NotificationService;
@@ -13,7 +15,7 @@ class NotificationService {
     _notificationHandler = notificationHandler;
     _messaging!: IMessaging;
 
-    constructor(private requester: IRestPost, private links: ILinks,) {
+    constructor(private requester: IRequester, private links: ILinks,) {
         if (NotificationService.instance) {
             return NotificationService.instance;
         }
@@ -41,7 +43,7 @@ class NotificationService {
 
     register = async (userId?: number | string) => {
         const token = await this._messaging.getFCMToken();
-        const response = await this.requester.post(this.links.REGISTER_FCM_TOKEN, { userId, token });
+        const response = await this.requester.post(this.links.DELETE_FCM_TOKEN, { token });
         const result = this.processingResponse(response);
         return result;
     }
@@ -49,7 +51,7 @@ class NotificationService {
     deleteToken = async () => {
         const token = await this._messaging.getFCMToken();
         await this._messaging.removeFCMToken();
-        const response = await this.requester.post(this.links.DELETE_FCM_TOKEN, { token });
+        const response = await this.requester.delete(this.links.DELETE_FCM_TOKEN, { token }, { "x-api-key": "test" });
         const result = this.processingResponse(response);
         return result;
     }
@@ -69,7 +71,6 @@ class NotificationService {
     }
 
     private onForegroundEvent = (type: EventType, detail: EventDetail) => {
-        console.log(type)
         switch (type) {
             case EventType.PRESS:
                 console.log('User pressed notification on Foreground', detail.notification);
@@ -88,6 +89,7 @@ class NotificationService {
     }
 
     private onReceiveNotification = (remoteMessage: FirebaseMessagingTypes.RemoteMessage) => {
+        console.log(remoteMessage)
         try {
             this._notificationHandler.createLocalNotification(remoteMessage);
         } catch (error) {
@@ -95,15 +97,14 @@ class NotificationService {
         }
     }
 
-    private processingResponse = (response: any): IResponse<any> => {
-        let result: any = { isError: true, message: '' };
+    private processingResponse = (response: any): any => {
+        let result: any = { isError: true, message: '', errors: {} };
         if (response?.status < 400) {
-            result = { isError: false, data: response.data, message: '' };
-        } else if (response.error === 'validation') {
-            result = { isError: true, message: response?.messages };
+            result = { isError: false, data: response?.data || response, errors: response?.errors };
         } else {
-            result = { isError: true, message: response?.message };
+            result = { isError: true, message: response?.data?.message, errors: response?.data?.errors };
         }
+        console.log(result);
         return result;
     }
 
