@@ -33,31 +33,31 @@ class NotificationHandler {
     };
 
     createLocalNotification = async (remoteMessage: FirebaseMessagingTypes.RemoteMessage): Promise<void> => {
+        console.log(remoteMessage, 'createLocalNotification')
         try {
-            if (typeof remoteMessage?.data?.notifee === 'string') {
-                const { title, body, imageUrl } = JSON.parse(remoteMessage?.data?.notifee);
-                notifee.incrementBadgeCount();
-                await notifee.displayNotification({
-                    id: remoteMessage.messageId,
-                    title,
-                    body,
-                    android: {
-                        channelId: 'default',
-                        pressAction: { id: 'default' },
-                        largeIcon: imageUrl,
-                        importance: AndroidImportance.HIGH,
-                        sound: 'default'
-                    },
-                    ios: {
-                        sound: 'default',
-                        attachments: [
-                            {
-                                url: imageUrl,
-                            }
-                        ],
-                    }
-                });
-            }
+            console.log(remoteMessage?.data, 'remoteMessage?.data')
+            // const { title, body, imageUrl } = JSON.parse(remoteMessage?.data?);
+            notifee.incrementBadgeCount();
+            await notifee.displayNotification({
+                id: remoteMessage.messageId,
+                title: remoteMessage.notification?.title,
+                body: remoteMessage.notification?.body,
+                android: {
+                    channelId: 'default',
+                    pressAction: { id: 'default' },
+                    largeIcon: remoteMessage.data?.imageUrl,
+                    importance: AndroidImportance.HIGH,
+                    sound: 'default'
+                },
+                ios: {
+                    sound: 'default',
+                    attachments: [
+                        {
+                            url: String(remoteMessage.data?.imageUrl),
+                        }
+                    ],
+                }
+            });
         } catch (e) {
             console.log('createLocalNotification ===> ', e)
         }
@@ -67,7 +67,7 @@ class NotificationHandler {
         const unsubscribe = notifee.onForegroundEvent(({ type, detail }) => callBack(type, detail));
 
         return () => {
-            unsubscribe();
+            unsubscribe;
         };
     }
 

@@ -51,6 +51,7 @@ export const useMeditationPlayer = () => {
     };
 
     const onSlidingStart = () => { setIsSeek(true) };
+
     const onValueChange = (value: number | Array<number>) => {
         if (Array.isArray(value) && mediaDuration && (typeof value[0] === 'number')) {
             setCurrentTime(value[0] * mediaDuration);

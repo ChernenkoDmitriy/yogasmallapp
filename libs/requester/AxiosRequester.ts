@@ -72,9 +72,9 @@ class AxiosRequester implements IRequester {
             const response = await Axios(config);
             return response;
         } catch (error: any) {
-            this.serverError(error?.status);
-            console.warn('AxiosRequester -> post: ', error);
-            return error?.response || {};
+            this.serverError(error.status);
+            console.warn('AxiosRequester -> post: ', JSON.stringify(error));
+            return error || {};
         }
     }
 

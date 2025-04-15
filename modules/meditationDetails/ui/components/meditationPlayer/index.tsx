@@ -27,7 +27,7 @@ export const MeditationPlayer: FC<IProps> = ({ code, isAvailable, connectionLink
         onSetIsPaused, onSlidingComplete, onSlidingStart, onValueChange,
         timeLeft, isSeek
     } = useMeditationPlayer();
-
+    console.log(currentTime / mediaDuration)
     return (
         <View style={styles.container}>
             <MeditationVideo
@@ -47,7 +47,7 @@ export const MeditationPlayer: FC<IProps> = ({ code, isAvailable, connectionLink
                     <View style={styles.player}>
                         <Slider
                             animateTransitions={true}
-                            value={currentTime / mediaDuration}
+                            value={(currentTime / mediaDuration) || 0}
                             maximumTrackTintColor={colors.blockBackground}
                             minimumTrackTintColor={colors.playerProgress}
                             trackStyle={styles.track}

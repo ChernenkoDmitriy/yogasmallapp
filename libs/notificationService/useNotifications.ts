@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { notificationService } from "./NotificationService";
-import { notificationHandler } from "./pushNotification/NotificationHandler";
 import { AuthorizationStatus } from "@notifee/react-native";
-import notifee, { EventType } from '@notifee/react-native';
 
 export const useNotifications = () => {
     useEffect(() => {

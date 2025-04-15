@@ -1,4 +1,4 @@
-import messaging, { deleteToken, getInitialNotification, getMessaging, getToken, hasPermission, onMessage, onNotificationOpenedApp, onTokenRefresh, registerDeviceForRemoteMessages, setBackgroundMessageHandler } from '@react-native-firebase/messaging';
+import { deleteToken, getInitialNotification, getMessaging, getToken, hasPermission, onMessage, onNotificationOpenedApp, onTokenRefresh, registerDeviceForRemoteMessages, setBackgroundMessageHandler } from '@react-native-firebase/messaging';
 import { IMessaging } from './IMessaging';
 import { Alert } from 'react-native';
 import Clipboard from '@react-native-clipboard/clipboard';
@@ -59,22 +59,39 @@ export class FirebaseMessaging implements IMessaging {
     }
 
     subscribeAppOnBackgroundMessages = (callBack: Function) => {
-        setBackgroundMessageHandler(getMessaging(), async remoteMessage => {
+        setBackgroundMessageHandler(this._messaging, async remoteMessage => {
             if (remoteMessage) {
-                callBack(remoteMessage);
+                console.log(remoteMessage, 'onBackgroundMessage')
+                await callBack(remoteMessage);
             }
         });
     };
 
     subscribeAppOnForegroundMessages = (callBack: Function): Function => {
+        const unsubscribeOnOpenedApp = onNotificationOpenedApp(this._messaging, remoteMessage => {
+            if (remoteMessage) {
+                console.log(remoteMessage, "onNotificationOpenedApp")
+                callBack(remoteMessage.notification, 'onNotificationOpenedApp');
+            }
+        });
+
+        getInitialNotification(this._messaging).then(remoteMessage => {
+            if (remoteMessage) {
+                console.log(remoteMessage, "onNotificationOpenedApp")
+                callBack(remoteMessage.notification, 'getInitialNotification');
+            }
+        });
+
         const unsubscribe = onMessage(this._messaging, async remoteMessage => {
             if (remoteMessage) {
-                callBack(remoteMessage);
+                console.log(remoteMessage, "onMessage")
+                callBack(remoteMessage, 'onMessage');
             }
         });
 
         return () => {
             unsubscribe();
+            unsubscribeOnOpenedApp()
         };
     };
 

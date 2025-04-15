@@ -5,9 +5,7 @@ import { IResponse } from "../requester/IRequester/IResponse";
 import { ILinks, links } from "../../src/utils/Links";
 import { Utils } from "../../src/utils/Utils";
 import { FirebaseMessagingTypes } from "@react-native-firebase/messaging";
-import { EventDetail, EventType } from "@notifee/react-native";
-import Axios from "axios";
-import axios from "axios";
+import notifee, { EventDetail, EventType } from "@notifee/react-native";
 
 class NotificationService {
     private static instance: NotificationService;
@@ -42,11 +40,15 @@ class NotificationService {
     }
 
     register = async (userId?: number | string) => {
-        const token = await this._messaging.getFCMToken();
-        const response = await this.requester.post(this.links.DELETE_FCM_TOKEN, { token });
-        const result = this.processingResponse(response);
-        return result;
-    }
+        try {
+            const token = await this._messaging.getFCMToken();
+            const response = await this.requester.post(this.links.DELETE_FCM_TOKEN, { token });
+            const result = this.processingResponse(response);
+            return result;
+        } catch (e) {
+            return null;
+        };
+    };
 
     deleteToken = async () => {
         const token = await this._messaging.getFCMToken();
@@ -60,14 +62,20 @@ class NotificationService {
         const unsubscribe = this._messaging?.subscribeAppOnForegroundMessages(this.onReceiveNotification);
         const unsubscribeEvent = this._notificationHandler.subscribeAppOnForegroundEvents(this.onForegroundEvent);
         return () => {
-            unsubscribe();
-            unsubscribeEvent;
-        }
+            unsubscribe;
+            unsubscribeEvent();
+        };
     }
 
     subscribeBackground = () => {
-        this._messaging?.subscribeAppOnBackgroundMessages(this.onReceiveNotification);
+        this._messaging?.subscribeAppOnBackgroundMessages(() => this._notificationHandler.incrementBadgeCount());
         this._notificationHandler.subscribeAppOnBackgroundEvents(this.onBackgroundEvent)
+    }
+
+    onReceiveNotification = (remoteMessage: FirebaseMessagingTypes.RemoteMessage, type: string) => {
+        if (type === 'onMessage' && remoteMessage) {
+            this._notificationHandler.createLocalNotification(remoteMessage);
+        }
     }
 
     private onForegroundEvent = (type: EventType, detail: EventDetail) => {
@@ -85,15 +93,6 @@ class NotificationService {
                 console.log('User pressed notification on Background', detail.notification);
                 notificationHandler.decrementBadgeCount();
                 break;
-        }
-    }
-
-    private onReceiveNotification = (remoteMessage: FirebaseMessagingTypes.RemoteMessage) => {
-        console.log(remoteMessage)
-        try {
-            this._notificationHandler.createLocalNotification(remoteMessage);
-        } catch (error) {
-            console.warn('NotificationService -> onReceiveNotification: ', error);
         }
     }
 

@@ -18,6 +18,19 @@
 		E985F24EE21E402C9A9C1A5E /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01099FAA797A41C7BED8EE5B /* SourceSansPro-Regular.ttf */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B800BD272DAE7607006C7A68 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		01099FAA797A41C7BED8EE5B /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSansPro-Regular.ttf"; path = "../assets/fonts/SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* yogasmallapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yogasmallapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +148,7 @@
 				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
 				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
 				8798A80FCEDA03412F01BB0E /* [CP-User] [RNFB] Core Configuration */,
+				B800BD272DAE7607006C7A68 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -151,6 +165,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
@@ -302,7 +317,7 @@
 				CODE_SIGN_ENTITLEMENTS = yogasmallapp/yogasmallapp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = XKT94ALT9G;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = yogasmallapp/Info.plist;
@@ -312,7 +327,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.6;
+				MARKETING_VERSION = 1.0.7;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -336,7 +351,7 @@
 				CODE_SIGN_ENTITLEMENTS = yogasmallapp/yogasmallapp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = XKT94ALT9G;
 				INFOPLIST_FILE = yogasmallapp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = G.CODE;
@@ -345,7 +360,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.6;
+				MARKETING_VERSION = 1.0.7;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

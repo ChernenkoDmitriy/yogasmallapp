@@ -12,12 +12,12 @@ export const MeditationDetailsView: FC = observer(() => {
         lessonTitle, lessonContent, onGoBack,
         code, setCode, isAvailable, onGetAccess
     } = useMeditationDetails();
-    
+
     return (
         <ScreenContainer headerComponent={<AppHeader isBackButton={true} onGoBack={onGoBack} />}>
             <MeditationTasks
                 header={<MeditationPlayer
-                connectionLink={connectionLinksModel.links?.['meditation'] || ''}
+                    connectionLink={connectionLinksModel.links?.['meditation'] || ''}
                     code={code}
                     setCode={setCode}
                     onGetAccess={onGetAccess}
